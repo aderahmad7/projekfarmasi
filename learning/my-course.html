@@ -68,6 +68,9 @@
             type="text/css"
             href="../assets/css/style.css"
         />
+
+        <!-- Style video -->
+        <link rel="stylesheet" href="../assets/css/video.css" />
     </head>
 
     <body class="inter-body learning-color">
@@ -76,22 +79,22 @@
             <div class="custom-container">
                 <div class="top-header">
                     <div class="header-left">
-                        <a class="text-white" href="index.html">
+                        <a class="text-white" href="javascript:history.go(-1)">
                             <i class="ri-arrow-left-line"></i>
                         </a>
                     </div>
 
                     <div class="header-right">
                         <div class="notification-box">
-                            <a class="text-white" href="cart.html">
-                                <i class="ri-shopping-bag-3-line"></i>
+                            <a class="text-white" href="#">
+                                <i class="ri-chat-4-line"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="header-bottom header-bottom-2">
-                    <h2 class="fw-500 text-white">My Courses</h2>
+                    <h2 class="fw-500 text-white">Courses</h2>
                 </div>
             </div>
         </header>
@@ -117,7 +120,7 @@
                             <i class="ri-play-circle-line"></i>
                         </div>
                         <div class="mobile-name">
-                            <h5>My Courses</h5>
+                            <h5>Courses</h5>
                         </div>
                     </a>
                 </li>
@@ -168,7 +171,6 @@
                                     data-bs-toggle="offcanvas"
                                     data-bs-target="#filter-button"
                                 >
-                                    <i class="ri-sound-module-line fil"></i>
                                 </button>
                             </div>
                         </form>
@@ -178,213 +180,17 @@
         </div>
         <!-- Setting Section End -->
 
-        <!-- Continue Reading Section Start -->
-        <section class="section-t-space continue-reading-section">
+        <!-- Features Course Section Start -->
+        <section class="section-t-space feature-course-section">
             <div class="custom-container">
-                <div class="title px-15">
-                    <h4>Continue Reading</h4>
-                </div>
-
-                <div class="row g-3">
-                    <div class="col-12">
-                        <div class="reading-list w-100">
-                            <div class="reading-box">
-                                <div class="reading-detail">
-                                    <a
-                                        href="unlocked-courses.html"
-                                        class="reading-image"
-                                    >
-                                        <img
-                                            src="../assets/images/learning/reading/2.jpg"
-                                            class="img-fluid"
-                                            alt=""
-                                        />
-                                    </a>
-                                    <a
-                                        href="unlocked-courses.html"
-                                        class="reading-name"
-                                    >
-                                        <h5>
-                                            React - The Complete Guide (incl
-                                            Hooks, React...
-                                        </h5>
-                                    </a>
-                                </div>
-                                <div class="reading-view">
-                                    <div class="progress">
-                                        <div
-                                            class="progress-bar"
-                                            role="progressbar"
-                                        ></div>
-                                    </div>
-                                    <h6 class="theme-color">55% Complete</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12">
-                        <div class="reading-list w-100">
-                            <div class="reading-box">
-                                <div class="reading-detail">
-                                    <a
-                                        href="unlocked-courses.html"
-                                        class="reading-image"
-                                    >
-                                        <img
-                                            src="../assets/images/learning/reading/1.jpg"
-                                            class="img-fluid"
-                                            alt=""
-                                        />
-                                    </a>
-                                    <a
-                                        href="unlocked-courses.html"
-                                        class="reading-name"
-                                    >
-                                        <h5>
-                                            React - The Complete Guide (incl
-                                            Hooks, React...
-                                        </h5>
-                                    </a>
-                                </div>
-                                <div class="reading-view">
-                                    <div class="progress">
-                                        <div
-                                            class="progress-bar"
-                                            role="progressbar"
-                                        ></div>
-                                    </div>
-                                    <h6 class="theme-color">55% Complete</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div id="videoList"></div>
             </div>
         </section>
-        <!-- Continue Reading Section End -->
+        <!-- Features Course Section End -->
 
         <!-- space box start -->
         <div class="learning-box"></div>
         <!-- space box end -->
-
-        <!-- Filter Offcanvas Start -->
-        <div
-            class="offcanvas filter-button offcanvas-bottom theme-bottom-offcanvas"
-            tabindex="-1"
-            id="filter-button"
-        >
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                    Sort by:
-                </h5>
-            </div>
-            <div class="offcanvas-body">
-                <form class="filter-box-list">
-                    <div class="filter-box">
-                        <input
-                            class="form-check-input"
-                            type="radio"
-                            name="exampleRadios"
-                            id="1"
-                            value="option1"
-                            checked
-                        />
-                        <label class="form-check-label" for="1">
-                            <i class="ri-thumb-up-line"></i>
-                            <span>Popularity</span>
-                        </label>
-                    </div>
-
-                    <div class="filter-box">
-                        <input
-                            class="form-check-input"
-                            type="radio"
-                            name="exampleRadios"
-                            id="02"
-                            value="option1"
-                        />
-                        <label class="form-check-label" for="02">
-                            <svg>
-                                <use
-                                    xlink:href="https://themes.pixelstrap.net/multikit/assets/images/learning/low-high.svg#low"
-                                ></use>
-                            </svg>
-                            <span>Price: Low to High</span>
-                        </label>
-                    </div>
-
-                    <div class="filter-box">
-                        <input
-                            class="form-check-input"
-                            type="radio"
-                            name="exampleRadios"
-                            id="03"
-                            value="option1"
-                        />
-                        <label class="form-check-label" for="03">
-                            <svg>
-                                <use
-                                    xlink:href="https://themes.pixelstrap.net/multikit/assets/images/learning/high-low.svg#high"
-                                ></use>
-                            </svg>
-                            <span>Price: High to Low</span>
-                        </label>
-                    </div>
-
-                    <div class="filter-box">
-                        <input
-                            class="form-check-input"
-                            type="radio"
-                            name="exampleRadios"
-                            id="04"
-                            value="option1"
-                        />
-                        <label class="form-check-label" for="04">
-                            <i class="ri-star-line"></i>
-                            <span>User Ratings: Highest</span>
-                        </label>
-                    </div>
-                    <button
-                        class="btn btn-theme text-white apply-button"
-                        data-bs-dismiss="offcanvas"
-                    >
-                        Apply
-                    </button>
-                </form>
-            </div>
-        </div>
-        <!-- Filter Offcanvas End -->
-
-        <!-- Theme Option Setting Box Start -->
-        <div class="theme-setting-box">
-            <div class="theme-box">
-                <button class="theme-icon text-white">
-                    <i class="ri-menu-line"></i>
-                </button>
-                <ul class="theme-option">
-                    <li>
-                        <button class="theme-setting-button" id="rtl-btn">
-                            <i class="ri-text-direction-r"></i>
-                        </button>
-                    </li>
-                    <li>
-                        <button class="theme-setting-button" id="dark-btn">
-                            <i class="ri-sun-line"></i>
-                        </button>
-                    </li>
-                    <li>
-                        <button
-                            onclick="location.href = 'https://themes.pixelstrap.net/multikit/landing/index.html';"
-                            class="theme-setting-button"
-                        >
-                            <i class="ri-home-3-line"></i>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- Theme Option Setting Box End -->
 
         <!-- Bootstrap js-->
         <script src="../assets/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>
@@ -398,5 +204,9 @@
 
         <!-- Theme Settings js-->
         <script src="../assets/js/theme-setting.js"></script>
+
+        <!-- Video js -->
+        <script src="../assets/js/video.js"></script>
+        <script src="https://www.youtube.com/iframe_api"></script>
     </body>
 </html>
