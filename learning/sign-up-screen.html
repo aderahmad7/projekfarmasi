@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Projek Farmasi</title>
+        <link rel="icon" href="assets/images/favicon/icon.png" />
+        <!--Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com/" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../assets/css/all.min.css" />
+        <link rel="stylesheet" href="../assets/css/slick.css" />
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../assets/css/styleSecond.css" />
+        <link rel="stylesheet" href="../assets/css/media-query.css" />
+    </head>
+    <body>
+        <div class="site-content mt-5 p-2">
+            <!-- Sign in screen start -->
+            <section
+                id="sign-in-screen-content"
+                class="d-flex flex-column gap-4"
+            >
+                <div class="container">
+                    <div class="sign-in-login">
+                        <h1 class="login-txt">Create Your Account</h1>
+                    </div>
+                    <div class="sign-in-login-form mt-24">
+                        <form>
+                            <div class="form-details-sign-in">
+                                <span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                    >
+                                        <mask
+                                            id="mask0_204_148"
+                                            style="mask-type: alpha"
+                                            maskUnits="userSpaceOnUse"
+                                            x="0"
+                                            y="0"
+                                            width="24"
+                                            height="24"
+                                        >
+                                            <rect
+                                                width="24"
+                                                height="24"
+                                                fill="white"
+                                            />
+                                        </mask>
+                                        <g mask="url(#mask0_204_148)">
+                                            <path
+                                                d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                                                stroke="black"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M6 21V19C6 17.9391 6.42143 16.9217 7.17157 16.1716C7.92172 15.4214 8.93913 15 10 15H14C15.0609 15 16.0783 15.4214 16.8284 16.1716C17.5786 16.9217 18 17.9391 18 19V21"
+                                                stroke="black"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </g>
+                                    </svg>
+                                </span>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    placeholder="Your Name"
+                                    class="sign-in-custom-input"
+                                />
+                            </div>
+                            <div class="form-details-sign-in mt-12">
+                                <span>
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <mask
+                                            id="mask0_330_7186"
+                                            style="mask-type: alpha"
+                                            maskUnits="userSpaceOnUse"
+                                            x="0"
+                                            y="0"
+                                            width="24"
+                                            height="24"
+                                        >
+                                            <rect
+                                                width="24"
+                                                height="24"
+                                                fill="white"
+                                            />
+                                        </mask>
+                                        <g mask="url(#mask0_330_7186)">
+                                            <path
+                                                d="M19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5Z"
+                                                stroke="black"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M3 7L12 13L21 7"
+                                                stroke="black"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </g>
+                                    </svg>
+                                </span>
+                                <input
+                                    type="email"
+                                    id="Email"
+                                    placeholder="Email"
+                                    class="sign-in-custom-input"
+                                />
+                            </div>
+                            <div class="form-details-sign-in mt-12">
+                                <span>
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <mask
+                                            id="mask0_330_7136"
+                                            style="mask-type: alpha"
+                                            maskUnits="userSpaceOnUse"
+                                            x="0"
+                                            y="0"
+                                            width="24"
+                                            height="24"
+                                        >
+                                            <rect
+                                                width="24"
+                                                height="24"
+                                                fill="white"
+                                            />
+                                        </mask>
+                                        <g mask="url(#mask0_330_7136)">
+                                            <path
+                                                d="M17 11H7C5.89543 11 5 11.8954 5 13V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V13C19 11.8954 18.1046 11 17 11Z"
+                                                stroke="black"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M12 17C12.5523 17 13 16.5523 13 16C13 15.4477 12.5523 15 12 15C11.4477 15 11 15.4477 11 16C11 16.5523 11.4477 17 12 17Z"
+                                                stroke="black"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M8 11V7C8 5.93913 8.42143 4.92172 9.17157 4.17157C9.92172 3.42143 10.9391 3 12 3C13.0609 3 14.0783 3.42143 14.8284 4.17157C15.5786 4.92172 16 5.93913 16 7V11"
+                                                stroke="black"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </g>
+                                    </svg>
+                                </span>
+                                <input
+                                    type="password"
+                                    id="password"
+                                    placeholder="Password"
+                                    class="sign-in-custom-input"
+                                />
+                                <i class="fas fa-eye-slash" id="eye"></i>
+                            </div>
+                            <div class="form-details-sign-in mt-12">
+                                <span>
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <mask
+                                            id="mask0_330_7136"
+                                            style="mask-type: alpha"
+                                            maskUnits="userSpaceOnUse"
+                                            x="0"
+                                            y="0"
+                                            width="24"
+                                            height="24"
+                                        >
+                                            <rect
+                                                width="24"
+                                                height="24"
+                                                fill="white"
+                                            />
+                                        </mask>
+                                        <g mask="url(#mask0_330_7136)">
+                                            <path
+                                                d="M17 11H7C5.89543 11 5 11.8954 5 13V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V13C19 11.8954 18.1046 11 17 11Z"
+                                                stroke="black"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M12 17C12.5523 17 13 16.5523 13 16C13 15.4477 12.5523 15 12 15C11.4477 15 11 15.4477 11 16C11 16.5523 11.4477 17 12 17Z"
+                                                stroke="black"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M8 11V7C8 5.93913 8.42143 4.92172 9.17157 4.17157C9.92172 3.42143 10.9391 3 12 3C13.0609 3 14.0783 3.42143 14.8284 4.17157C15.5786 4.92172 16 5.93913 16 7V11"
+                                                stroke="black"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </g>
+                                    </svg>
+                                </span>
+                                <input
+                                    type="password"
+                                    id="password"
+                                    placeholder="Confirm Password"
+                                    class="sign-in-custom-input"
+                                />
+                                <i class="fas fa-eye-slash" id="eye"></i>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="sign-in-btn mt-32">
+                        <a href="sign-in-screen.html">Sign Up</a>
+                    </div>
+                </div>
+                <div class="block-footer">
+                    <p>
+                        Already have an account?
+                        <a href="sign-in-screen.html">Sign In</a>
+                    </p>
+                </div>
+            </section>
+            <!-- Sign in screen end -->
+        </div>
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/slick.min.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/custom.js"></script>
+    </body>
+</html>
