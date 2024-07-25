@@ -75,8 +75,6 @@ function stopProgressTracker(index) {
     clearInterval(players[index].progressTracker);
 }
 
-
-
 function updateVideoProgress(index) {
     const player = players[index];
     const duration = player.getDuration();
@@ -88,31 +86,28 @@ function updateVideoProgress(index) {
 }
 
 function updateTotalProgress() {
-    totalProgress =
+    let progress =
         videoData.reduce((sum, video) => sum + (video.progress || 0), 0) /
         videoData.length;
 
     const progressFill = document.getElementById("progressFill");
     const progressPercentage = document.getElementById("progressPercentage");
 
-    progressFill.style.width = `${totalProgress}%`;
-    progressPercentage.textContent = `${Math.round(totalProgress)}% Complete`;
-
-    if (totalProgress >= 99.9) {
-        showCompleteButton();
+    if (progress > totalProgress) {
+        totalProgress = progress;
+        progressFill.style.width = `${totalProgress}%`;
+        progressPercentage.textContent = `${Math.round(
+            totalProgress
+        )}% Complete`;
     }
 }
 
-function showCompleteButton() {
-    const completeButton = document.getElementById("completeButton");
-    completeButton.style.display = "block";
-}
+const btnPostTest = document.getElementById("btnPost");
 
-function initializeCompleteButton() {
-    const completeButton = document.getElementById("completeButton");
-    completeButton.addEventListener("click", () => {
-        alert("Selamat! Anda telah menonton semua video.");
-    });
-}
-
-initializeCompleteButton();
+btnPostTest.addEventListener("click", function () {
+    if (totalProgress >= 99.5) {
+        location.href = "post-test-screen.html";
+    } else {
+        alert("Finish the video first");
+    }
+});
