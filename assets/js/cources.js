@@ -164,7 +164,11 @@ function showCompleteButton() {
 }
 
 function addVideo() {
-    const id = document.getElementById("newVideoLink").value.split("/")[3].split("?")[0];
+    const link = document.getElementById("newVideoLink").value;
+    const id =
+        link.split("/")[2] === "www.youtube.com"
+            ? newLink.split("?v=")[1]
+            : link.split("/")[3].split("?")[0];
     const title = document.getElementById("newVideoTitle").value;
     const description = document.getElementById("newVideoDescription").value;
 
@@ -190,14 +194,18 @@ function clearAddVideoForm() {
 function editVideo(index) {
     currentEditIndex = index;
     const video = videoData[index];
-    document.getElementById("editVideoLink").value = video.id;
+    document.getElementById("editVideoLink").value = `https://www.youtube.com/watch?v=${video.id}`;
     document.getElementById("editVideoTitle").value = video.title;
     document.getElementById("editVideoDescription").value = video.description;
     new bootstrap.Modal(document.getElementById("editVideoModal")).show();
 }
 
 function saveEditedVideo() {
-    const newId = document.getElementById("editVideoLink").value.split("/")[3].split("?")[0];
+    const newLink = document.getElementById("editVideoLink").value;
+    const newId =
+        newLink.split("/")[2] === "www.youtube.com"
+            ? newLink.split("?v=")[1]
+            : newLink.split("/")[3].split("?")[0];
     const newTitle = document.getElementById("editVideoTitle").value;
     const newDescription = document.getElementById(
         "editVideoDescription"
