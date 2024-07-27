@@ -19,10 +19,10 @@ const ctx = document.getElementById("chart").getContext("2d");
 new Chart(ctx, {
     type: "bar",
     data: {
-        labels: ["Pasien", "Dokter"],
+        labels: ["Patients", "Doctor"],
         datasets: [
             {
-                label: "Jumlah",
+                label: "Amount",
                 data: [patientCount, doctorCount],
                 backgroundColor: [
                     "rgba(54, 162, 235, 0.6)",
@@ -56,7 +56,7 @@ new Chart(ctx, {
             },
             title: {
                 display: true,
-                text: "Perbandingan Jumlah Pasien dan Dokter",
+                text: "Comparison of Number of Patients and Doctors",
                 color: "rgb(22, 65, 80)",
             },
         },
@@ -68,7 +68,7 @@ const ctxPie = document.getElementById("pieChart").getContext("2d");
 new Chart(ctxPie, {
     type: "pie",
     data: {
-        labels: ["Selesai Course", "Belum Selesai"],
+        labels: ["Course Completed", "Not finished yet"],
         datasets: [
             {
                 data: [completedPercentage, incompletePercentage],

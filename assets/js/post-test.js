@@ -44,6 +44,8 @@ function addQuestion() {
         questions.push(question);
         document.getElementById("questionText").value = "";
         updateQuestionList();
+    }else {
+        alert("Please Input Question");
     }
 }
 
@@ -121,10 +123,10 @@ function updateQuestionList() {
         questionDiv.className = "question";
         questionDiv.innerHTML = `
             <h3 class="question-text mb-3">${qIndex + 1}. ${question.text}</h3>
-            <div class="question-buttons mb-2 d-flex gap-1">
-                <button onclick="editQuestion(${qIndex})" class="btn btn-sm btn-primary">Edit Question</button>
-                <button onclick="deleteQuestion(${qIndex})" class="btn btn-sm btn-danger">Delete Question</button>
-                <button onclick="addOption(${qIndex})" class="btn btn-sm btn-success">Add Option</button>
+            <div class="question-buttons mb-2 d-flex gap-2">
+                <button onclick="editQuestion(${qIndex})" class="btn btn-sm btn-primary rounded-3">Edit Question</button>
+                <button onclick="deleteQuestion(${qIndex})" class="btn btn-sm btn-danger rounded-3">Delete Question</button>
+                <button onclick="addOption(${qIndex})" class="btn btn-sm btn-success rounded-3">Add Option</button>
             </div>
             <div class="options">
                 ${question.options

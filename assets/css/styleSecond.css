@@ -71,9 +71,7 @@ html {
     box-sizing: border-box;
 }
 
-.bg-web-primary {
-    background-color: rgb(13, 53, 67);
-}
+
 
 a:focus, a {
     outline: none;

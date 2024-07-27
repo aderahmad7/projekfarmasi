@@ -72,26 +72,34 @@
 
     <body class="inter-body learning-color">
         <!-- header start -->
-        <header class="main-header learning-header h-102">
-            <div class="custom-container">
-                <div class="top-header">
-                    <div class="header-left">
-                        <a class="text-white" href="index.html">
-                            <i class="ri-arrow-left-line"></i>
-                        </a>
-                    </div>
-
-                    <div class="header-right">
-                        <div class="notification-box">
-                            <a class="text-white" href="#">
-                                <i class="ri-chat-4-line"></i>
-                            </a>
-                        </div>
-                    </div>
+        <header class="main-header learning-header">
+            <div class="top-header">
+                <div class="header-left">
+                    <a class="text-white" href="index.html">
+                        <i class="ri-arrow-left-line"></i>
+                    </a>
                 </div>
 
-                <div class="header-bottom header-bottom-2">
-                    <h2 class="fw-500 text-white">Consultation</h2>
+                <div class="header-right">
+                    <div class="notification-box">
+                        <a class="text-white" href="#">
+                            <i class="ri-chat-4-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-bottom-account">
+                <div class="profile-image">
+                    <img
+                        src="../assets/images/learning/menu-profile.jpg"
+                        class="img-fluid"
+                        alt=""
+                    />
+                </div>
+                <div class="profile-name">
+                    <h4 class="text-white">Jacob Mark</h4>
+                    <h6 class="content-color">jacobmark@gmail.com</h6>
                 </div>
             </div>
         </header>
@@ -111,19 +119,7 @@
                     </a>
                 </li>
 
-                
                 <li>
-                    <a href="my-course.html" class="mobile-box">
-                        <div class="mobile-icon">
-                            <i class="ri-play-circle-line"></i>
-                        </div>
-                        <div class="mobile-name">
-                            <h5>Courses</h5>
-                        </div>
-                    </a>
-                </li>
-                
-                <li class="active">
                     <a href="consultation.html" class="mobile-box">
                         <div class="mobile-icon">
                             <i class="ri-contacts-book-2-line"></i>
@@ -134,7 +130,7 @@
                     </a>
                 </li>
 
-                <li>
+                <li class="active">
                     <a href="account.html" class="mobile-box">
                         <div class="mobile-icon">
                             <i class="ri-user-3-line"></i>
@@ -148,13 +144,60 @@
         </div>
         <!-- Mobile Section End -->
 
-        <section class="section-t-space feature-course-section d-flex align-items-center justify-content-center text-black-50">
-            <h2>Features under development</h1>
-        </section>
+        <!-- Setting Section Start -->
+        <div class="setting-style-1 pt-45">
+            <div class="custom-container">
+                <div class="title">
+                    <h4>Account Setting</h4>
+                </div>
+                <ul class="menu-setting-list px-0">
+                    <li>
+                        <a
+                            href="personal-setting.html"
+                            class="menu-setting-box"
+                        >
+                            <div class="setting-icon">
+                                <i class="ri-user-3-line"></i>
+                            </div>
+                            <div class="setting-name">
+                                <h4>Personal Setting</h4>
+                                <i class="ri-arrow-right-s-line"></i>
+                            </div>
+                        </a>
+                    </li>
 
-        <!-- space box start -->
-        <div class="learning-box"></div>
-        <!-- space box end -->
+                    <li>
+                        <a
+                            href="account-security.html"
+                            class="menu-setting-box"
+                        >
+                            <div class="setting-icon">
+                                <i class="ri-lock-line"></i>
+                            </div>
+                            <div class="setting-name">
+                                <h4>Account security</h4>
+                                <i class="ri-arrow-right-s-line"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="../sign-in-screen.html"
+                            class="menu-setting-box"
+                        >
+                            <div class="setting-icon">
+                                <i class="ri-logout-circle-line"></i>
+                            </div>
+                            <div class="setting-name">
+                                <h4>Logout</h4>
+                                <i class="ri-arrow-right-s-line"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Setting Section End -->
 
         <!-- Bootstrap js-->
         <script src="../assets/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>
