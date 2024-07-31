@@ -1,0 +1,4868 @@
+/*------------------------------------------------------------------
+Project:Guruji  Online Learning APP
+Author: The_Krishna       
+Last change: 29/12/2023 
+Primary use:  Online Learning & Educational Courses PWA
+-------------------------------------------------------------------*/
+
+/*----------------Table of contents Start---------------------------
+1.Default CSS
+2.Index Screen
+3.Onboarding Screen
+4.Let You Screen 
+5.Sign In Screen 
+6.Sign Up Screen 
+7.Forget Password Screen 
+8.Check Mail Screen 
+9.Verify Screen 
+10.Notification Allow Screen 
+11.Preferred Language Screen 
+12.Primary Goal Screen 
+13.Choose Interests Screen 
+14.Faq Screen 
+15.Privacy Screen 
+16.About Us 
+17.Currency 
+18.Single Course Description Screen
+19.Select Courses Screen 
+20.Notification Screen 
+21.Mentor Screen 
+22.Checkout Screen
+23.Apply Coupon Screen
+24.Payment Method Screen
+25.Date Picker
+26.Setting Screen
+27.Notification Option Screen
+28.FavouritePage Screen
+29.Tabbar 
+30.Chat2 Screen 
+31.Courses Ongoing Screen 
+32.Completed Course Rating Screen
+33.Category Screen 
+34.Trending Courses Screen 
+35.Preloader
+36.Single mentor screen start
+37.Profile screen start
+38.Result found screen start
+39.New Course screen start
+40.Wallet Screen 
+41.Homescreen Screen 
+42.chat screen 
+43.Animation
+44.PWA Popup
+
+---------Table of contents End-----------------------------------*/
+
+/*------------------------ [Color codes] ------------------------
+                        
+Background: #FFFFFF     
+Content:  #666666      
+Heading h1: #000000       
+paragraph p:#666666     
+-------------------------------------------------------------------*/
+
+/************************ 1.Default CSS ***************************/
+html {
+   scroll-behavior: smooth;
+   -webkit-text-size-adjust: 100%;
+}
+*, ::after, ::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+a:focus, a {
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+} 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+body {
+    max-width: 600px;
+    margin: 0 auto;
+    height: 100%;
+}
+svg{
+    vertical-align: middle;
+}
+input{
+    outline-width: 0;
+    outline-offset: 0;
+    outline: 0;
+}
+textarea{
+  outline-width: 0;
+  outline-offset: 0;
+  outline: 0;
+}
+.container{
+    background: var(--1, #FFF); 
+    padding: 0 16px;
+}
+
+.mt-24{
+    margin-top: 24px;
+}
+.mt-32{
+    margin-top: 32px;
+}
+.pt-30{
+    padding-top: 30px;
+}
+.mt-12{
+    margin-top: 12px;
+}
+.mt-16{
+    padding-top: 16px;
+}
+.mr-8{
+    margin-right: 8px;
+}
+.margin-top{
+    margin-top: 16px;
+}
+.mt-8{
+    margin-top: 8px;
+}
+#about-us-section,
+#apply-coupon,
+#currency-page,
+#faq-sec,
+#forget-password-screen-content,
+#verify-screen,
+#categories-section,
+#reset-password-screen-content,
+#notification-allow-screen,
+#select-language-page,
+#trending-course,
+#mentor-screen,
+#apply-coupon,
+#notification-screen,
+#setting-screen,
+#notification2-screen,
+#complete-course-rating,
+#result-found,
+#new-courses,
+#privacy-page,
+#language-screen,
+#wallet-screen,
+#profile-edit,
+#review-screen,
+#single-mentor-sec
+{
+    margin-bottom: 16px;
+}
+#let-you-screen-content{
+    margin-bottom: 75px;
+}
+#top-header, #top-navbar {
+    background: white;
+    max-width: 600px;
+}
+#primary_goal,
+#interest-screen,
+#payment-succuessfull,
+#select-course-screen{
+    margin-bottom: 80px;
+}
+#filter-screen{
+    margin-bottom: 100px;
+}
+.let-yoy-page-section-full{
+    padding: 12px 0;
+}
+.fixed {
+    position: fixed;
+    z-index: 2;
+    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    top: 0%;
+    -webkit-box-shadow: 0 0 22px -4px rgb(0 0 0 / 17%);
+    box-shadow: 0 0 22px -4px rgb(0 0 0 / 17%);
+    -webkit-animation: fixedheader 600ms ease 0ms 1 forwards;
+    animation: fixedheader 600ms ease 0ms 1 forwards;
+}
+
+/************************ 2.Index Screen ***************************/
+#splashscreen{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--1, #FFF); 
+}
+.onboarding-slider .carousel-item{
+    transition: none !important;
+}
+.logo-txt {
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.logo-para {
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+.logo-img-sec,
+.let-you-screen-img,
+.onboarding-img,
+.check-mail-img,
+.payment-img,
+.complete-course-rating-top,
+.noresult-top {
+    text-align: center;
+}
+
+/************************ 3.Onboarding Screen  ***************************/
+.skip_btn-onboading  {
+    text-align: right;
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+.skip_btn-onboading a{
+   color: var(--3, #666) !important; 
+}
+.boarding-title h1 {
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+}
+.onboarding-next-btn a,
+.sign-in-password-btn a,
+.sign-in-btn a,
+.sign-up-btn a,
+.sign-in-btn input[type="submit"],
+.sign-up-btn input[type="submit"],
+.send-instruction-btn a,
+.send-instruction-btn input[type="submit"],
+.open-email-btn a,
+.verify-btn a,
+.allow-btn a,
+.next-btn a,
+.next-btn-goal a,
+.next-btn-goal button,
+.inter-next-btn a,
+.feedback-submit a,
+.go-courses-btn a,
+.buy-now-description a,
+.pay-now-btn a,
+.apply-coupon-btn a,
+.save-btn-payment a,
+.start-course-btn a,
+.write-review-btn a,
+.try-again-btn a,
+.add-to-wallet a,
+.save-changes-btn a,
+.download-btn a,
+.next-course a{ 
+    width: 100%;
+    border-radius: 8px;
+    background: rgb(22, 65, 80);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    color: var(--1, #FFF);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: auto;
+    max-width: 600px;
+}
+.onboarding-img{
+    text-align: center;
+}
+.onboarding-next-btn {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 16px;
+    z-index: 5;
+    padding: 0px 16px;
+}
+.onboarding-slider .carousel-indicators [data-bs-target] {
+    margin-right: 8px;
+    margin-left: 8px;
+}
+.custom-slider-dots {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    background: var(--2, #000) !important;
+}
+.custom-slider-btn .active {
+    width: 28px !important;
+}
+.Onboarding-Screen-1-full {
+    position: relative;
+    height: 100vh;
+}
+.onboarding-slider {
+    height: calc(100vh - 80px);
+}
+.custom-slider-btn{
+    bottom: 100px;
+    position: fixed;
+    right: 0;
+    z-index: 2;
+    padding: 0;
+    margin: 0 !important;
+    list-style: none;
+    height: fit-content;
+}
+.Onboarding-Screen-1{
+    position: relative;
+}
+
+/************************ 4.Let You Screen  ***************************/
+.let-you-txt {
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+}
+.social-icon {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid rgb(0 0 0 / 8%);
+    text-align: center;
+}
+.next-course {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding: 16px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background: var(--1, #FFF);
+    box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.04);
+    z-index: 1;
+}
+.social-txt {
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-left: 12px
+}
+.or-section p {
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    overflow: hidden;
+}
+.or-section p:before {
+    right: 8px;
+    margin-left: -50%;
+}
+.or-section p:after {
+    left: 8px;
+    margin-right: -50%;
+}
+.or-section p:before, 
+.or-section p:after {
+    background: rgb(0 0 0 / 8%);
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+#let-you-footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: white;
+    padding: 16px 0;
+    z-index: 99;
+}
+.block-footer p{
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+.block-footer a{
+    color: rgb(22, 65, 80);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+/************************ 5.Sign In Screen ***************************/
+.sign-in-login{
+    margin-top: 42px;
+}
+#sign-in-screen-content{
+    position: relative;
+}
+.login-txt {
+    color: rgb(22, 65, 80);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+}
+.form-details-sign-in {
+    border-radius: 8px;
+    background: rgb(102 102 102 / 8%);
+    padding: 12px;
+    display: flex;
+}
+.sign-in-custom-input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    padding-left: 12px;
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+#eye,
+#eye1 {
+    color: #666666;
+    display: flex;
+    align-items: center;
+}
+.remember-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+.footer-checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: fit-content;
+}
+.footer-checkbox-input+ .footer-chec-txt {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+}
+.footer-checkbox-input + .footer-chec-txt:before {
+    content: "";
+    margin-right: 12px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+}
+.footer-chec-txt {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+.forget-btn a {
+    color: var(--8, #F97316);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+.footer-checkbox-input:checked + .footer-chec-txt:before {
+    background: black;
+    border: none;
+}
+.footer-checkbox-input:checked + .footer-chec-txt:after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 12px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+    transform: rotate(45deg);
+}
+.sign-in-social-media-full {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 24px;
+    margin-top: 24px;
+}
+.sign-in-social-media-deatails {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    border: 2px solid rgb(102 102 102 / 8%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/************************ 6.Sign Up Screen ***************************/
+.mobile-form {
+    border-radius: 8px;
+    background: #F0F0F0;
+    padding: 12px;
+}
+.third-txt3 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+#mobile_code {
+    margin-left: 0px;
+    padding-right: 0;
+}
+.iti__selected-dial-code {
+    display: none;
+}
+.iti--separate-dial-code .iti__selected-flag{
+    background: none;
+}
+#sign-up-screen-content{
+    margin-bottom: 90px;
+}
+
+/************************ 7.Forget Password Screen  ***************************/
+.navbar-boder {
+   background: rgb(0 0 0 / 8%);
+   height: 1px;
+}
+.social-icon-img {
+    display: inline-block;
+}
+.top-header-full {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
+}
+.back-btn, 
+.back-btn a {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+.header-title {
+    margin-left: auto;
+    margin-right: auto;
+}
+.header-title p {
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter",sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+.title-sec{
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+/************************ 8.Check Mail Screen ***************************/
+.check-mail-content h1 {
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+}
+.check-mail-content p {
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 16px !important;
+}
+.open-email-skip-btn a {
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; 
+}
+.open-email-skip-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+}
+.mentor-img img,
+.fourth-decs-img img,
+.mentor-img-sec img{
+    border-radius: 50px;
+}
+#checkmail-footer{
+    background: white;
+    padding-bottom: 16px;
+    margin-top: 46px;
+}
+.check-mail-img{
+    margin-top: 24px;
+}
+
+/************************ 9.Verify Screen  ***************************/
+.otp-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 11px;
+}
+.otp-section input {
+    width: 100%;
+    height: 60px;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    text-align: center;
+    padding: 10px;
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.otp:focus {
+    border: 1px solid #000;
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.24));
+    box-shadow: none;
+}
+.otp-resend {
+    text-align: right;
+    margin-top: 16px;
+}
+.resend-txt1 {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+.resend-txt2 a {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+.counter-sec {
+    padding-top: 165px;
+}
+.otp-timer {
+    display: inline-block;
+    padding: 25px 18px;
+    background: #FFFFFF;
+    position: relative;
+    height: 100px;
+    width: 100px;
+}
+.otp-timer .border {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border-radius: 50%;
+    border: 2px dashed rgb(0 0 0 / 16%) !important;
+}
+.timer-counter-content{
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.otp-left{
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/************************ 10.Notification Allow Screen ***************************/
+.skip-section {
+    padding: 8px 0;
+}
+.skip-btn {
+    display: flex;
+    margin-left: auto;
+    width: 34px;
+    height: 34px;
+    align-items: center;
+}
+.skip-btn a{
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; 
+}
+.notification-img {
+    margin-top: 42px;
+    text-align: center;
+}
+.notification-content h1{
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px; 
+}
+.notification-content p{
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; 
+}
+
+/************************ 11.Preferred Language Screen ***************************/
+.hey-txt {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+}
+.select-lang {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+.select-lang-sec {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.lang-sec input[type="radio"] {
+    display: none;
+}
+label.custom-radio-sel-lang {
+    padding: 11px 16px;
+    border: 2px solid #F0F0F0;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #000;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+.lang-sec input[type="radio"]:checked + label {
+    background: #1E293B;
+    border-radius: 8px;
+    color: white;
+    border: 2px solid transparent;
+}
+
+/************************ 12.Primary Goal Screen  ***************************/
+.top-navbar_full {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+.skip-btn-goal a {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+.top-navbar-title p {
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+.goal-title p{
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+.form-check-input.custom-input-goal:focus {
+    box-shadow: none !important;
+}
+.form-check-input.custom-input-goal:active {
+    filter: none;
+}
+.select-goal {
+    border-radius: 8px;
+    border: 2px solid rgb(0 0 0 / 8%);
+    padding: 12px 16px;
+    margin-bottom: 0;
+}
+.form-check-input.custom-input-goal {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 2px solid #666666;
+    float: right !important;
+}
+.form-check-label.custom-lable-goal {
+    display: flex;
+    align-items: center;
+    color: #707070;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+.form-check-input.custom-input-goal:checked {
+    background: white;
+    background-image: url(../images/goal/orange-tick.svg);
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border: none;
+    mix-blend-mode: darken;
+}
+.next-btn-goal,
+.inter-next-btn,
+.go-courses-btn,
+.pay-now-btn ,
+.try-again-btn{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: white;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.select-goal.language-sel .custom-lable-goal{
+    color: var(--2, #000);
+}
+.select-goal.language-sel{
+    border-radius: 8px;
+    border: 2px solid var(--2, #000);
+}
+.language-screen-full,
+.currency-page-full{
+    margin-top: 17px;
+}
+
+/************************ 13.Choose Interests Screen ***************************/
+.select-interest {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.interest-sec input[type="checkbox"] {
+    display: none;
+}
+.interest-sec input[type="checkbox"]:checked + label {
+    background: #1E293B;
+    border-radius: 8px;
+    color: white;
+    border: 2px solid transparent;
+}
+label.custom-interest-lbl{
+    padding: 11px 16px;
+    border: 2px solid #F0F0F0;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #000;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    border-radius: 4px !important;
+    border: 1px solid rgb(0 0 0 / 16%) !important;
+}
+.interest-sec input[type="checkbox"]:checked + label {
+    background: #1E293B;
+    border-radius: 8px;
+    color: white;
+    border: 2px solid transparent;
+}
+
+/************************ 14.Faq Screen  ***************************/
+.nested-accordion {
+    cursor: pointer;
+    position: relative;
+}
+.review-time p {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.nested-accordion h3 {
+ color: var(--2, #000);
+ font-family: "Inter";
+ font-size: 16px;
+ font-style: normal;
+ font-weight: 600;
+ line-height: 24px; 
+}
+.boder-top {
+    border-bottom: 1px solid rgb(0 0 0 / 10%);
+    padding-bottom: 24px;
+}
+.nested-accordion .comment {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+.nested-accordion h3:before {
+    content: url(../svg/plus-icon.svg);
+    position: absolute;
+    right: 0;
+    color: #FF4C3B;
+    font-family: Space Grotesk;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+}
+.nested-accordion h3.selected {
+    color: var(--8, #F97316);
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; 
+}
+.faq-txt1:before {
+    content: url(../svg/up-arrow.svg) !important;
+}
+.nested-accordion h3.selected:before {
+    content: url(../svg/minus-icon.svg);
+}
+.faq-txt1.selected:before {
+    content: url(../svg/down-arrow.svg) !important;
+}
+
+/************************ 15.Privacy Screen  ***************************/
+.privacy-txt3{
+    color: var(--2, #000);
+    font-family: "Inter",sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; 
+}
+.privacy-txt1, .privacy-txt2, .privacy-txt6, .privacy-txt4, .privacy-txt5 {
+ color: var(--3, #666);
+ font-family: "Inter",sans-serif;
+ font-size: 16px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 20px; 
+}
+.privacy-txt2, .privacy-txt5, .privacy-txt6 {
+    padding-top: 10px !important;
+}
+.privacy-txt4 {
+    padding-top: 16px !important;
+}
+.privacy-second-content {
+    margin-top: 24px;
+}
+
+/************************ 16.About Us ***************************/
+.about-us-icon-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+.social-detail-about {
+    margin-left: auto;
+    margin-right: auto;
+}
+.shape {
+    width: 74px;
+    height: 74px;
+    border-radius: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.facebook-bg {
+   background: rgb(59 89 153 / 8%);
+}
+.instragram-bg {
+    background: linear-gradient(225deg, rgb(110 62 255 / 7%) 0%, rgb(224 49 77 / 7%) 47.92%, rgb(254 215 84 / 7%) 100%);
+}
+.twitter-bg {
+    background: rgb(29 161 242 / 7%);
+}
+.youtube-bg {
+    background: rgb(255 0 0 / 7%);
+}
+.about-social-txt {
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter",sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; 
+    margin-top: 12px !important;
+}
+
+/************************ 17.Currency  ***************************/
+.change-lan-sec {
+    padding: 17px 0px !important;
+    border-bottom: 1px solid rgb(0 0 0 / 8%);
+}
+.form-check-input.custom-input:checked {
+    background: white;
+    background-image: url(../images/icons/lang-select.svg);
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border: none;
+    mix-blend-mode: darken;
+}
+.form-check-label.custom-lable {
+    display: flex;
+    align-items: center;
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; 
+}
+.custom-lable span {
+    padding-right: 8px;
+}
+.form-check-input.custom-input {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 2px solid #666666;
+    float: right !important;
+}
+.language-sel .curr-icon path {
+    stroke: #1E293B;
+}
+.language-sel .form-check-label.custom-lable {
+    color: #000;
+}
+.change-lan-sec:last-child {
+    border: navajowhite;
+}
+
+/************************ 18.Single Course Description Screen  ***************************/
+.first-decs-sec-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.first-left-sec {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background: rgb(102 102 102 / 8%);
+    border-radius: 4px;
+    padding: 8px;
+}
+.firs-txt1 {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    text-decoration: line-through;
+}
+.firs-txt2 {
+    color: var(--8, #F97316);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; 
+}
+.second-txt1 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+}
+.second-txt2{
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+.second-decs-sec-bottom-wrap {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.third-txt1{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.fourth-txt1 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.fourth-txt2 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.fourth-txt4 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}
+.fourth-txt5 p{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.fourth-txt5 {
+    border-radius: 4px;
+    border: 2px solid var(--2, #000);
+    padding: 8px;
+}
+.fourth-decs-img-wrap {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+.fourth-decs-sec-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fourth-decs-img {
+    mix-blend-mode: multiply;
+}
+.single-courses-tab{
+    justify-content: space-between !important;
+}
+.single-courses-tab li{
+    width: 33.33%;
+    border-top: 1px solid rgb(0 0 0 / 8%);
+    border-bottom: 1px solid rgb(0 0 0 / 8%);
+}
+.single-courses-tab li button{
+    padding: 10px 0;
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    background: transparent !important;
+    border-radius: 0 !important;
+    position: relative;
+    width: 100%;
+}
+.single-courses-tab li button:hover{
+   color: var(--8, #F97316) !important; 
+}
+.single-courses-tab li button.active{
+    color: var(--8, #F97316) !important;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+.single-courses-tab li button:before {
+    content: '';
+    background: var(--8, #F97316);
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+}
+.single-courses-tab li button.active:before{
+    opacity: 1;
+}
+.des-con-txt1{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.des-con-txt2{
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+    padding-top: 12px;
+}
+.desc-learn-sec li{
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+    padding-top: 8px;
+}
+ul.desc-learn-sec {
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+}
+.desc-learn-sec li:first-child{
+    padding-top: 0;
+}
+.social-icon-courses {
+    border-radius: 48px;
+    background: rgb(102 102 102 / 8%);
+    padding: 12px;
+    width: fit-content;
+}
+.whatsapp-bg{
+    background: #000000;
+}
+.single-courses-share{
+    display: flex;
+    column-gap: 16px;
+}
+.single-courses-bottom-txt p {
+ color: var(--1, #FFF);
+ text-align: center;
+ font-family: "Inter";
+ font-size: 12px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: normal;
+}
+.single-courses-bottom-txt {
+    border-radius: 4px;
+    background: linear-gradient(97deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.20) 100%);
+    backdrop-filter: blur(3px);
+    width: fit-content;
+    padding: 8px;
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+}
+.single-courses-bookmark {
+    border-radius: 32px;
+    background: var(--1, #FFF);
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 6px;
+}
+.student-course {
+    position: relative;
+}
+.seventh-txt1{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.seventh-txt2 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+.seventh-txt3 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    text-decoration: line-through;
+}
+.single-course-price{
+    margin-top: 8px;
+}
+.student-course img {
+    border-radius: 8px;
+}
+.seventh-decs-sec-wrap-slider .slick-slide{
+    margin: 0 8px;
+}
+.seventh-decs-sec{
+    margin-left: 16px;
+}
+.item-bookmark.active  {
+    content: url(../images/single-courses/bookmark-fill.svg); 
+}
+.accordion-button.custom_icon.collapsed {
+    background-image: url(../images/single-courses/up-arrow.svg);
+    background-position: 97% center;
+    background-repeat: no-repeat;
+    background-color: white !important;
+    color: var(--2, #000) !important;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    padding: 0;
+}
+.accordion-button.custom_icon {
+    background-image: url(../images/single-courses/down-arrow.svg);
+    background-position: 97% center;
+    background-repeat: no-repeat;
+    background-color: white !important;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--2, #000) !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    padding: 0;
+}
+.faq-answer {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+    padding: 12px 0 0 0px;
+}
+.accordion-button::after {
+    background-image: none !important;
+}
+.faq-answer p {
+    width: 80%;
+}
+.accordion-button span {
+    width: 80%;
+}
+.buy-now-description {
+    background: var(--1, #FFF);
+    box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.04);
+    padding: 16px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    z-index: 2;
+    max-width: 600px;
+    right: 0;
+    margin: 0 auto;
+}
+#single-description-screen{
+    margin-bottom: 112px;
+}
+.lesson-first-content-wrap,
+.lesson-intro-content-wrap,
+.review-first-sec-wrap
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.lesson-txt1 {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+}
+.ongoing-section-wrap {
+    border-top: 1px solid rgb(0 0 0 / 8%);
+}
+.ongoing-courses-tab .nav-link {
+    padding-top: 8px !important;
+}
+#lesson-introduction .accordion-button::after {
+  display: none !important;
+  background-image: none !important;
+}
+#lesson-introduction .accordion-button span{
+    width: 100% !important;
+}
+.lesson-custom-time{
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; 
+}
+.lesson-custom-btn {
+    padding: 15px 12px;
+    border-radius: 8px;
+    background: rgb(102 102 102 / 8%) !important;
+}
+.lesson-title {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+.lesson-custom-btn:focus-visible{
+    outline: none !important;
+}
+.lesson-custom-btn:focus{
+    box-shadow: none !important;
+}
+#lesson-introduction .accordion-item{
+    border: none;
+}
+.lesson-txt2 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+#lesson-introduction .accordion-body{
+    padding: 0;
+}
+.color-grey{
+    color: var(--3, #666);
+}
+.view-all-txt {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+}
+.review-first-content {
+    border-radius: 8px;
+    border: 1px solid rgb(0 0 0 / 8%);
+}
+.review-first-content {
+    border-radius: 8px;
+    border: 1px solid rgb(0 0 0 / 8%);
+    padding: 14px 15px;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+}
+.rev1-txt {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+}
+.rev2-txt {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+.review-sec-star ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.review-sec-star ul li {
+    display: table-cell;
+}
+.review-second-content-wrap{
+ display: flex;
+ justify-content: end;
+ align-items: center;
+ column-gap: 8px;
+}
+.single-courses-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    position: absolute;
+    width: 100%;
+    top: 20px;
+}
+.single-courses-bookmark-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-img-desc{
+    position: relative;
+}
+.cousr-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.progress.custom-progress {
+    width: 165px;
+    height: 4px;
+    max-width: 100%;
+}
+.w-105 {
+    width: 105px;
+}
+.w-145{
+    width: 145px;
+}
+.w-60{
+    width: 60px;
+}
+.w-30{
+    width: 30px;
+}
+.w-10{
+    width: 10px;
+}
+.custom-progress-bar {
+    background: black;
+    border-radius: 2px;
+}
+.review-percentage p{
+    color: var(--2, #000);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 10px;
+}
+.review-bottom-sec-wrap {
+    display: flex;
+    column-gap: 12px;
+}
+.review-third-sec-wrap {
+    display: flex;
+    column-gap: 12px;
+}
+.review-time {
+    margin-left: 8px;
+}
+.review-star ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.review-star ul li{
+    display: inline-block;
+}
+.review-content {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+}
+.review-bottom-first img{
+    border-radius: 24px;
+}
+.review-bottom-third{
+    margin-left: auto;
+}
+.review-para p{
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; 
+}
+.review-helpful-sec-full {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    border-top: 1px solid rgb(0 0 0 / 8%);
+    border-bottom: 1px solid rgb(0 0 0 / 8%);
+    padding: 5px 0;
+}
+.helpful-txt {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; 
+}
+.like-txt1 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; 
+}
+.dislike-txt {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+.review-helpful-sec{
+    margin-top: 8px;
+}
+.review-bottom-second h4{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; 
+}
+
+/************************ 19.Select Courses Screen ***************************/
+.course-header {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+#select-course .accordion-button::after{
+ background-image: url(../svg/down-arrow-black.svg) !important;
+ background-position: 97% center;
+ background-repeat: no-repeat;
+}
+.select-courses-txt1 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}
+.select-courses-txt2 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.courses-custom-btn{
+    background: transparent !important;
+    padding: 0px !important;
+    box-shadow: none !important;
+}
+#select-course .accordion-body{
+    padding: 0px !important;
+}
+#select-course .accordion-item{
+    border: none !important;
+    border-radius: 0 !important;
+}
+.select-course-bottom-border{
+    border-bottom: 1px solid rgb(0 0 0 / 8%) !important;
+}
+.form-check-input:active{
+    filter: none !important;
+}
+.form-check-input:focus{
+    box-shadow: none !important;
+}
+.form-check-input.custom-input-select:checked {
+    background: white;
+    background-image: url(../images/courses/select-icon.svg);
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border: none;
+    mix-blend-mode: darken;
+}
+.form-check-label.custom-lable-select {
+    display: flex;
+    align-items: center;
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+.form-check-input.custom-input-select {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 2px solid #666666;
+    float: left !important;
+    margin-left: 0 !important;
+    margin-right: 16px !important;
+}
+.change-courses-sec{
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+}
+.change-courses-sec.language-sel .custom-lable-select{
+    color: var(--2, #000);
+}
+
+/************************ 20.Notification Screen  ***************************/
+.notification-top{
+    display: flex;
+    column-gap: 12px;
+    align-items: center;
+    border-bottom: 1px solid rgb(0 0 0 / 8%);
+    padding-bottom: 16px;
+}
+.notification-top:last-child{
+    border-bottom: none;
+}
+.notifi-txt2 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+.notifi-txt1 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}
+.notifi-txt3 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+.notification-client-img img {
+    border-radius: 24px;
+}
+
+/************************ 21.Mentor Screen  ***************************/
+.mentor-content{
+    display: flex;
+    align-items: center;
+}
+.mentor-details{
+    margin-right: auto;
+}
+.mentor-img{
+    margin-right: 16px;
+}
+.mentor-details h3{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.mentor-details h4{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.mentor-details p{
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+.custom-radio-sel-friend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 4px;
+    border: 2px solid #000;
+    cursor: pointer;
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 70px;
+}
+.mentor-select input {
+    display: none;
+}
+.mentor-select input[type="checkbox"]:checked + label {
+    border-radius: 4px;
+    background: #000;
+    color: white;
+    border: 2px solid transparent;
+}
+
+/************************ 22.Checkout Screen  ***************************/
+.checkout-screen-top {
+    display: flex;
+    column-gap: 12px;
+}
+.checkout-second{
+    width: 80%;
+}
+.checkout-second-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+.checkout-design {
+    border-radius: 4px;
+    background: rgb(102 102 102 / 8%);
+    padding: 8px;
+}
+.checkout-design p{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.checkout-bookmark-sec {
+    background: rgb(102 102 102 / 8%);
+    padding: 4px;
+    border-radius: 28px;
+}
+.checkout-bookmark-sec a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.check-txt1{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+.checkout-second-third {
+    display: flex;
+    justify-content: space-between;
+    line-height: 16px;
+}
+.check-txt2 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; 
+}
+.check-txt3 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 12px; 
+    text-decoration: line-through;
+    margin-left: 4px;
+}
+.check-txt4 {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; 
+    margin-left: 4px;
+}
+.check-txt5 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}
+.check-txtt5{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+.checkout-first img{
+    border-radius: 8px;
+}
+.checkout-second-fourth{
+    margin-top: 8px;
+}
+.checkout-first{
+    display: flex;
+    align-items: center;
+}
+.checkout-addtxt{
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+.check-select-mode input[type="radio"] {
+    display: none;
+}
+.payment-custom-radio {
+    width: 70px;
+    height: 49px;
+    background: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: 1px solid rgba(30, 41, 59, 0.1);
+    border-radius: 4px;
+}
+.coupon-iconn {
+    background: rgb(102 102 102 / 8%);
+    border-radius: 8px;
+    border: none;
+    padding: 14px 0 14px 16px !important;
+}
+.search-text {
+ background: rgb(102 102 102 / 8%) !important;
+ border-radius: 8px;
+ padding: 12px !important;
+ border: none;
+ margin-left: 0 !important;
+ color: var(--3, #666);
+ font-family: "Inter";
+ font-size: 18px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 24px; 
+}
+.search-text:focus{
+    box-shadow: none!important;
+}
+.checkoutpage-boder {
+    background: rgb(0 0 0 / 8%);
+    height: 1px;
+    margin-top: 4px;
+}
+.checkout-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.check-price1 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+.color-green{
+    color: var(--6, #4ADE80);
+}
+.check-price2 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+}
+.checkout-price:last-child{
+    border-top: 1px solid rgb(0 0 0 / 8%);
+    padding-top: 12px;
+}
+#checkout-screen .slick-slide{
+    margin: 0 4px;
+}
+#checkout-screen{
+    margin-bottom: 80px;
+}
+.payment-method-checkoutpage-full{
+    padding-left: 16px;
+}
+
+/************************ 23.Apply Coupon Screen ***************************/
+.coupon-name h3{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}
+.coupon-name p{
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; 
+    margin-top: 8px;
+}
+.available-coupon-sec-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar-boder.coupon{
+    margin-top: 8px;
+}
+
+/************************ 24.Payment Method Screen ***************************/
+#payment-method-screen{
+    margin-bottom: 150px;
+}
+.payment-top p {
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+.payment-wrap{
+    margin-left: 16px;
+}
+.pay-btn.active {
+    border: 1px solid #F97316;
+    border-radius: 4px;
+}
+.pay-txt1 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.custom-payment-input {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 16px;
+    background: rgb(102 102 102 / 8%);
+    border-radius: 8px;
+}
+input {
+    border: none;
+    width: 100%;
+}
+.pay-txt2 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.switch-sec {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.payment-boder{
+    height: 1px;
+    background: rgb(0 0 0 / 8%);
+}
+.date-picker-sec {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 12px;
+    -moz-column-gap: 12px;
+    column-gap: 12px;
+}
+ul.input.date-picker-input {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+#payment-method-screen .slick-slide{
+    margin: 0 4px;
+}
+.payment-succuessfull-wrap{
+    margin-top: 40px;
+}
+.payment-save {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 0;
+    background: white;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.payment-switch{
+    margin-bottom: 38px;
+}
+
+/************************ 25.Date Picker ***************************/
+.ui-datepicker-trigger {
+ display: none;
+}
+.ui-datepicker {
+ width: 90%;
+ max-width: 350px;
+ position: fixed;
+ top: 60% !important;
+ left: 50% !important;
+ transform: translate(-50%, -50%);
+ padding: 1em;
+ background-color: #fff;
+ border-radius: 5px;
+ box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+ z-index: 200 !important;
+ display: none;
+}
+.ui-datepicker-header {
+ position: relative;
+ width: 100%;
+ height: 46px;
+ display: flex;
+ justify-content: center;
+ padding: 4px 0;
+ background-color: rgb(102 102 102 / 8%);
+ border-top: 1px solid rgb(102 102 102 / 8%);
+ border-bottom: 1px solid rgb(102 102 102 / 8%);
+ border-radius: 5px;
+}
+.ui-datepicker-prev, .ui-datepicker-next {
+ position: absolute;
+ width: 26px;
+ top: 50%;
+ transform: translateY(-50%);
+ background: url(../images/payment/calender-icon.png) no-repeat center;
+ background-size: 18px;
+}
+.ui-datepicker-prev span, .ui-datepicker-next span {
+ font-size: 0;
+}
+.ui-datepicker-prev {
+ left: 10px;
+ transform: translateY(-50%) rotate(180deg);
+}
+.ui-datepicker-next {
+ right: 10px;
+}
+.ui-datepicker-title {
+ width: 100%;
+ max-width: 160px;
+ display: flex;
+}
+.ui-datepicker-year, .ui-datepicker-month {
+ margin: 0 12px;
+ padding-right: 8px;
+ text-align: center;
+ font-size: 20px;
+ color: #333;
+ border: none;
+ background-color: transparent;
+ background-image: url(../images/payment/calender.html);
+ background-repeat: no-repeat;
+ background-position: center right 2px;
+ font-family: 'Inter';
+}
+.ui-datepicker-year {
+ background-position: center right 0;
+}
+.ui-datepicker-calendar {
+ width: 100%;
+ text-align: center;
+ font-size: 18px;
+}
+.ui-datepicker-calendar thead th {
+ padding: 16px 0 12px 0;
+ font-weight: 500;
+}
+.ui-datepicker-calendar td {
+ position: relative;
+ width: 24px;
+ height: 24px;
+ padding: 5px 2px;
+}
+.ui-datepicker-calendar a {
+ display: block;
+ line-height: 1.4;
+ font-weight: 500;
+}
+.ui-datepicker-calendar .ui-datepicker-other-month {
+ color: #b1a7a6;
+ background-color: #f5f3f4;
+}
+.ui-datepicker-today {
+ color: #ffefc8;
+ font-weight: 800;
+}
+.ui-datepicker .ui-state-active {
+    color: #000215;
+    font-weight: 700;
+}
+.ui-datepicker .ui-state-active::after {
+ content: '';
+ display: block;
+ width: 36px;
+ height: 36px;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ background-color: #ffefc8;
+ border-radius: 50%;
+ z-index: -1;
+}
+.datepicker-layer {
+ width: 100%;
+ height: 100%;
+ position: fixed;
+ top: 0;
+ left: 0 !important;
+ background-color: rgba(0, 0, 0, 0.5);
+ z-index: 200 !important;
+ display: none;
+}
+.datepicker-layer.show {
+ display: block;
+}
+ul.input.date-picker-input {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+/************************ 26.Setting Screen ***************************/
+.setting-screen-wrap a {
+    display: block;
+    margin-top: 16px;
+}
+.setting-deatils {
+    display: flex;
+    align-items: center;
+        margin-top: 8px;
+}
+.setting-border {
+    border-bottom: 1px solid rgb(0 0 0 / 8%);
+}
+.setting-icon {
+    padding: 12px;
+    background: rgb(249 115 22 / 8%);;
+    border-radius: 8px;
+    margin-right: 16px;
+}
+.icon-back-btn {
+    margin-left: auto;
+}
+.icon-name p{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+#setting-screen .notification-option-switch{
+    margin-left: auto;
+}
+.subscript {
+    display: block;
+    position: absolute;
+    right: 10px;
+    bottom: 9px;
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.superscript {
+    display: block;
+    position: absolute;
+    right: 17px;
+    top: 9px;
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.supsub {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+}
+.coupon-price {
+    position: relative;
+    width: 75px;
+    padding: 9px;
+    background: rgb(102 102 102 / 8%);
+    border-radius: 4px;
+}
+
+#favourite-page{
+    margin-bottom: 80px;
+}
+
+/************************ 27.Notification Option Screen ***************************/
+.notification-option-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 0;
+}
+.notification-option-name p {
+ color: var(--2, #000);
+ font-family: "Inter";
+ font-size: 16px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: normal;
+}
+.notification-option-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.notification-option-switch .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+.notification-option-switch .switch input {
+    display: none;
+}
+.notification-option-switch input:checked + .slider {
+    background: #F97316;
+    border: 1px solid transparent;
+}
+.notification-option-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 4px;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgb(102 102 102 / 20%);
+    border-radius: 40px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+.notification-option-switch input:checked + .slider:before {
+    transform: translateX(16px);
+}
+.notification-option-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    background: #fff;
+    border-radius: 22px;
+    left: 0px;
+    bottom: 0px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 22px;
+    border: 0.5px solid #F0F0F0;
+    box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.05), 0px 1px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 8px 0px rgba(0, 0, 0, 0.08);
+}
+.notification2-screen-wrap{
+    margin-top: 17px;
+}
+
+/************************ 28.FavouritePage Screen ***************************/
+.brookwood-txt {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #0EA5E9;
+    margin-left: auto;
+    margin-right: auto;
+}
+.favourite-top-sec {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-pack: justify;
+   -ms-flex-pack: justify;
+   justify-content: space-between;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   align-items: center;
+}
+.green-progressbar {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+}
+.sort-btn-favoutite {
+    border: 2px solid #0EA5E9;
+    width: 113px;
+    height: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: #0EA5E9;
+    cursor: pointer;
+    border-radius: 8px 0px 0px 8px;
+}
+.sort-btn-favoutite a {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.sort-btn-favoutite1 {
+    border: 2px solid #0EA5E9;
+    border-radius: 0px 8px 8px 0px;
+    width: 113px;
+    height: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.sort-btn-favoutite1 a {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #666666;
+}
+.fav-second-button-wrapper {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-column-gap: 8px;
+   -moz-column-gap: 8px;
+   column-gap: 8px;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   align-items: center;
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+   justify-content: center;
+}
+.favourite-bottom-sec-wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 15px 1fr;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 15px;
+}
+.review-play-video {
+    width: 100%;
+}
+.modal-body iframe{
+    width: 100%;
+    height: 100%;
+}
+.modal.show .modal-dialog {
+    transform: translate3d(0,0,0);
+    transition-duration:400ms;
+}
+.modal .modal-dialog{
+    transition-property: transform;
+    transform: translate3d(0,100vh,0);
+}
+#review-video-modal .modal-content{
+    height: 500px;
+}
+
+/************************ 29.Tabbar  ***************************/
+#bottom-navigation{
+    margin-bottom: 100px;
+}
+.bootom-tabbar {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: #ffffff;
+    z-index: 99;
+    filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.04));
+    z-index: 1;
+    text-align: center;   
+}
+.bootom-tabbar li.active{
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+    top: -32px;
+    width: 64px;
+    height: 64px;
+}
+.bootom-tabbar li a.active {
+   width: 56px;
+   height: 56px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #F97316;
+   border-radius: 28px;
+   margin-left: auto;
+   margin-right: auto;
+}
+.orange-boder.active {
+    width: 24px;
+    height: 8px;
+    border-radius: 4px;
+    background: #f97316;
+    margin-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.bootom-tabbar li.active:before {
+    content: "";
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 30px;
+    z-index: -1;
+    top: -4px;
+    box-shadow: inset 0px -11px 4px -5px #0000001f;
+    left: 0;
+}
+.bootom-tabbar li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+    top: 0;
+    width: 64px;
+    height: 64px;
+}
+.bootom-tabbar li:before{
+    position: relative;
+}
+.orange-boder{
+    display: none;
+}
+.home-navigation-menu {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.bootom-tabbar li a svg.active path{
+    stroke: white;
+}
+.bottom-panel {
+    position: fixed;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    bottom: 0;
+}
+
+/************************ 30.Chat2 Screen ***************************/
+.chat-content-wrap-time,
+.chatscree2-wrap,
+.chat-content-top,
+.chat-content-wrap-time{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.chat-img{
+    width: 15%;
+}
+.chat-content{
+    width: 85%;
+}
+.online-btn {
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.green-btn {
+    width: 8px;
+    height: 8px;
+    background: #4ADE80;
+    border-radius: 7px;
+}
+.chatscree2-wrap{
+    column-gap: 16px;
+}
+.chat-img-sec img {
+    border-radius: 50px;
+}
+.chat-img-sec{
+    position: relative;
+}
+.chat-txt1 {
+    color: var(--2, #000);
+    font-family: "Inter",sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.chat-txt2 {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter" ,sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.chat-txt3 {
+    color: var(--3, #666);
+    font-family: "Inter",sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.chat-txt4{
+    width: 16px;
+    height: 16px;
+    background: var(--6, #4ADE80);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: var(--1, #FFF);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 10px;
+}
+.chat-border {
+    height: 1px;
+    background: rgb(0 0 0 / 10%);
+    margin-top: 16px;
+}
+#chatscree2,
+#profile-screen,
+#ongoing-section,
+#bookmark-sec,
+#homescreen{
+    margin-bottom: 130px;
+}
+
+/************************ 31.Courses Ongoing Screen  ***************************/
+.circle_percent {
+  font-size: 80px;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  background: #eee;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 0;
+}
+.circle_inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  clip: rect(0 1em 1em 0.5em);
+}
+.round_per {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: #e4a6d2;
+  clip: rect(0 1em 1em 0.5em);
+  transform: rotate(180deg);
+  transition: 1.05s;
+}
+.percent_more .circle_inner {
+  clip: rect(0 0.5em 1em 0em);
+}
+.percent_more:after {
+  position: absolute;
+  left: 0.5em;
+  top: 0em;
+  right: 0;
+  bottom: 0;
+  background: #c084fc;
+  content: "";
+}
+.circle_inbox {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: #fff;
+  z-index: 1;
+  border-radius: 50%;
+}
+.percent_text {
+  position: absolute;
+  font-size: 36px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: #c084fc;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+}
+.percent_more.green-progressbar:after {
+  background: #4ADE80;
+}
+.percent_more.pink-progressbar:after {
+  background: #F472B6;
+}
+.percent_more.black-progressbar:after {
+  background: #000000;
+}
+.green-progressbar .percent_text {
+    color: #4ADE80 !important;
+}
+.pink-progressbar .percent_text {
+    color: var(--5, #F472B6);
+}
+.black-progressbar .percent_text{
+    color: #000000;
+}
+.pink{
+    background: #F472B6;
+}
+.purple{
+    background: #C084FC;
+}
+.black{
+    background: #000000;
+}
+.green{
+    background: #4ADE80 !important;
+}
+.ongoing-section-details-wrap {
+    display: flex;
+    column-gap: 12px;
+}
+.ongoing-second-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+h2.ongoing-txt1 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+span.ongoing-txt2 {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}
+.ongoing-second{
+    width: 85%;
+}
+.ongoing-first{
+    width: 15%;
+}
+.ongoing-first img{
+    border-radius: 8px;
+}
+.ongoing-courses-tab li {
+    width: 50%;
+    border-bottom: 1px solid rgb(0 0 0 / 8%);
+}
+.ongoing-courses-tab li button:before {
+    content: '';
+    background: var(--8, #F97316);
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+}
+.ongoing-courses-tab li button {
+    padding-bottom: 8px;
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    background: transparent !important;
+    border-radius: 0 !important;
+    position: relative;
+    width: 100%;
+}
+.ongoing-courses-tab li button.active {
+    color: var(--8, #F97316) !important;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+.ongoing-courses-tab li button.active:before{
+    opacity: 1;
+}
+.ongoing-courses-tab li button:hover{
+   color: var(--8, #F97316) !important; 
+}
+.course-boder {
+    height: 1px;
+    background: rgb(0 0 0 / 8%);
+    margin-top: 24px;
+}
+.ongoing-courses-tab li button:focus-visible{
+    outline: none !important;
+}
+.lesson-tabbar-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tab-lesson1 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+.tab-lesson2 {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; 
+}
+.tabbar-bottom{
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    border-radius: 8px;
+    background: rgb(102 102 102 / 8%);
+    padding: 12px;
+    margin-top: 16px;
+}
+.play-btn-txt{
+    margin-right: auto;
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; 
+}
+.play-btn-time {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+.start-course-btn {
+    background: var(--1, #FFF);
+    box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.04);
+    padding: 16px ;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+#single-courses-complete{
+    margin-bottom: 100px;
+}
+#ongoing-section .ongoing-section-wrap{
+    border-top: none;
+}
+
+/************************ 32.Completed Course Rating Screen  ***************************/
+.course-txt1 {
+    color:#000;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+}
+.course-txt2 {
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+.rating-para {
+    border-radius: 8px;
+    background: rgb(249 115 22 / 8%);
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 16px;
+}
+.rating-para p{
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; 
+}
+.cancel-review-btn a{
+    width: 100%; 
+    border-radius: 8px;
+    background: rgb(102 102 102 / 8%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: auto;
+}
+.star-rating {
+    direction: rtl;
+    text-align: center;
+}
+.star-rating input[type="radio"] {
+    display: none;
+}
+.star-rating label {
+    color: #FEDDC7;
+    padding: 0;
+    font-size: 32px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.star-rating input[type="radio"]:checked ~ label {
+    color: #F97316;
+}
+
+/************************ 33.Category Screen ***************************/
+.category-txt1 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.category-txt2 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 4px
+}
+.categories-title{
+    margin-top: 10px;
+}
+.categories-wrap{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+.categories-content img,
+.trending-course-img img{
+    border-radius: 8px;
+}
+
+/************************ 34.Trending Courses Screen ***************************/
+.trending-name p{
+    color: var(--1, #FFF);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.trending-name {
+    border-radius: 4px;
+    background: linear-gradient(97deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.20) 100%);
+    backdrop-filter: blur(3px);
+    padding: 8px;
+    position: absolute;
+    bottom: 9px;
+    left: 9px;
+}
+.trending-bookmark {
+    background: #FFFFFF;
+    border-radius: 16px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 9px;
+    right: 9px;
+}
+.trending-course-img{
+    position: relative;
+}
+.trending-bookmark a{
+    display: flex;
+}
+.trending-txt1 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.trending-txt2 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    margin-right: 8px;
+}
+.trending-txt3 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    text-decoration: line-through;
+}
+.trending-txt5 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    margin-left: 4px;
+}
+.trending-course-price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+/*------------------------------------- 35.Preloader -------------------------------------*/
+.loader {
+   position: relative;
+   width: 2.5em;
+   height: 2.5em;
+   transform: rotate(165deg);
+}
+.loader:before, .loader:after {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   display: block;
+   width: 0.5em;
+   height: 0.5em;
+   border-radius: 0.25em;
+   transform: translate(-50%, -50%);
+}
+.loader:before {
+   animation: before 2s infinite;
+}
+.loader:after {
+   animation: after 2s infinite;
+}
+.loader {
+   position: absolute;
+   top: calc(50% - 1.25em);
+   left: calc(50% - 1.25em);
+}
+.loader-mask, .loader-mask1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 99999;
+}
+
+/*------------------------------------- 36.Single mentor screen start -------------------------------------*/
+.single-mentor-first-wrap {
+    display: flex;
+    column-gap: 16px;
+}
+.single-mentor-details h3{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.single-mentor-details h4{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.single-mentor-details p{
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; 
+}
+.mentor-follow-btn {
+    max-width: 40px;
+    width: 100%;
+    height: 40px;
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+.mentor-comment {
+    background: #F3F3F3;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+.mentor-follow-sec{
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: flex-end;
+
+}
+.mentor-icon {
+    width: 74px;
+    height: 74px;
+    border-radius: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mentor-content-single h3 {
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+.mentor-content-single p {
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    margin-top: 4px;
+}
+.mentor-icon.green-bg {
+    background: rgb(74 222 128 / 8%);
+}
+.mentor-icon.pink-bg {
+    background: rgb(244 114 182 / 8%);
+}
+.mentor-icon.orange-bg {
+    background: rgb(249 115 22 / 8%);
+}
+.mentor-icon.purple-bg{
+ background: rgb(192 132 252 / 8%);
+}
+.single-mentor-second-wrap-sec {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+}
+.single-mentor-tab li button.active {
+    color: var(--8, #F97316) !important;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+.single-mentor-tab li {
+    width: 33.33%;
+    border-top: 1px solid rgb(0 0 0 / 8%);
+    border-bottom: 1px solid rgb(0 0 0 / 8%);
+}
+.single-mentor-tab li button {
+   padding: 24px 0 10px 0;
+   color: var(--3, #666);
+   text-align: center;
+   font-family: "Inter";
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 20px;
+   background: transparent !important;
+   border-radius: 0 !important;
+   position: relative;
+   width: 100%;
+}
+.single-mentor-tab li button:before {
+    content: '';
+    background: var(--8, #F97316);
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+}
+.single-mentor-tab li button.active:before {
+    opacity: 1;
+}
+.single-mentor-tab li button:hover{
+   color: var(--8, #F97316) !important; 
+}
+.mentor-student-content{
+    display: flex;
+    column-gap: 16px;
+    align-items: center;
+}
+.mentor-comment-tab {
+    margin-left: auto;
+}
+.mentor-name h2 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.mentor-name h3 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    margin-top: 4px;
+}
+
+/*------------------------------------- 37.Profile screen start -------------------------------------*/
+.profile-edit-img {
+    text-align: center;
+    position: relative;
+    width: fit-content;
+    margin: auto;
+}
+.profile-edit-img img {
+    border-radius: 60px;
+}
+.image-input {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.image-input input {
+    display: none;
+}
+.image-button {
+    background: black;
+    padding: 8px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.profile-details h1 {
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.profile-details p {
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 8px;
+}
+.profile-second-wrap {
+    display: flex;
+    padding: 12px 0;
+}
+.profile-follower,
+.profile-following{
+    width: 50%;
+    text-align: center;
+}
+.profile-follower h2 ,
+.profile-following h2{
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+.profile-follower p,
+.profile-following p {
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; 
+    margin-top: 4px;
+}
+.boder-top-profile,
+.boder-bottom-profile {
+    border-bottom: 1px solid rgb(0 0 0 / 8%);
+}
+.profile-custom-input{
+    border: none;
+    background: transparent;
+    width: 100%;
+    padding-left: 12px;
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.iti__arrow:before {
+   content: url(../images/icons/faq-up.svg) !important;
+   position: absolute;
+   left: 0;
+   top: 0px;
+   padding-left: 20px;
+   margin-left: 12px !important;
+}
+.iti__arrow {
+    border: 0 !important;
+    margin-left: 12px !important;
+}
+#mobile_code {
+    margin-left: 10px;
+    padding-right: 0;
+}
+#profile-edit .iti {
+    position: relative;
+    display: flex;
+}
+.arrow-icon {
+    background: url(../images/icons/faq-up.svg) no-repeat;
+    background-position: 96% center;
+    font-size: 18px;
+    appearance: none;
+}
+.profile-edit-option {
+    width: 100%;
+    border: none;
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; 
+    padding-left: 12px;
+}
+.profile-edit-option:focus-visible{
+    outline: none !important;
+}
+
+/*------------------------------------- 38.Result found screen start -------------------------------------*/
+.serachbar-homepage2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+}
+.close-btn {
+    width: 24px;
+    height: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    border: none;
+    background: transparent !important;
+    font-size: 24px;
+    padding: 0;
+    z-index: 0;
+}
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.search-text-result:focus{
+    box-shadow: none;
+}
+.search-iconn, .coupon-iconn {
+    background: rgb(102 102 102 / 8%);
+    border-radius: 8px;
+    border: none;
+    padding: 14px 0 14px 16px !important;
+}
+.search-text-result {
+   background: rgb(102 102 102 / 8%) !important;
+   border-radius: 8px;
+   padding: 12px !important;
+   border: none;
+   color: var(--2, #000);
+   font-family: ""Inter"";
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 24px;
+   margin-left: 0 !important;
+}
+.result-txt1 {
+    color: var(--2, #000);
+    font-family: ""Inter"";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+}
+.result-txt2 {
+    color: var(--8, #F97316);
+}
+.result-txt3 {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; 
+}
+.result-txt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.result-found-bottom-wrap {
+    display: flex;
+    column-gap: 12px;
+}
+.result-bookmark a{
+    display: flex;
+}
+.result-bottom-txt p {
+    border-radius: 4px;
+    background: rgb(102 102 102 / 8%);
+    padding: 8px;
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.result-bookmark {
+    width: 28px;
+    height: 28px;
+    background: rgb(102 102 102 / 8%);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+.result-content-sec{
+    width: 80%;
+}
+.content-first{
+    display: flex;
+}
+.content-second h2{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+.content-third {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.result-price{
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; 
+}
+.result-time {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    margin-left: 4px;
+}
+.result-rating-txt{
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; 
+    margin-left: 4px;
+}
+.result-time-sec {
+    display: flex;
+    align-items: center;
+    line-height: 12px;
+}
+.result-rating-sec{
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+.result-rating-sec-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.result-found-middle-wrap {
+    border-bottom: 1px solid rgb(0 0 0 / 8%);
+    padding-bottom: 12px;
+}
+.noresult-bottom h1{
+    color: var(--2, #000);
+    text-align: center;
+    font-family: ""Inter"";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px; 
+}
+.noresult-bottom p{
+    color: var(--3, #666);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; 
+}
+.search-result-txt1{
+    color: var(--2, #000);
+    font-family: ""Inter"";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; 
+}
+span.search-result-txt2 {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+.select-filter {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+    border: 2px solid #000;
+    padding: 4px;
+}
+.filter-sec input[type="radio"] {
+    display: none;
+}
+.filter-sec input[type="radio"]:checked + label {
+    background: black;
+    border-radius: 8px;
+    color: white;
+    border: 2px solid transparent;
+    width: 100%;
+}
+label.custom-radio-sel-filter {
+    padding: 11px 16px;
+    cursor: pointer;
+    color: #000;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.select-category {
+    display: flex;
+    column-gap: 12px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.category-sec input[type="radio"] {
+    display: none;
+}
+.category-sec input[type="radio"]:checked + label {
+    background: black;
+    border-radius: 16px;
+    border: 2px solid #000;
+    color: white;
+}
+label.custom-radio-sel-category {
+    padding: 7px 12px;
+    cursor: pointer;
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    border: 2px solid #000;
+}
+.filter-modal .pricing-slider .irs-slider {
+    height: 22px;
+    width: 22px;
+    background: #ffffff;
+    border: 2px solid #000;
+    z-index: 0;
+}
+.filter-modal .pricing-slider .irs-from, .filter-modal .pricing-slider .irs-to {
+    background-color: #000;
+    color: #FFF;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 34px;
+    height: 20px;
+}
+.filter-modal span.irs-to, .filter-modal span.irs-from {
+    display: flex;
+    top: -10px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+}
+.filter-modal .pricing-slider .irs-bar {
+    height: 4px;
+    border: none;
+    background: #000;
+    border-radius: 2px;
+}
+.filter-modal .pricing-slider .irs-min, 
+.filter-modal .pricing-slider .irs-max {
+  display: none; 
+}
+.filter-modal .pricing-slider .irs-line {
+    height: 4px;
+    border: none;
+    background: rgb(0 0 0 / 10%);
+    border-radius: 2px;
+}
+.review-desc {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.review-sec:first-child {
+    margin-left: 0px;
+}
+.review-sec {
+    margin-left: 12px;
+}
+.review-sec input {
+    display: none;
+}
+.custom-radio-sel-review {
+    padding: 8px 12px;
+    border-radius: 18px;
+    border: 2px solid #000;
+    cursor: pointer;
+    color: #000;
+    text-align: center;
+    color: #000;
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    display: inline-flex;
+}
+.review-star {
+    margin-right: 4px;
+}
+.review-sec input[type="radio"]:checked + label {
+    border-radius: 18px;
+    background: #000;
+    color: white;
+    border: 2px solid transparent;
+}
+.select-course-wrap .course-header span {
+    display: block;
+}
+.select-course-wrap .accordion-button span{
+    width: auto;
+}
+.course-header img{
+    border-radius: 8px;
+    width: 100%;
+}
+.recent-found-bottom-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.recent-found-bottom-wrap:first-child span {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.recent-found-bottom a{
+    display: block;
+}
+.reset-btn {
+    border-radius: 8px;
+    background: rgb(0 0 0 / 8%);
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    font-family: ""Inter"";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.reset-btn a{
+  color: var(--2, #000);  
+}
+.filter-btn{
+   border-radius: 8px;
+   background: var(--2, #000); 
+   padding: 15px 0;
+   text-align: center;
+   width: 100%;
+   text-align: center;
+   font-family: ""Inter"";
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+}
+.filter-fifth-sec {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+.filter-content{
+    margin-top: 20px;
+}
+.filter-btn a{
+   color: var(--1, #FFF); 
+}
+#filterModal .modal-content {
+    border-radius: 16px 16px 0px 0px;
+    background: var(--1, #FFF);   
+}
+.search-modal{
+    background: rgb(0 0 0 / 50%);
+    top: unset;
+    bottom: 0;
+    position: fixed;
+    overflow: hidden;
+}
+.filter-title {
+    color: var(--2, #000);
+    font-family: ""Inter"";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+.search-modal .modal-header{
+    padding: 0;
+    justify-content: center;
+    margin-top: 32px;
+    padding-bottom: 8px;
+}
+.search-modal .modal-title{
+    color: var(--2, #000);
+    text-align: center;
+    font-family: ""Inter"";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+}
+.search-modal .modal-body{
+    padding: 0 16px 16px 16px;
+}
+.filter-sec{
+    width: 50%;
+}
+.search-modal .modal-dialog {
+    height: 100%;
+    display: flex;
+    align-items: end;
+    margin: 0 auto;
+}
+
+/*------------------------------------- 39.New Course screen start -------------------------------------*/
+.new-courses {
+    position: relative;
+}
+.new-courses-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+.new-courses-txt {
+    border-radius: 4px;
+    background: linear-gradient(97deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.20) 100%);
+    backdrop-filter: blur(3px);
+    padding: 8px;
+    width: fit-content;
+    position: absolute;
+    bottom: 9px;
+    left: 9px;
+}
+.new-courses-txt p{
+    color: var(--1, #FFF);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+p.new-courses-txt1 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+}
+span.new-courses-txt3 {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}
+span.new-courses-txt5 {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}
+.new-courses img {
+    width: 100%;
+    border-radius: 8px;
+
+}
+.new-courses-sec.slick-slide{
+    padding: 0 15px 0px 0px ;
+}
+.bookmark-time {
+    display: flex;
+    align-items: center;
+}
+.bookmark-rating {
+    display: flex;
+    align-items: center;
+}
+.bookmark-star {
+    display: flex;
+}
+
+/************************ 40.Wallet Screen CSS ***************************/
+.wallet-first-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Wallet h1 {
+    color: var(--2, #000);
+    font-family: ""Inter"";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.wallet-price1 {
+    color: var(--6, #4ADE80);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.wallet-txt2 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.wallet-txt3 {
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.search-text1 {
+   color: var(--3, #666);
+   font-family: "Inter";
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 24px;
+   border-radius: 8px;
+   background: rgb(102 102 102 / 8%);
+   border: none;
+   margin-left: 0 !important;
+}
+.search-iconn:focus-visible, .search-text:focus {
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.search-text1:focus{
+    box-shadow: none !important;
+    background: #F0F0F0 !important;
+}
+.wallet-screen-name {
+    color: var(--2, #000);
+    font-family: ""Inter"";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+#wallet-screen .slick-slide {
+    margin: 0 4px;
+}
+.filter-title{
+    color: var(--2, #000);
+    font-family: ""Inter"";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.filter-sec-btn{
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    background: var(--1, #FFF);
+    box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.04);
+    padding: 16px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 600px;
+}
+.footer.transparent {
+    background-color: #e5eff5;
+}
+.footer.fixed1 {
+    width: 100%;
+    left: 0;
+    background-color: var(--bg-white);
+    bottom: 0;
+    z-index: 999;
+    position: fixed;
+}
+.footer {
+    height: auto;
+    align-items: center;
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+}
+
+/************************ 41.Homescreen Screen CSS ***************************/
+.home-first-sec-wrap h1{ 
+    color: var(--2, #000);
+    font-family: ""Inter"";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+.custom-header-offcanva {
+    -webkit-box-pack: end !important;
+    -ms-flex-pack: end !important;
+    justify-content: end !important;
+}
+.menu-sidebar .notification-option-switch{
+    margin-left: auto;
+}
+.home-first-sec-wrap p{
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+.homescreen-second-wrapper-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#homepage1-tab {
+    flex-wrap: nowrap !important;
+    margin-left: 16px;
+    padding-right: 16px;
+}
+.home-release-bottom-sec{
+    margin-left: 16px;
+}
+.new-courses-txt4 img{
+    display: inline-block;!important;
+}
+.home1-txt3 {
+    color: var(--2, #000);
+    font-family: ""Inter"";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.see-all-txt {
+    color: var(--3, #666);
+    text-align: right;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+input:-webkit-autofil{
+    background-color: transparent !important;
+}
+.categories-content.slick-slide {
+    padding: 0 15px 0 0;
+}
+.categories-slider .slick-track {
+    margin-left: 15px;
+}
+.shop-now2-sec{
+    background-image: url(../images/homescreen/offer-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    position: relative;
+    padding: 24px;
+    padding-bottom: 44px !important;
+    border-radius: 8px;
+}
+.offer-price p {
+    color: var(--1, #FFF);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.offer-price h2 {
+    color: var(--1, #FFF);
+    font-family: ""Inter"";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; 
+}
+.home1-shop-now-btn {
+    border-radius: 4px;
+    background: var(--8, #F97316);
+    padding: 4px;
+    width: fit-content;
+}
+.home1-shop-now-btn p {
+    color: var(--2, #000);
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 4px;
+}
+.offer-details-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.discount-txt p{
+
+    color: var(--1, #FFF);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; 
+}
+.show-now2-custom-btn {
+    outline-offset: 2px !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 13px;
+    border: 2px solid #FFF !IMPORTANT;
+    background: transparent !important;
+    opacity: 1 !important;
+}
+.show-now2-custom-btn.active{
+    width: 24px !important;
+    background: white !important;
+}
+.slide-shop-now2 .carousel-indicators{
+    bottom: 24px;
+    margin-bottom:0;
+    z-index: 1;
+}
+.trending-course-details.slick-slide {
+    padding: 0 15px 0 0;
+}
+.trending-course-bottom-wrap .slick-track{
+    margin-left: 15px;
+}
+.home-mentor-sec img{
+    mix-blend-mode: multiply;
+    background: rgb(102 102 102 / 8%);
+    border-radius: 40px;
+}
+.home-mentor-bottom .slick-slide{
+    padding: 0 15px 0 0;
+}
+.home-mentor-bottom .slick-track{
+    margin-left: 15px;
+}
+.home-mentor-name p {
+    color: var(--2, #000);
+    text-align: center;
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 8px;
+}
+button.accordion-button.courses-custom-btn.collapsed::after {
+    transform: rotate(-180deg) !important;
+}
+button.accordion-button.courses-custom-btn::after {
+    transform: rotate(0deg) !important;
+}
+.custom-home1-tab-btn.active {
+    border: 2px solid transparent;
+    background: #000 !important;
+    color: white;
+}
+.custom-home1-tab-btn {
+    padding: 7px 12px;
+    border-radius: 16px !important;
+    border: 2px solid #000 !important;
+    color: #000;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+}
+.custom-home1-tab-btn:hover {
+    color: #000 !important;
+}
+.custom-home1-tab-btn.active:hover {
+    color: white !important;
+}
+#homepage1-tab li {
+    margin-left: 12px;
+}
+.result-img-sec img{
+    border-radius: 8px;
+}
+#homepage1-tab li:first-child {
+    margin-left: 0;
+}
+
+/************************ 42.chat screen CSS ***************************/
+.amigo-chat-AI-main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    border-radius: 24px 24px 0 0;
+    position: relative;
+    height: calc(100vh - 85px);
+}
+.message-submit.messages-plus-icon{
+    background: #F97316;
+}
+.chat {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    overflow: hidden;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.chat-title .avatar {
+    width: 64px;
+    height: 64px;
+}
+.chat-title .avatar img {
+    width: 100%;
+    height: auto;
+}
+.messages {
+    flex: 1 1 auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.messages .messages-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 101%;
+    width: 100%;
+}
+.messages .message {
+    clear: both;
+    float: left;
+    padding: 9px 12px;
+    border-radius: 8px 8px 8px 0;
+    background: rgb(249 115 22 / 8%);
+    position: relative;
+    border: none;
+    color:#000000;
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    margin: 15px 0 20px 0;
+}
+.messages .message .timestamp {
+    position: absolute;
+    bottom: -18px;
+    font-size: 10px;
+    color:#666666;
+    right: 0;
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 12px;
+    width: 50px;
+}
+.messages .message .avatar {
+    position: absolute;
+    z-index: 1;
+    bottom: -15px;
+    left: -35px;
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+.messages .message .avatar img {
+    width: 100%;
+    height: auto;
+}
+.messages .message.message-personal {
+    float: right;
+    text-align: right;
+    background: #F97316;
+    border: none;
+    border-radius: 8px 8px 0 8px;
+    color: #FFF;
+    text-align: right;
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    margin-bottom:20px;
+}
+.message-box .message-input:focus {
+    outline: none !important;
+    color: #0F0F0F;
+    border-radius: 8px;
+}
+.message-submit{
+    border: 0;
+}
+.messages .message:last-child {
+    margin-bottom: 30px;
+}
+.messages .message.new {
+    transform-origin: 0 0;
+    -webkit-animation: bounce 500ms linear both;
+    animation: bounce 500ms linear both;
+}
+.messages .message.loading span {
+    display: inline-block;
+    font-size: 0;
+    width: 20px;
+    height: 10px;
+    position: relative;
+}
+.messages .message.loading::before {
+    position: relative;
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #888;
+    z-index: 2;
+    margin-top: 4px;
+    border: none;
+    animation: wave 1.3s linear infinite;
+}
+.messages .message.loading span::before {
+    position: relative;
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #888;
+    z-index: 2;
+    margin-top: 4px;
+    margin-left: 4px;  
+    animation: wave 1.3s linear infinite;  
+    animation-delay: -1.1s;
+}
+.messages .message.loading span::after {
+    position: relative;
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #888;
+    border-radius: 50%;
+    z-index: 2;
+    margin-top: 4px;
+    margin-left: 4px;
+    animation: wave 1.3s linear infinite;
+    animation-delay: -0.9s;
+}
+.message-box {
+    border: none;
+    position: relative;
+    border-radius: 10px;
+    width: 89%;
+}
+.specker {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    cursor: pointer;
+    stroke: green;
+}
+.btn-close:focus{
+    box-shadow: none !important;
+}
+.specker-file:focus {
+    stroke: #121212;
+}
+.chat-input {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    justify-content: center;
+}
+.send-icons {
+    stroke: white;
+    stroke-width: 2px;
+    stroke-linecap: round;
+}
+#slide3{
+    margin-top: 86px;
+}
+.message-box .message-input {
+    border: 1px solid transparent;
+    outline: none !important;
+    resize: none;
+    font-size: 16px;
+    height: 48px;
+    margin: 0;
+    padding-right: 20px;
+    width: 100%;
+    background: rgb(102 102 102 / 8%);
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+.message-box textarea:focus:-webkit-placeholder {
+    color: transparent;
+}
+.message-submit {
+    border-radius: 8px;
+    padding: 0;
+    background-color: #000000;
+    padding: 12px;
+}
+body::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+.mCSB_scrollTools {
+    margin: 1px -3px 1px 0;
+    opacity: 0;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/************************ 43.Animation ***************************/
+@keyframes wave {
+  0%, 60%, 100% {
+    transform: initial;
+}
+30% {
+    transform: translateY(-10px);
+}
+}
+@keyframes fixedheader {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes before {
+   0% {
+       width: 0.5em;
+       box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+   }
+   35% {
+       width: 2.5em;
+       box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+   }
+   70% {
+       width: 0.5em;
+       box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+   }
+   100% {
+       box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+   }
+}
+@keyframes after {
+   0% {
+       height: 0.5em;
+       box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+   }
+   35% {
+       height: 2.5em;
+       box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+   }
+   70% {
+       height: 0.5em;
+       box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+   }
+   100% {
+       box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+   }
+}
+
+/************************ 44.PWA Popup ***************************/
+.offcanvas.offcanvas-bottom {
+    border-radius: 0.625rem 0.625rem 0 0;
+    height: unset;
+    border-top: 0;
+}
+.popup-close-home {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    margin-left: auto;
+    margin-right: 12px;
+    margin-top: 12px;
+}
+.logo-popup {
+    margin-right: auto;
+    margin-left: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.addtohome-popup p.title {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+    color: #121212;
+    margin-top: 12px;
+    margin-bottom: 16px;
+}
+.addhome-btn {
+    width: 343px;
+    border-radius: 8px;
+    background: #f97316;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
+    color: #FFF;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin: auto;
+}
+a.addhome-btn {
+    color: #ffffff;
+    margin-top: 20px;
+}
+.install-txt{
+    text-align: center;
+    color: var(--2, #666);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}

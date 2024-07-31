@@ -1,0 +1,275 @@
+@media(max-width:991px){
+	#review-video-modal .modal-content{
+		height: 100vh;
+	}
+}
+@media(max-width:540px){
+	.bootom-tabbar li{
+		width: auto;
+	}
+}
+@media(max-width:450px){
+	#homepage1-tab{
+		overflow-x: scroll;
+		overflow-y: hidden;
+	}
+	#ongoing-section .ongoing-first{
+		width: auto;
+	}
+	#single-courses-complete .ongoing-first {
+		width: auto;
+	}
+}
+@media(max-width:400px){
+	.ongoing-first{
+		width: auto;
+	}
+}
+@media(max-width:320px){
+	.shape{
+		width: 60px;
+		height: 60px;
+	}
+	.bootom-tabbar li.active:before{
+		top: -8px;
+	}
+	.about-us-screen-full {
+		margin-top: 20px;
+	}
+	#review-screen .checkout-screen-top{
+		display: block;
+	}
+	.review-first-content{
+		display: none;
+	}
+	.fourth-decs-sec-top{
+		column-gap: 15px;
+	}
+	.login-txt{
+		font-size: 30px;
+	}
+	#review-screen .checkout-second-wrap{
+		margin-top: 20px;
+	}
+	.footer-chec-txt,
+	.forget-btn a{
+		font-size: 14px;
+	}
+	#review-screen .checkout-second{
+		width: 100%;
+	}
+	.onboarding-img img,
+	.let-you-screen-img img,
+	.check-mail-img img,
+	.payment-img img,
+	.noresult-top img,
+	.complete-course-rating-top img,
+	.fourth-decs-img img,
+	.mentor-img-sec img
+	{
+		width: 100%;
+	}
+	.bootom-tabbar li{
+		margin: 0 12px;
+	}
+	.boarding-title h1{
+		font-size: 28px;
+	}
+	.sign-in-login {
+		margin-top: 32px;
+	}
+	.mt-32 {
+		margin-top: 26px;
+	}
+	.supsub{
+		font-size: 24px;
+	}
+	.payment-succuessfull-wrap {
+		margin-top: 26px;
+	}
+	.bootom-tabbar li a.active{
+		width: 50px;
+		height: 50px;
+	}
+	.orange-boder.active{
+		margin-top: 16px;
+	}
+	.circle_percent{
+		width: 70px;
+		height: 70px;
+	}
+	.percent_text{
+		font-size: 16px;
+		line-height: 16px;
+	}
+	.ongoing-section-details-wrap{
+		align-items: center;
+	}
+	#single-courses-complete .ongoing-first{
+		width: auto;
+	}
+	#ongoing-section .ongoing-first{
+		width: auto;
+	}
+	.new-courses-wrap,
+	.categories-wrap{
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.select-course-wrap .accordion-button span {
+		width: 80%;
+	}
+	#checkout-screen .checkout-screen-top{
+		display: block;
+	}
+	#checkout-screen .checkout-second{
+		width: 100%;
+		margin-top: 20px;
+	}
+}
+@media(max-width:280px){
+	.supsub {
+		font-size: 20px;
+	}
+	.search-text{
+		font-size: 16px;
+	}
+	.about-us-icon-wrapper{
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.bootom-tabbar li.active:before {
+		top: 0px;
+		width: 50px;
+		height: 50px;
+	}
+	.bootom-tabbar li a.active {
+		width: 40px;
+		height: 40px;
+		margin-left: 4px;
+	}
+	.bootom-tabbar li.active{
+		width: 40px;
+		height: 40px;
+	}
+	.orange-boder.active {
+		margin-left: 14px;
+	}
+	.course-txt1{
+		font-size: 28px;
+	}
+	.ongoing-section-details-wrap {
+		display: block;
+	}
+	#ongoing-section .ongoing-second{
+		width: 100%;
+	}
+	.ongoing-details .mt-16{
+		padding-top: 0px;
+	}
+	.ongoing-second-wrap{
+		margin-top: 20px;
+	}
+	.sign-in-custom-input{
+		font-size: 16px;
+	}
+	.discount-txt p{
+		font-size: 12px;
+	}
+	.offer-details-wrap{
+		display: block;
+	}
+	.home1-shop-now-btn{
+		margin-top: 10px;
+	}
+	.shop-now2-sec{
+		padding-bottom: 60px !important;
+	}
+	.home1-txt3{
+		font-size: 18px;
+	}
+	#homescreen .result-found-bottom-wrap{
+		display: block;
+	}
+	.result-content-sec {
+		width: 100%;
+	}
+	.result-content-sec-wrap{
+		margin-top: 10px;
+	}
+	.social-txt{
+		font-size: 16px;
+	}
+	.mentor-details h4{
+		font-size: 12px;
+	}
+	.mentor-details h3{
+		font-size: 14px;
+	}
+	.mentor-content{
+		column-gap: 10px;
+	}
+	.mentor-img {
+		margin-right: 0px;
+	}
+	.mentor-img img {
+		width: 100%;
+	}
+	.notification-content h1{
+		font-size: 28px;
+	}
+	.select-goal{
+		padding: 8px;
+	}
+	.form-check-label.custom-lable-goal{
+		font-size: 15px;
+	}
+	.select-course-wrap .accordion-button span {
+		width: 100%;
+	}
+	.result-txt1{
+		font-size: 18px;
+	}
+	.result-txt3{
+		font-size: 14px;
+	}
+	#result-found .result-found-bottom-wrap{
+		display: block;
+	}
+	.sign-in-login{
+		margin-top: 26px;
+	}
+	.login-txt{
+		font-size: 26px;
+	}
+	.second-decs-sec-bottom-wrap {
+		grid-template-columns: repeat(1,1fr);
+	}
+	.firs-txt2{
+		font-size: 20px;
+	}
+	.fourth-decs-sec-top{
+		display: block;
+	}
+	.fourth-txt5 {
+		width: fit-content;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 15px;
+	}
+	.ongoing-second{
+		width: 100%;
+	}
+	.checkout-second {
+		width: 100%;
+		margin-top: 15px;
+	}
+	.checkout-screen-top{
+		display: block;
+	}
+	svg.specker {
+		width: 20px;
+		height: 20px;
+	}
+	.message-box .message-input{
+		font-size: 14px;
+	}
+}

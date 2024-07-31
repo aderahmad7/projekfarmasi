@@ -25,15 +25,17 @@ class Filters extends BaseFilters
      * or [filter_name => [classname1, classname2, ...]]
      */
     public array $aliases = [
-        'csrf'          => CSRF::class,
-        'toolbar'       => DebugToolbar::class,
-        'honeypot'      => Honeypot::class,
-        'invalidchars'  => InvalidChars::class,
+        'csrf' => CSRF::class,
+        'toolbar' => DebugToolbar::class,
+        'honeypot' => Honeypot::class,
+        'invalidchars' => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
-        'cors'          => Cors::class,
-        'forcehttps'    => ForceHTTPS::class,
-        'pagecache'     => PageCache::class,
-        'performance'   => PerformanceMetrics::class,
+        'cors' => Cors::class,
+        'forcehttps' => ForceHTTPS::class,
+        'pagecache' => PageCache::class,
+        'performance' => PerformanceMetrics::class,
+        'auth' => \App\Filters\AuthFilter::class,
+        //'adminauth' => \App\Filters\AdminFilter::class,
     ];
 
     /**
@@ -69,15 +71,12 @@ class Filters extends BaseFilters
      */
     public array $globals = [
         'before' => [
-            // 'honeypot',
-            // 'csrf',
-            // 'invalidchars',
+            'auth' => ['except' => ['login', 'login/*', 'register', 'register/*', 'resetsandi', 'resetsandi/*', 'admin', 'admin/*', 'pretest', 'pretest/*', 'posttest', 'posttest/*', 'course', 'course/*']], // Kecualikan route tertentu
+            //'adminauth' => ['only' => ['admin', 'admin/*']]
         ],
-        'after' => [
-            // 'honeypot',
-            // 'secureheaders',
-        ],
+        'after' => [],
     ];
+
 
     /**
      * List of filter aliases that works on a

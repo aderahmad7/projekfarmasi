@@ -1,0 +1,75 @@
+#videoList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.video-item {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.video-thumbnail {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+.video-thumbnail iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+.video-info {
+    padding: 15px;
+}
+.video-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.video-description {
+    font-size: 14px;
+    color: #666;
+}
+#progressContainer {
+    margin-top: 30px;
+    padding: 0 20px;
+}
+#progressBar {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#progressFill {
+    height: 100%;
+    background-color: rgb(22, 65, 80);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+#progressPercentage {
+    font-family: "Inter";
+    color: rgb(22, 65, 80);
+    font-weight: bold;
+}
+
+#completeButton {
+    display: none;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: rgb(22, 65, 80);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+#completeButton:hover {
+    background-color: rgb(13, 53, 67);
+}
