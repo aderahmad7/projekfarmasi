@@ -8,5 +8,5 @@ class PostTestModel extends Model
 {
     protected $table = 'posttest';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['pertanyaan'];
+    protected $allowedFields = ['pertanyaan', 'id_jawaban'];
 }

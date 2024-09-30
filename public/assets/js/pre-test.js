@@ -80,7 +80,7 @@ function addOption(questionIndex) {
     setFormAction("pretest/add_option");
 }
 
-function editOption(questionIndex, optionIndex, optionValue) {
+function editOption(questionIndex, ansIndex, optionIndex, optionValue) {
     showModal(
         "Edit Option",
         "Edit Option Choices:",
@@ -95,7 +95,14 @@ function editOption(questionIndex, optionIndex, optionValue) {
     console.log("Untuk indeks pertanyaan:", questionIndex);
     console.log("Untuk isi opsi:", optionValue);
     console.log("Untuk indeks opsi:", optionIndex);
+    console.log("Untuk indeks jawaban:", ansIndex);
+    if (ansIndex == optionIndex) {
+        document.getElementById("correctOptionCheck").checked = true;
+    } else {
+        document.getElementById("correctOptionCheck").checked = false;
+    }
     document.getElementById("questionId").value = questionIndex;
+    document.getElementById("ansId").value = ansIndex;
     document.getElementById("modalInput").value = optionValue;
     document.getElementById("optionId").value = optionIndex;
     setFormAction("pretest/edit_option");

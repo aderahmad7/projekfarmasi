@@ -8,5 +8,5 @@ class PretestModel extends Model
 {
     protected $table = 'pretest';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['pertanyaan'];
+    protected $allowedFields = ['pertanyaan', 'id_jawaban'];
 }

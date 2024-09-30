@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\AnsPretestModel;
 use App\Models\OptPretestModel;
 use App\Models\PasienModel;
 use App\Models\PretestModel;
@@ -18,6 +19,7 @@ class Pretest extends BaseController
     {
         $this->pretestModel = new PretestModel();
         $this->optPretestModel = new OptPretestModel();
+        $this->ansPretestModel = new AnsPretestModel();
         helper('cookie');
         // Cek autentikasi di konstruktor
         $this->cekAuth();
@@ -74,6 +76,27 @@ class Pretest extends BaseController
         $id_user = session()->get('id_user'); // Ambil ID pasien dari sesi
         $id_pasien = $pasienModel->getDataID($id_user)["id"];
 
+        // Ambil data pertanyaan dan pilihan ganda
+        $pertanyaan = $this->pretestModel->findAll();
+        $pilihan = [];
+
+        foreach ($pertanyaan as $p) {
+            $pilihan[$p['id']] = $this->optPretestModel->where('id_pretest', $p['id'])->findAll();
+        }
+
+        $data = [
+            'selectedOptions' => $selectedOptions,
+            'pertanyaan' => $pertanyaan,
+            'pilihan' => $pilihan
+        ];
+        return view('pasien/pretest-review', $data);
+    }
+    public function done()
+    {
+        $pasienModel = new PasienModel();
+        $id_user = session()->get('id_user'); // Ambil ID pasien dari sesi
+        $id_pasien = $pasienModel->getDataID($id_user)["id"];
+
         // Update status pretest menjadi 'sudah'
         $statModel = new StatCourseModel();
         $statModel->where('id_pasien', $id_pasien)->set(['pretest' => 'sudah'])->update();
@@ -93,7 +116,8 @@ class Pretest extends BaseController
 
         $text = $this->request->getPost('text');
         $data = [
-            'pertanyaan' => $text
+            'pertanyaan' => $text,
+            'id_jawaban' => 0
         ];
         if ($this->pretestModel->insert($data)) {
             return redirect()->back();
@@ -150,6 +174,17 @@ class Pretest extends BaseController
             'teks_pilihan' => $teksPilihan
         ];
         if ($this->optPretestModel->insert($data)) {
+            $isChecked = esc($this->request->getPost('is_correct'));
+            if ($isChecked) {
+                $newID = $this->optPretestModel->insertID();
+                $addAns = [
+                    'id_jawaban' => $newID,
+                ];
+                $ans = $this->pretestModel->update($idPretest, $addAns);
+                if (!$ans) {
+                    return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+                }
+            }
             return redirect()->back();
         } else {
             return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
@@ -168,10 +203,32 @@ class Pretest extends BaseController
 
         $teksPilihan = esc($this->request->getPost('options'));
         $idPilihan = esc($this->request->getPost('id_pilihan'));
+        $idAns = esc($this->request->getPost('id_jawaban'));
+        $idPertanyaan = esc($this->request->getPost('id_pertanyaan'));
         $data = [
             'teks_pilihan' => $teksPilihan
         ];
         if ($this->optPretestModel->update($idPilihan, $data)) {
+            $isChecked = esc($this->request->getPost('is_correct'));
+            if ($isChecked) {
+                $addAns = [
+                    'id_jawaban' => $idPilihan,
+                ];
+                $ans = $this->pretestModel->update($idPertanyaan, $addAns);
+                if (!$ans) {
+                    return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+                }
+            } else {
+                if ($idPilihan === $idAns) {
+                    $addAns = [
+                        'id_jawaban' => 0,
+                    ];
+                    $ans = $this->pretestModel->update($idPertanyaan, $addAns);
+                    if (!$ans) {
+                        return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+                    }
+                }
+            }
             return redirect()->back();
         } else {
             return redirect()->back()->withInput()->with('errors', 'Adding question failed.');

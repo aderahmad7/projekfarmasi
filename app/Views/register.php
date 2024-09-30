@@ -36,6 +36,11 @@
             background-color: #dff0d8;
             border-color: #d6e9c6;
         }
+
+        #pass-require {
+            color: black;
+            font-size: 13px;
+        }
     </style>
 </head>
 
@@ -71,7 +76,7 @@
                         alert("<?= esc(session('success')) ?>");
                     </script>
                 <?php endif; ?>
-                
+
                 <div class="sign-in-login-form mt-24">
                     <form method="post" action="<?= site_url('register/daftar_pasien') ?>">
                         <div class="form-details-sign-in">
@@ -274,6 +279,9 @@
                                 class="sign-in-custom-input" />
                             <i class="fas fa-eye-slash" id="eye"></i>
                         </div>
+                        <span id="pass-require">Password minimal terdiri dari 8 karakter, serta harus terdapat minimal 1
+                            huruf kapital dan
+                            1 angka</span>
                         <div class="form-details-sign-in mt-12">
                             <span>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"

@@ -98,10 +98,15 @@
                                 <?php if (isset($question['options']) && is_array($question['options']) && count($question['options']) > 0): ?>
                                     <?php foreach ($question['options'] as $oIndex => $option): ?>
                                         <div class="option">
-                                            <div class="option-text"><?= chr(97 + $oIndex) ?>. <?= esc($option['teks_pilihan']) ?></div>
+                                            <div class="option-text">
+                                                <?= chr(97 + $oIndex) ?>. <?= esc($option['teks_pilihan']) ?>
+                                                <?php if ($option['id'] === $question['id_jawaban']): ?>
+                                                    <span class="text-success">(Jawaban yang benar)</span>
+                                                <?php endif; ?>
+                                            </div>
                                             <div class="option-buttons">
                                                 <button
-                                                    onclick="editOption(<?= $question['id'] ?>, <?= $option['id'] ?>, '<?= addslashes(esc($option['teks_pilihan'])) ?>')"
+                                                    onclick="editOption(<?= $question['id'] ?>, <?= $question['id_jawaban'] ?>, <?= $option['id'] ?>, '<?= addslashes(esc($option['teks_pilihan'])) ?>')"
                                                     class="btn btn-sm btn-outline-primary w-auto">Edit</button>
                                                 <a href="<?= base_url('posttest/delete_option/' . $option['id']) ?>"
                                                     onclick="return confirm('Are you sure you want to delete this option?');"
@@ -130,10 +135,17 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <input type="hidden" name="id_pertanyaan" id="questionId">
+                    <input type="hidden" name="id_jawaban" id="ansId">
                     <input type="hidden" name="id_pilihan" id="optionId">
                     <div class="modal-body">
                         <p id="modalMessage"></p>
                         <input name="options" type="text" id="modalInput" class="form-control" />
+                    </div>
+                    <div class="form-check ms-3">
+                        <input class="form-check-input" type="checkbox" id="correctOptionCheck" name="is_correct">
+                        <label class="form-check-label" for="correctOptionCheck">
+                            Tandai jika ini pilihan yang benar
+                        </label>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">

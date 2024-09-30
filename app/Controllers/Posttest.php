@@ -97,6 +97,27 @@ class Posttest extends BaseController
         $id_user = session()->get('id_user'); // Ambil ID pasien dari sesi
         $id_pasien = $pasienModel->getDataID($id_user)["id"];
 
+        // Ambil data pertanyaan dan pilihan ganda
+        $pertanyaan = $this->posttestModel->findAll();
+        $pilihan = [];
+
+        foreach ($pertanyaan as $p) {
+            $pilihan[$p['id']] = $this->optposttestModel->where('id_posttest', $p['id'])->findAll();
+        }
+
+        $data = [
+            'selectedOptions' => $selectedOptions,
+            'pertanyaan' => $pertanyaan,
+            'pilihan' => $pilihan
+        ];
+        return view('pasien/posttest-review', $data);
+    }
+    public function done()
+    {
+        $pasienModel = new PasienModel();
+        $id_user = session()->get('id_user'); // Ambil ID pasien dari sesi
+        $id_pasien = $pasienModel->getDataID($id_user)["id"];
+
         // Update status pretest menjadi 'sudah'
         $statModel = new StatCourseModel();
         $statModel->where('id_pasien', $id_pasien)->set(['posttest' => 'sudah'])->update();
@@ -117,7 +138,8 @@ class Posttest extends BaseController
 
         $text = $this->request->getPost('text');
         $data = [
-            'pertanyaan' => $text
+            'pertanyaan' => $text,
+            'id_jawaban' => 0
         ];
         if ($this->posttestModel->insert($data)) {
             return redirect()->back();
@@ -174,6 +196,17 @@ class Posttest extends BaseController
             'teks_pilihan' => $teksPilihan
         ];
         if ($this->optposttestModel->insert($data)) {
+            $isChecked = esc($this->request->getPost('is_correct'));
+            if ($isChecked) {
+                $newID = $this->optposttestModel->insertID();
+                $addAns = [
+                    'id_jawaban' => $newID,
+                ];
+                $ans = $this->posttestModel->update($idPosttest, $addAns);
+                if (!$ans) {
+                    return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+                }
+            }
             return redirect()->back();
         } else {
             return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
@@ -192,10 +225,32 @@ class Posttest extends BaseController
 
         $teksPilihan = esc($this->request->getPost('options'));
         $idPilihan = esc($this->request->getPost('id_pilihan'));
+        $idAns = esc($this->request->getPost('id_jawaban'));
+        $idPertanyaan = esc($this->request->getPost('id_pertanyaan'));
         $data = [
             'teks_pilihan' => $teksPilihan
         ];
         if ($this->optposttestModel->update($idPilihan, $data)) {
+            $isChecked = esc($this->request->getPost('is_correct'));
+            if ($isChecked) {
+                $addAns = [
+                    'id_jawaban' => $idPilihan,
+                ];
+                $ans = $this->posttestModel->update($idPertanyaan, $addAns);
+                if (!$ans) {
+                    return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+                }
+            } else {
+                if ($idPilihan === $idAns) {
+                    $addAns = [
+                        'id_jawaban' => 0,
+                    ];
+                    $ans = $this->posttestModel->update($idPertanyaan, $addAns);
+                    if (!$ans) {
+                        return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+                    }
+                }
+            }
             return redirect()->back();
         } else {
             return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
