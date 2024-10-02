@@ -50,7 +50,7 @@
         <section id="sign-in-screen-content" class="d-flex flex-column gap-4">
             <div class="container">
                 <div class="sign-in-login">
-                    <h1 class="login-txt">Create Your Account</h1>
+                    <h1 class="login-txt">Buat Akun Anda</h1>
                 </div>
                 <!-- Menampilkan pesan kesalahan -->
                 <?php if (session()->has('errors')): ?>
@@ -247,7 +247,7 @@
                                     </g>
                                 </svg>
                             </span>
-                            <input type="text" name="username" id="username" placeholder="Username"
+                            <input type="text" name="username" id="username" placeholder="Nama Pengguna"
                                 class="sign-in-custom-input" />
                         </div>
 
@@ -275,7 +275,7 @@
                                     </g>
                                 </svg>
                             </span>
-                            <input type="password" name="password" id="password" placeholder="Password"
+                            <input type="password" name="password" id="password" placeholder="Kata Sandi"
                                 class="sign-in-custom-input" />
                             <i class="fas fa-eye-slash" id="eye"></i>
                         </div>
@@ -306,20 +306,20 @@
                                     </g>
                                 </svg>
                             </span>
-                            <input type="password" name="re-password" id="confirm" placeholder="Confirm Password"
+                            <input type="password" name="re-password" id="confirm" placeholder="Konfirmasi Kata Sandi"
                                 class="sign-in-custom-input" />
                             <i class="fas fa-eye-slash" id="eye"></i>
                         </div>
                         <div class="sign-in-btn mt-32">
-                            <input type="submit" name="submit" value="Sign Up">
+                            <input type="submit" name="submit" value="Daftar">
                         </div>
                     </form>
                 </div>
             </div>
             <div class="block-footer">
                 <p>
-                    Already have an account?
-                    <a href="<?= base_url('login') ?>">Sign In</a>
+                Sudah punya akun?
+                    <a href="<?= base_url('login') ?>">Masuk</a>
                 </p>
             </div>
         </section>

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="multikit">
     <meta name="keywords" content="multikit">
-    <title>Multikit - Multi-purpose Html Template</title>
+    <title>Projek Farmasi</title>
     <link rel="manifest" href="https://themes.pixelstrap.net/multikit/manifest.json">
     <meta name="theme-color" content="#ff8d2f">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -60,7 +60,7 @@
             </div>
 
             <div class="header-bottom header-bottom-2">
-                <h2 class="fw-500 text-white">Account Security</h2>
+                <h2 class="fw-500 text-white">Keamanan Akun</h2>
             </div>
         </div>
     </header>
@@ -119,7 +119,7 @@
         <div class="offcanvas-body">
             <form class="form-style-1">
                 <div class="learning-theme-form mb-3">
-                    <label for="email1" class="form-label">Your Email</label>
+                    <label for="email1" class="form-label">Email Anda</label>
                     <input type="email" class="form-control" value="testing@gmail.com"
                         placeholder="Your email address is testing@gmail.com" id="email1">
                 </div>
@@ -147,15 +147,15 @@
         <div class="custom-container">
             <form method="post" action="<?= site_url('pasien/ubah_sandi') ?>" class="form-style-1">
                 <div class="mb-3">
-                    <label for="email" class="form-label">Password :</label>
-                    <input type="password" class="form-control mb-3" name="curr-pass" placeholder="Current Password"
+                    <label for="email" class="form-label">Kata Sandi :</label>
+                    <input type="password" class="form-control mb-3" name="curr-pass" placeholder="Kata Sandi Saat Ini"
                         id="pass1">
-                    <input type="password" class="form-control mb-3" name="new-pass" placeholder="New Password"
+                    <input type="password" class="form-control mb-3" name="new-pass" placeholder="Kata Sandi Baru"
                         id="pass2">
                     <input type="password" class="form-control mb-3" name="re-new-pass"
-                        placeholder="Re-type new Password" id="pass3">
+                        placeholder="Ketik Ulang Kata Sandi Baru" id="pass3">
 
-                    <input type="submit" class="btn btn-gradient mt-2" value="Submit">
+                    <input type="submit" class="btn btn-gradient mt-2" value="Kirim">
                 </div>
             </form>
         </div>

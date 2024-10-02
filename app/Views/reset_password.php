@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Guruji - Online Learning & Educational Courses</title>
+    <title>Projek Farmasi</title>
 
     <!--Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
@@ -27,7 +27,7 @@
             <div class="container">
                 <div class="top-header-full">
                     <div class="header-title">
-                        <p>Reset Password</p>
+                        <p>Setel Ulang Kata Sandi</p>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                 <div class="forget-password-screen-wrap">
                     <div class="forget-password-screen-top mt-32">
                         <p class="title-sec">
-                            Enter new password and confirm.
+                        Masukkan kata sandi baru dan konfirmasi.
                         </p>
                     </div>
 
@@ -90,7 +90,7 @@
                                     </g>
                                 </svg>
                             </span>
-                            <input type="password" name="password" id="password" placeholder="Password"
+                            <input type="password" name="password" id="password" placeholder="Kata Sandi"
                                 class="sign-in-custom-input" />
                             <i class="fas fa-eye-slash" id="eye"></i>
                         </div>
@@ -119,11 +119,11 @@
                                 </svg>
                             </span>
                             <input type="password" name="re-password" id="confirm-password"
-                                placeholder="Confirm Password" class="sign-in-custom-input" />
+                                placeholder="Konfirmasi Kata Sandi" class="sign-in-custom-input" />
                             <i class="fas fa-eye-slash" id="eye1"></i>
                         </div>
                         <div class="send-instruction-btn mt-32">
-                            <input type="submit" name="submit" value="Change Password">
+                            <input type="submit" name="submit" value="Ubah Kata Sandi">
                         </div>
                     </form>
                 </div>

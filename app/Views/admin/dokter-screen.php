@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="multikit" />
     <meta name="keywords" content="multikit" />
-    <title>Multikit - Multi-purpose Html Template</title>
+    <title>Projek Farmasi</title>
     <link rel="manifest" href="https://themes.pixelstrap.net/multikit/manifest.json" />
     <meta name="theme-color" content="#ff8d2f" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="header-bottom header-bottom-2">
-                        <h2 class="fw-500 text-white">Doctor Data</h2>
+                        <h2 class="fw-500 text-white">Data Tenaga Kesehatan</h2>
                     </div>
                 </div>
             </div>
@@ -68,20 +68,20 @@
 
     <section class="data-dokter-section pt-25 pe-3">
         <div class="custom-container table-responsive">
-            <button class="btn bg-web-primary text-white mb-3 w-auto" onclick="showForm()">Add Doctor</button>
+            <button class="btn bg-web-primary text-white mb-3 w-auto" onclick="showForm()">Tambah Tenaga Kesehatan</button>
             <table class="table table-bordered table-striped" id="doctor-table">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Name</th>
+                        <th>Nama</th>
                         <th>Gender</th>
-                        <th>Age</th>
-                        <th>Specialist</th>
-                        <th>Total Years Experience</th>
-                        <th>Phone Number</th>
+                        <th>Umur</th>
+                        <th>Jenis Tenaga Kesehatan</th>
+                        <th>Total Tahun Pengalaman</th>
+                        <th>Nomor Handphone</th>
                         <th>Email</th>
-                        <th>Username</th>
-                        <th>Action</th>
+                        <th>Nama Pengguna</th>
+                        <th>Tindakan</th>
                     </tr>
                 </thead>
                 <tbody id="doctor-table-body" data-dokter='<?= json_encode($doctors) ?>'></tbody>
@@ -108,27 +108,27 @@
                     <form id="doctor-form" onsubmit="saveDoctor(event)">
                         <input type="hidden" id="doctor-id" />
                         <div class="form-group">
-                            <label for="doctor-name">Name:</label>
+                            <label for="doctor-name">Nama:</label>
                             <input type="text" name="name" class="form-control" id="doctor-name" required />
                         </div>
                         <div class="form-group">
                             <label for="doctor-name">Gender:</label>
                             <select name="gender" id="doctor-gender" class="form-select">
-                                <option value="Laki-laki">Male</option>
-                                <option value="Perempuan">Female</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="doctor-usia">Age:</label>
+                            <label for="doctor-usia">Usia:</label>
                             <input type="number" name="usia" class="form-control" id="doctor-usia" required />
                         </div>
                         <div class="form-group">
-                            <label for="doctor-tahun-pengalaman">Total Years Experience:</label>
+                            <label for="doctor-tahun-pengalaman">Total Tahun Pengalaman:</label>
                             <input type="number" name="exp-years" class="form-control" id="doctor-tahun-pengalaman"
                                 required />
                         </div>
                         <div class="form-group">
-                            <label for="doctor-nomor-handphone">Phone Number:</label>
+                            <label for="doctor-nomor-handphone">Nomor Handphone:</label>
                             <input type="number" name="no-hp" class="form-control" id="doctor-nomor-handphone"
                                 required />
                         </div>
@@ -137,22 +137,22 @@
                             <input type="email" name="email" class="form-control" id="doctor-email" required />
                         </div>
                         <div class="form-group">
-                            <label for="doctor-username">Username:</label>
+                            <label for="doctor-username">Nama Pengguna:</label>
                             <input type="text" name="username" class="form-control" id="doctor-username" required />
                         </div>
                         <div class="form-group">
-                            <label for="doctor-password">Password:</label>
+                            <label for="doctor-password">Kata Sandi:</label>
                             <input type="text" name="password" class="form-control" id="doctor-password" />
                         </div>
                         <div class="form-group mb-4">
-                            <label for="doctor-specialty">Specialist:</label>
+                            <label for="doctor-specialty">Jenis Tenaga Kesehatan:</label>
                             <input type="text" name="spesialis" class="form-control" id="doctor-specialty" required />
                         </div>
                         <button type="button" class="btn btn-secondary mb-1" data-dismiss="modal">
-                            Close
+                            Tutup
                         </button>
                         <button type="submit" name="submit" class="btn btn-primary">
-                            Save changes
+                            Simpan perubahan
                         </button>
                     </form>
                 </div>

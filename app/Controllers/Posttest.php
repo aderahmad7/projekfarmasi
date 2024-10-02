@@ -74,7 +74,7 @@ class Posttest extends BaseController
         if ($statPosttest < 100) {
             var_dump($statPosttest);
             var_dump($id_pasien);
-            return redirect()->to('/pasien')->with('success', 'Login successful.');
+            return redirect()->to('/pasien')->with('success', 'Login Berhasil.');
         }
         // Ambil data pertanyaan dan pilihan ganda
         $pertanyaan = $this->posttestModel->findAll();
@@ -144,7 +144,7 @@ class Posttest extends BaseController
         if ($this->posttestModel->insert($data)) {
             return redirect()->back();
         } else {
-            return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+            return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan pertanyaan.');
         }
 
     }
@@ -167,7 +167,7 @@ class Posttest extends BaseController
         if ($this->posttestModel->update($idPertanyaan, $data)) {
             return redirect()->back();
         } else {
-            return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+            return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan pertanyaan.');
         }
     }
 
@@ -204,12 +204,12 @@ class Posttest extends BaseController
                 ];
                 $ans = $this->posttestModel->update($idPosttest, $addAns);
                 if (!$ans) {
-                    return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+                    return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan pertanyaan.');
                 }
             }
             return redirect()->back();
         } else {
-            return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+            return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan pertanyaan.');
         }
     }
 
@@ -238,7 +238,7 @@ class Posttest extends BaseController
                 ];
                 $ans = $this->posttestModel->update($idPertanyaan, $addAns);
                 if (!$ans) {
-                    return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+                    return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan pertanyaan.');
                 }
             } else {
                 if ($idPilihan === $idAns) {
@@ -247,13 +247,13 @@ class Posttest extends BaseController
                     ];
                     $ans = $this->posttestModel->update($idPertanyaan, $addAns);
                     if (!$ans) {
-                        return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+                        return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan pertanyaan.');
                     }
                 }
             }
             return redirect()->back();
         } else {
-            return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+            return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan pertanyaan.');
         }
     }
 

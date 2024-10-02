@@ -32,28 +32,28 @@ class Register extends BaseController
                     'label' => 'Email',
                     'rules' => 'required|valid_email|is_unique[user.email]',
                     'errors' => [
-                        'is_unique' => 'This email is already registered.'
+                        'is_unique' => 'Email ini sudah terdaftar.'
                     ]
                 ],
                 'username' => [
                     'label' => 'Username',
                     'rules' => 'required|is_unique[user.username]',
                     'errors' => [
-                        'is_unique' => 'This username is already taken.'
+                        'is_unique' => 'Nama pengguna ini sudah digunakan.'
                     ]
                 ],
                 'password' => [
                     'label' => 'Password',
                     'rules' => 'required|min_length[8]|regex_match[/(?=.*[A-Z])(?=.*\d).{8,}/]',
                     'errors' => [
-                        'regex_match' => 'Password must be at least 8 characters long and contain at least one uppercase letter and one number.'
+                        'regex_match' => 'Kata sandi harus minimal 8 karakter dan mengandung minimal satu huruf besar dan satu angka.'
                     ]
                 ],
                 're-password' => [
                     'label' => 'Confirm Password',
                     'rules' => 'required|matches[password]',
                     'errors' => [
-                        'matches' => 'The password confirmation does not match the password.'
+                        'matches' => 'Konfirmasi kata sandi tidak cocok dengan kata sandi.'
                     ]
                 ],
             ];
@@ -92,11 +92,11 @@ class Register extends BaseController
                     ];
                     $addStat = $statCourseModel->insertData($statPasien);
                     if (!$addPasien || !$addStat) {
-                        return redirect()->back()->withInput()->with('error', 'Registration failed. Please try again.');
+                        return redirect()->back()->withInput()->with('error', 'Pendaftaran gagal. Silakan coba lagi.');
                     }
-                    return redirect()->to('/login')->with('success', 'Registration successful.');
+                    return redirect()->to('/login')->with('success', 'Pendaftaran berhasil.');
                 } else {
-                    return redirect()->back()->withInput()->with('error', 'Registration failed. Please try again.');
+                    return redirect()->back()->withInput()->with('error', 'Pendaftaran gagal. Silakan coba lagi.');
                 }
             } else {
                 return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());

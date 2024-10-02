@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="multikit" />
     <meta name="keywords" content="multikit" />
-    <title>Multikit - Multi-purpose Html Template</title>
+    <title>Projek Farmasi</title>
     <link rel="manifest" href="https://themes.pixelstrap.net/multikit/manifest.json" />
     <meta name="theme-color" content="#ff8d2f" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="header-bottom header-bottom-2">
-                        <h2 class="fw-500 text-white">Pre-Test Data</h2>
+                        <h2 class="fw-500 text-white">Data Pre-Test</h2>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                     <input type="text" name="text" id="questionText" class="form-control"
                         placeholder="Input Question" />
                     <button name="submit" class="btn bg-web-primary text-white mt-2">
-                        Add Question
+                        Tambah Pertanyaan
                     </button>
                 </form>
             </div>
@@ -86,11 +86,10 @@
                                 <button
                                     onclick="editQuestion(<?= $question['id'] ?>, '<?= addslashes(esc($question['pertanyaan'])) ?>')"
                                     class="btn btn-sm btn-primary rounded-3">Edit
-                                    Question</button>
+                                    Pertanyaan</button>
                                 <a href="<?= base_url('pretest/delete_question/' . $question['id']) ?>"
                                     onclick="return confirm('Are you sure you want to delete this question?');"
-                                    class="btn btn-sm btn-danger rounded-3">Delete
-                                    Question</a>
+                                    class="btn btn-sm btn-danger rounded-3">Hapus Pertanyaan</a>
                                 <button onclick="addOption(<?= $question['id'] ?>)" class="btn btn-sm btn-success rounded-3">Add
                                     Option</button>
                             </div>
@@ -110,7 +109,7 @@
                                                     class="btn btn-sm btn-outline-primary w-auto">Edit</button>
                                                 <a href="<?= base_url('pretest/delete_option/' . $option['id']) ?>"
                                                     onclick="return confirm('Are you sure you want to delete this option?');"
-                                                    class="btn btn-sm btn-outline-danger w-auto">Delete</a>
+                                                    class="btn btn-sm btn-outline-danger w-auto">Hapus</a>
 
                                             </div>
                                         </div>
@@ -120,7 +119,7 @@
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <p>No questions available.</p>
+                    <p>Tidak ada pertanyaan yang tersedia.</p>
                 <?php endif; ?>
             </div>
         </div>
@@ -149,7 +148,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            Cancel
+                            Batal
                         </button>
                         <button type="submit" name="submit" type="button" class="btn btn-primary" id="modalConfirm">
                             OK

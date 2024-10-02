@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="multikit" />
     <meta name="keywords" content="multikit" />
-    <title>Multikit - Multi-purpose Html Template</title>
+    <title>Projek Farmasi</title>
     <link rel="manifest" href="https://themes.pixelstrap.net/multikit/manifest.json" />
     <meta name="theme-color" content="#ff8d2f" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -78,7 +78,7 @@
                         <i class="ri-home-5-line"></i>
                     </div>
                     <div class="mobile-name">
-                        <h5>Home</h5>
+                        <h5>Beranda</h5>
                     </div>
                 </a>
             </li>
@@ -89,7 +89,7 @@
                         <i class="ri-contacts-book-2-line"></i>
                     </div>
                     <div class="mobile-name">
-                        <h5>Consultation</h5>
+                        <h5>Konsultasi</h5>
                     </div>
                 </a>
             </li>
@@ -100,7 +100,7 @@
                         <i class="ri-user-3-line"></i>
                     </div>
                     <div class="mobile-name">
-                        <h5>Account</h5>
+                        <h5>Akun</h5>
                     </div>
                 </a>
             </li>
@@ -112,7 +112,7 @@
     <div class="setting-style-1 pt-45">
         <div class="custom-container">
             <div class="title">
-                <h4>Account Setting</h4>
+                <h4>Pengaturan Akun</h4>
             </div>
             <ul class="menu-setting-list px-0">
                 <li>
@@ -121,7 +121,7 @@
                             <i class="ri-user-3-line"></i>
                         </div>
                         <div class="setting-name">
-                            <h4>Personal Setting</h4>
+                            <h4>Pengaturan Pribadi</h4>
                             <i class="ri-arrow-right-s-line"></i>
                         </div>
                     </a>
@@ -133,7 +133,7 @@
                             <i class="ri-lock-line"></i>
                         </div>
                         <div class="setting-name">
-                            <h4>Account security</h4>
+                            <h4>Keamanan Akun</h4>
                             <i class="ri-arrow-right-s-line"></i>
                         </div>
                     </a>
@@ -144,7 +144,7 @@
                             <i class="ri-information-line"></i>
                         </div>
                         <div class="setting-name">
-                            <h4>Logout</h4>
+                            <h4>Keluar</h4>
                             <i class="ri-arrow-right-s-line"></i>
                         </div>
                     </a>

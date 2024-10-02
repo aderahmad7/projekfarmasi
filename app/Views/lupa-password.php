@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Guruji - Online Learning & Educational Courses</title>
+    <title>Projek Farmasi</title>
 
     <!--Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
@@ -42,7 +42,7 @@
                         </a>
                     </div>
                     <div class="header-title">
-                        <p>Forget Password</p>
+                        <p>Lupa Kata Sandi</p>
                     </div>
                 </div>
             </div>
@@ -57,9 +57,8 @@
                 <div class="forget-password-screen-wrap">
                     <div class="forget-password-screen-top mt-32">
                         <p class="title-sec">
-                            Enter the email with your account and
-                            we’ll send an email with instructions to reset
-                            your password.
+                            Masukkan alamat email akun Anda dan kami akan mengirimkan email berisi petunjuk untuk
+                            mengatur ulang kata sandi Anda.
                         </p>
                     </div>
                     <!-- Menampilkan pesan error -->
@@ -100,7 +99,7 @@
                                 class="sign-in-custom-input" />
                         </div>
                         <div class="send-instruction-btn mt-32">
-                            <input type="submit" name="submit" value="Send">
+                            <input type="submit" name="submit" value="Kirim">
                         </div>
                     </form>
                 </div>

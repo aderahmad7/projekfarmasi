@@ -67,10 +67,10 @@
 
                 <div class="header-bottom pb-4">
                     <div class="customer-name">
-                        <h2>Hello <?= $nama ?></h2>
+                        <h2>Halo <?= $nama ?></h2>
                         <img src="<?= base_url() ?>assets/images/learning/hand.png" alt="" />
                     </div>
-                    <h5>Learn from the top Educator!!</h5>
+                    <h5>Belajar dari Pendidik terbaik!!</h5>
                 </div>
             </div>
         </header>
@@ -85,7 +85,7 @@
                             <i class="ri-home-5-line"></i>
                         </div>
                         <div class="mobile-name">
-                            <h5>Home</h5>
+                            <h5>Beranda</h5>
                         </div>
                     </a>
                 </li>
@@ -96,7 +96,7 @@
                             <i class="ri-contacts-book-2-line"></i>
                         </div>
                         <div class="mobile-name">
-                            <h5>Consultation</h5>
+                            <h5>Konsultasi</h5>
                         </div>
                     </a>
                 </li>
@@ -107,7 +107,7 @@
                             <i class="ri-user-3-line"></i>
                         </div>
                         <div class="mobile-name">
-                            <h5>Account</h5>
+                            <h5>Akun</h5>
                         </div>
                     </a>
                 </li>
@@ -118,10 +118,10 @@
         <section class="section-t-space feature-course-section">
             <div class="custom-container">
                 <div class="title">
-                    <h4>Total Consul Patients</h4>
+                    <h4>Jumlah Pasien Konsul</h4>
                 </div>
                 <div class="bg-web-primary p-4 ms-4 me-4 rounded-3">
-                    <h3 class="text-white text-center mb-2">Patients</h2>
+                    <h3 class="text-white text-center mb-2">Pasien</h2>
                         <h2 class="text-white text-center"><?= $jumlah_pasien ?></h4>
                 </div>
             </div>
@@ -146,7 +146,7 @@
             </div>
             <div class="offcanvas-body">
                 <div class="title px-15">
-                    <h4>Account Settings</h4>
+                    <h4>Pengaturan Akun</h4>
                 </div>
                 <ul class="menu-setting-list">
                     <li>
@@ -155,7 +155,7 @@
                                 <i class="ri-user-3-line"></i>
                             </div>
                             <div class="setting-name">
-                                <h4>Personal Setting</h4>
+                                <h4>Pengaturan Pribadi</h4>
                                 <i class="ri-arrow-right-s-line"></i>
                             </div>
                         </a>
@@ -167,7 +167,7 @@
                                 <i class="ri-lock-line"></i>
                             </div>
                             <div class="setting-name">
-                                <h4>Account security</h4>
+                                <h4>Keamanan Akun</h4>
                                 <i class="ri-arrow-right-s-line"></i>
                             </div>
                         </a>
@@ -178,7 +178,7 @@
                                 <i class="ri-information-line"></i>
                             </div>
                             <div class="setting-name">
-                                <h4>Logout</h4>
+                                <h4>Keluar</h4>
                                 <i class="ri-arrow-right-s-line"></i>
                             </div>
                         </a>

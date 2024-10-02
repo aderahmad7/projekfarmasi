@@ -14,13 +14,13 @@ function showForm(index = null) {
     const patientPassword = document.getElementById("patient-password");
 
     if (index !== null) {
-        formTitle.textContent = "Edit Patient";
+        formTitle.textContent = "Edit Pasien";
         patientId.value = patients[index].id;
         fillFormWithPatientData(patients[index]);
         editIndex = index;
         patientPassword.style.display = 'none';
     } else {
-        formTitle.textContent = "Add Patient";
+        formTitle.textContent = "Tambah Pasien";
         patientForm.reset();
         patientId.value = "";
         editIndex = null;
@@ -62,7 +62,7 @@ function savePatient(event) {
                 window.location.reload();
                 $("#form-modal").modal("hide");
             } else {
-                alert('Error updating patient');
+                alert('Terjadi kesalahan saat memperbarui pasien');
             }
         })
         .catch(error => console.error('Error:', error));
@@ -80,7 +80,7 @@ function savePatient(event) {
                 window.location.reload();
                 $("#form-modal").modal("hide");
             } else {
-                alert('Error adding patient');
+                alert('Terjadi kesalahan saat menambahkan pasien');
             }
         })
         .catch(error => console.error('Error:', error));
@@ -88,7 +88,7 @@ function savePatient(event) {
 }
 
 function deletePatient(index) {
-    if (confirm('Are you sure you want to delete this patient?')) {
+    if (confirm('Apakah Anda yakin ingin menghapus pasien ini?')) {
         const url = `${baseUrl}/admin/delete_pasien/${patients[index].id}`;
         const csrfToken = document.querySelector('meta[name="X-CSRF-TOKEN"]').getAttribute('content');
         
@@ -105,7 +105,7 @@ function deletePatient(index) {
                 patients.splice(index, 1);
                 updateTable();
             } else {
-                alert('Error deleting patient');
+                alert('Terjadi kesalahan saat menghapus pasien');
             }
         })
         .catch(error => {
@@ -127,7 +127,7 @@ function updateTable() {
         row.innerHTML = `
             <td>${no++}</td>
             <td>${patient.name}</td>
-            <td>${patient.gender === "Laki-laki" ? "Male" : "Female"}</td>
+            <td>${patient.gender === "Laki-laki" ? "Laki-laki" : "Perempuan"}</td>
             <td>${patient.usia}</td>
             <td>${patient.history}</td>
             <td>${patient.pekerjaan}</td>
@@ -136,7 +136,7 @@ function updateTable() {
             <td>${patient.username}</td> 
             <td>
                 <button class="btn btn-secondary btn-sm mb-2" onclick="showForm(${start + index})">Edit</button>
-                <button class="btn btn-danger btn-sm" onclick="deletePatient(${start + index})">Delete</button>
+                <button class="btn btn-danger btn-sm" onclick="deletePatient(${start + index})">Hapus</button>
             </td>
         `;
         tbody.appendChild(row);

@@ -67,15 +67,15 @@
 
                 <div class="header-bottom">
                     <div class="customer-name">
-                        <h2>Hello <?= $nama ?></h2>
+                        <h2>Halo <?= $nama ?></h2>
                         <img src="<?= base_url() ?>assets/images/learning/hand.png" alt="" />
                     </div>
-                    <h5>Learn from the top Educator!!</h5>
+                    <h5>Belajar dari Pendidik terbaik!!</h5>
                 </div>
 
                 <div class="search-box index-search">
                     <div class="position-relative">
-                        <input type="search" class="form-control" placeholder="Search" />
+                        <input type="search" class="form-control" placeholder="Cari" />
                         <i class="ri-search-line"></i>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                             <i class="ri-home-5-line"></i>
                         </div>
                         <div class="mobile-name">
-                            <h5>Home</h5>
+                            <h5>Beranda</h5>
                         </div>
                     </a>
                 </li>
@@ -104,7 +104,7 @@
                             <i class="ri-contacts-book-2-line"></i>
                         </div>
                         <div class="mobile-name">
-                            <h5>Consultation</h5>
+                            <h5>Konsultasi</h5>
                         </div>
                     </a>
                 </li>
@@ -115,7 +115,7 @@
                             <i class="ri-user-3-line"></i>
                         </div>
                         <div class="mobile-name">
-                            <h5>Account</h5>
+                            <h5>Akun</h5>
                         </div>
                     </a>
                 </li>
@@ -127,7 +127,7 @@
         <section class="section-t-space poster-section">
             <div class="custom-container">
                 <div class="title">
-                    <h4>Your Progress</h4>
+                    <h4>Kemajuan Anda</h4>
                 </div>
                 <div class="row d-flex justify-content-center">
                     <div class="col-11">
@@ -137,7 +137,7 @@
                             <div class="poster-detail p-center">
                                 <div>
                                     <h3 class="text-white">
-                                        Complete the video to do the post-test
+                                        Selesaikan video untuk melakukan post-test
                                     </h3>
                                     <button class="btn btn-sm btn-white" id="btnPost">
                                         Post-Test
@@ -152,7 +152,7 @@
                     <div id="progressBar" class="mb-1">
                         <div id="progressFill"></div>
                     </div>
-                    <div id="progressPercentage">0% Complete</div>
+                    <div id="progressPercentage">0% Selesai</div>
                 </div>
             </div>
         </section>
@@ -162,7 +162,7 @@
         <section class="section-t-space feature-course-section">
             <div class="custom-container">
                 <div class="title">
-                    <h4>Featured Courses</h4>
+                    <h4>Kursus Unggulan</h4>
                 </div>
                 <div id="videoList"></div>
             </div>
@@ -190,7 +190,7 @@
             </div>
             <div class="offcanvas-body">
                 <div class="title px-15">
-                    <h4>Account Settings</h4>
+                    <h4>Pengaturan Akun</h4>
                 </div>
                 <ul class="menu-setting-list">
                     <li>
@@ -199,7 +199,7 @@
                                 <i class="ri-user-3-line"></i>
                             </div>
                             <div class="setting-name">
-                                <h4>Personal Setting</h4>
+                                <h4>Pengaturan Pribadi</h4>
                                 <i class="ri-arrow-right-s-line"></i>
                             </div>
                         </a>
@@ -211,7 +211,7 @@
                                 <i class="ri-lock-line"></i>
                             </div>
                             <div class="setting-name">
-                                <h4>Account security</h4>
+                                <h4>Keamanan Akun</h4>
                                 <i class="ri-arrow-right-s-line"></i>
                             </div>
                         </a>
@@ -222,7 +222,7 @@
                                 <i class="ri-information-line"></i>
                             </div>
                             <div class="setting-name">
-                                <h4>Logout</h4>
+                                <h4>Keluar</h4>
                                 <i class="ri-arrow-right-s-line"></i>
                             </div>
                         </a>

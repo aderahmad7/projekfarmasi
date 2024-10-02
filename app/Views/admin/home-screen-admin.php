@@ -66,10 +66,10 @@
 
                 <div class="header-bottom pb-3">
                     <div class="customer-name">
-                        <h2>Hello Admin</h2>
+                        <h2>Halo Admin</h2>
                         <img src="<?= base_url() ?>assets/images/learning/hand.png" alt="" />
                     </div>
-                    <h5>Learn from the top Educator!!</h5>
+                    <h5>Belajar dari Pendidik terbaik!!</h5>
                 </div>
             </div>
         </header>
@@ -84,7 +84,7 @@
                             <i class="ri-home-5-line"></i>
                         </div>
                         <div class="mobile-name">
-                            <h5>Home</h5>
+                            <h5>Beranda</h5>
                         </div>
                     </a>
                 </li>
@@ -95,7 +95,7 @@
                             <i class="ri-group-line"></i>
                         </div>
                         <div class="mobile-name">
-                            <h5>Users</h5>
+                            <h5>Pengguna</h5>
                         </div>
                     </a>
                 </li>
@@ -106,7 +106,7 @@
                             <i class="ri-mac-line"></i>
                         </div>
                         <div class="mobile-name">
-                            <h5>Content</h5>
+                            <h5>Konten</h5>
                         </div>
                     </a>
                 </li>
@@ -117,12 +117,12 @@
         <section class="section-t-space feature-course-section">
             <div class="custom-container">
                 <div class="title">
-                    <h4>Users Total</h4>
+                    <h4>Total Pengguna</h4>
                 </div>
                 <ul class="feature-course-list">
                     <li>
                         <div class="feature-box bg-web-primary">
-                            <h3 class="text-center text-white">Patient</h3>
+                            <h3 class="text-center text-white">Pasien</h3>
                             <h4 class="text-center text-white" id="patientCount">
                                 <?= $n_pasien; ?>
                             </h4>
@@ -130,7 +130,7 @@
                     </li>
                     <li>
                         <div class="feature-box bg-web-primary">
-                            <h3 class="text-center text-white">Doctor</h3>
+                            <h3 class="text-center text-white">Tenaga Kesehatan</h3>
                             <h4 class="text-center text-white" id="doctorCount">
                                 <?= $n_dokter ?>
                             </h4>
@@ -144,7 +144,7 @@
         <section class="section-t-space feature-course-section">
             <div class="custom-container">
                 <div class="title">
-                    <h4>Users Statistics</h4>
+                    <h4>Statistik Pengguna</h4>
                 </div>
                 <div class="chart-container">
                     <canvas id="chart"></canvas>
@@ -157,7 +157,7 @@
             <input type="hidden" name="n-done" id="n-done" value="<?= $n_course_done ?>">
             <div class="custom-container">
                 <div class="title mb-0">
-                    <h4>Course Statistics</h4>
+                    <h4>Statistik Kursus</h4>
                 </div>
                 <div class="chart-container p-3 pt-0">
                     <canvas id="pieChart"></canvas>
@@ -190,7 +190,7 @@
                                 <i class="ri-information-line"></i>
                             </div>
                             <div class="setting-name">
-                                <h4>Logout</h4>
+                                <h4>Keluar</h4>
                                 <i class="ri-arrow-right-s-line"></i>
                             </div>
                         </a>

@@ -122,7 +122,7 @@ class Pretest extends BaseController
         if ($this->pretestModel->insert($data)) {
             return redirect()->back();
         } else {
-            return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+            return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan pertanyaan.');
         }
 
     }
@@ -145,7 +145,7 @@ class Pretest extends BaseController
         if ($this->pretestModel->update($idPertanyaan, $data)) {
             return redirect()->back();
         } else {
-            return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+            return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan pertanyaan.');
         }
     }
 
@@ -182,12 +182,12 @@ class Pretest extends BaseController
                 ];
                 $ans = $this->pretestModel->update($idPretest, $addAns);
                 if (!$ans) {
-                    return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+                    return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan pertanyaan.');
                 }
             }
             return redirect()->back();
         } else {
-            return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+            return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan pertanyaan.');
         }
     }
 
@@ -216,7 +216,7 @@ class Pretest extends BaseController
                 ];
                 $ans = $this->pretestModel->update($idPertanyaan, $addAns);
                 if (!$ans) {
-                    return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+                    return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan pertanyaan.');
                 }
             } else {
                 if ($idPilihan === $idAns) {
@@ -225,13 +225,13 @@ class Pretest extends BaseController
                     ];
                     $ans = $this->pretestModel->update($idPertanyaan, $addAns);
                     if (!$ans) {
-                        return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+                        return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan pertanyaan.');
                     }
                 }
             }
             return redirect()->back();
         } else {
-            return redirect()->back()->withInput()->with('errors', 'Adding question failed.');
+            return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan pertanyaan.');
         }
     }
 

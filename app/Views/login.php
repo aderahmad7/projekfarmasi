@@ -25,7 +25,7 @@
         <section id="sign-in-screen-content" class="d-flex flex-column gap-4">
             <div class="container">
                 <div class="sign-in-login">
-                    <h1 class="login-txt">Login To Your Account</h1>
+                    <h1 class="login-txt">Masuk ke Akun Anda</h1>
                 </div>
                 <!-- Menampilkan pesan error -->
                 <?php if (session()->has('error')): ?>
@@ -58,7 +58,7 @@
                                     </g>
                                 </svg>
                             </span>
-                            <input type="text" id="Username" name="username" placeholder="Username"
+                            <input type="text" id="Username" name="username" placeholder="Nama Pengguna"
                                 class="sign-in-custom-input" />
                         </div>
                         <div class="form-details-sign-in mt-12">
@@ -85,7 +85,7 @@
                                     </g>
                                 </svg>
                             </span>
-                            <input type="password" id="password" name="password" placeholder="Password"
+                            <input type="password" id="password" name="password" placeholder="Kata Sandi"
                                 class="sign-in-custom-input" />
                             <i class="fas fa-eye-slash" id="eye"></i>
                         </div>
@@ -93,22 +93,22 @@
                             <div class="footer-checkbox-sec">
                                 <input class="footer-checkbox-input" name="remember-me" id="footer-checkbox"
                                     type="checkbox" />
-                                <label for="footer-checkbox" class="footer-chec-txt">Remember Me</label>
+                                <label for="footer-checkbox" class="footer-chec-txt">Ingat Saya</label>
                             </div>
                             <div class="forget-btn">
-                                <a href="<?= base_url('login/lupa_password') ?>">Forget password?</a>
+                                <a href="<?= base_url('login/lupa_password') ?>">Lupa Kata Sandi?</a>
                             </div>
                         </div>
                         <div class="sign-in-btn mt-32">
-                            <input type="submit" name="submit" value="Sign In">
+                            <input type="submit" name="submit" value="Masuk">
                         </div>
                     </form>
                 </div>
             </div>
             <div class="block-footer">
                 <p>
-                    Don’t have an account?
-                    <a href="<?= base_url('register') ?>">Sign Up</a>
+                    Tidak punya akun?
+                    <a href="<?= base_url('register') ?>">Daftar</a>
                 </p>
             </div>
         </section>

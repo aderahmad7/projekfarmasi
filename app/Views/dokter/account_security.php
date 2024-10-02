@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="multikit">
     <meta name="keywords" content="multikit">
-    <title>Multikit - Multi-purpose Html Template</title>
+    <title>Projek Farmasi</title>
     <link rel="manifest" href="https://themes.pixelstrap.net/multikit/manifest.json">
     <meta name="theme-color" content="#ff8d2f">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -60,7 +60,7 @@
             </div>
 
             <div class="header-bottom header-bottom-2">
-                <h2 class="fw-500 text-white">Account Security</h2>
+                <h2 class="fw-500 text-white">Keamanan Akun</h2>
             </div>
         </div>
     </header>
@@ -120,19 +120,18 @@
         <div class="offcanvas-body">
             <form class="form-style-1">
                 <div class="learning-theme-form mb-3">
-                    <label for="email1" class="form-label">Your Email</label>
+                    <label for="email1" class="form-label">Email Anda</label>
                     <input type="email" class="form-control" value="<?= $email ?>"
                         placeholder="Your email address is <?= $email ?>" id="email1">
                 </div>
 
                 <div class="learning-theme-form mb-3">
-                    <label for="pass" class="form-label">Password</label>
-                    <input type="password" class="form-control" placeholder="Your Password" id="pass">
+                    <label for="pass" class="form-label">Kata Sandi</label>
+                    <input type="password" class="form-control" placeholder="Kata Sandi Anda" id="pass">
                 </div>
             </form>
-            <p class="content-modal-name">For your security, if you change your email address your saved credit
-                card information will be deleted.</p>
-            <button class="btn btn-theme text-white" data-bs-dismiss="modal">Save</button>
+            <p class="content-modal-name">Demi keamanan Anda, jika Anda mengubah alamat email, informasi kartu kredit Anda yang tersimpan akan terhapus.</p>
+            <button class="btn btn-theme text-white" data-bs-dismiss="modal">Simpan</button>
         </div>
     </div>
     <!-- Change email address offcanvas end -->

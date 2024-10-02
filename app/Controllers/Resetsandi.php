@@ -66,12 +66,12 @@ class Resetsandi extends BaseController
             $email->setMessage("Click this link to reset your password: <a href='{$resetLink}'>Reset Password</a>");
 
             if ($email->send()) {
-                return redirect()->back()->with('success', 'Check your email for the password reset link.');
+                return redirect()->back()->with('success', 'Periksa email Anda untuk tautan pengaturan ulang kata sandi.');
             } else {
-                return redirect()->back()->with('error', 'Unable to send email. Please try again.');
+                return redirect()->back()->with('error', 'Tidak dapat mengirim email. Silakan coba lagi.');
             }
         } else {
-            return redirect()->back()->with('error', 'Email not found.');
+            return redirect()->back()->with('error', 'Email tidak ditemukan.');
         }
     }
 
@@ -87,7 +87,7 @@ class Resetsandi extends BaseController
             return view('reset_password', $data);
         } else {
             $resetModel->deleteByToken($token);
-            return redirect()->to('login/lupa_password')->with('error', 'Invalid or expired reset token.');
+            return redirect()->to('login/lupa_password')->with('error', 'Token reset tidak valid atau kedaluwarsa.');
         }
 
     }
@@ -103,7 +103,7 @@ class Resetsandi extends BaseController
         $user = $resetModel->where('reset_token', $token)->where('token_exp >=', date('Y-m-d H:i:s'))->first();
         if (!$user) {
             $resetModel->deleteByToken($token);
-            return redirect()->to('login/lupa_password')->with('error', 'Invalid or expired reset token.');
+            return redirect()->to('login/lupa_password')->with('error', 'Token reset tidak valid atau kedaluwarsa.');
         }
 
         $rules = [
@@ -111,14 +111,14 @@ class Resetsandi extends BaseController
                 'label' => 'Password',
                 'rules' => 'required|min_length[8]|regex_match[/(?=.*[A-Z])(?=.*\d).{8,}/]',
                 'errors' => [
-                    'regex_match' => 'Password must be at least 8 characters long and contain at least one uppercase letter and one number.'
+                    'regex_match' => 'Kata sandi harus minimal 8 karakter dan mengandung minimal satu huruf besar dan satu angka.'
                 ]
             ],
             're-password' => [
                 'label' => 'Confirm Password',
                 'rules' => 'required|matches[password]',
                 'errors' => [
-                    'matches' => 'The password confirmation does not match the password.'
+                    'matches' => 'Konfirmasi kata sandi tidak cocok dengan kata sandi.'
                 ]
             ],
         ];
@@ -135,7 +135,7 @@ class Resetsandi extends BaseController
         if ($userModel->update($id_user, $data)) {
             // kode disini
             $resetModel->deleteByToken($token);
-            return redirect()->to('login')->with('success', 'User updated successfully.');
+            return redirect()->to('login')->with('success', 'Memperbarui pengguna berhasil.');
         } else {
             return redirect()->back()->withInput()->with('error', $userModel->errors());
         }

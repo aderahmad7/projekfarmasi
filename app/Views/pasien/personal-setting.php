@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="multikit">
     <meta name="keywords" content="multikit">
-    <title>Multikit - Multi-purpose Html Template</title>
+    <title>Projek Farmasi</title>
     <link rel="manifest" href="https://themes.pixelstrap.net/multikit/manifest.json">
     <meta name="theme-color" content="#ff8d2f">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -62,7 +62,7 @@
                     </div>
 
                     <div class="header-bottom header-bottom-2">
-                        <h2 class="fw-500 text-white">Edit Profile</h2>
+                        <h2 class="fw-500 text-white">Edit Profil</h2>
                     </div>
                 </div>
             </div>
@@ -122,42 +122,42 @@
                             </section>
                             <input type="hidden" name="id" value="<?= $id ?>">
                             <div class="mb-3">
-                                <label for="nama" class="form-label">Name</label>
+                                <label for="nama" class="form-label">Nama</label>
                                 <input type="text" name="nama" value="<?= $nama ?>" class="form-control"
-                                    placeholder="Enter your name" id="nama" required>
+                                    placeholder="Masukkan nama Anda" id="nama" required>
                             </div>
                             <div class="mb-3">
                                 <label for="gender" class="form-label">Gender</label>
                                 <select name="gender" class="form-select">
-                                    <option disabled>Select Gender</option>
-                                    <option <?= $gender === 'Laki-laki' ? 'selected' : '' ?> value="Laki-laki">Male
+                                    <option disabled>Pilih Gender</option>
+                                    <option <?= $gender === 'Laki-laki' ? 'selected' : '' ?> value="Laki-laki">Laki-laki
                                     </option>
-                                    <option <?= $gender === 'Perempuan' ? 'selected' : '' ?> value="Perempuan">Female
+                                    <option <?= $gender === 'Perempuan' ? 'selected' : '' ?> value="Perempuan">Perempuan
                                     </option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="usia" class="form-label">Age</label>
+                                <label for="usia" class="form-label">Usia</label>
                                 <input type="number" name="usia" class="form-control" min="0"
-                                    placeholder="Enter your age" id="usia" value="<?= $usia ?>" required>
+                                    placeholder="Masukkan usia Anda" id="usia" value="<?= $usia ?>" required>
                             </div>
                             <div class="mb-3">
-                                <label for="no-hp" class="form-label">Phone Number</label>
+                                <label for="no-hp" class="form-label">Nomor Handphone</label>
                                 <input type="text" name="no-hp" class="form-control" min="0"
-                                    placeholder="Enter your phone number" id="no-hp" value="<?= $no_hp ?>" required>
+                                    placeholder="Masukkan nomor handphone Anda" id="no-hp" value="<?= $no_hp ?>" required>
                             </div>
                             <div class="mb-3">
-                                <label for="riwayat" class="form-label">Medical History</label>
+                                <label for="riwayat" class="form-label">Riwayat Kesehatan</label>
                                 <input type="text" name="riwayat" class="form-control" min="0"
-                                    placeholder="Enter your medical history" id="riwayat" value="<?= $riwayat ?>"
+                                    placeholder="Masukkan riwayat kesehatan Anda" id="riwayat" value="<?= $riwayat ?>"
                                     required>
                             </div>
                             <div class="mb-5">
-                                <label for="pekerjaan" class="form-label">Job</label>
-                                <input type="text" name="pekerjaan" class="form-control" placeholder="Enter your job"
+                                <label for="pekerjaan" class="form-label">Pekerjaan</label>
+                                <input type="text" name="pekerjaan" class="form-control" placeholder="Masukkan pekerjaan Anda"
                                     id="pekerjaan" value="<?= $pekerjaan ?>" required>
                             </div>
-                            <input type="submit" name="submit" class="btn btn-gradient mb-4" value="Save Setting">
+                            <input type="submit" name="submit" class="btn btn-gradient mb-4" value="Simpan Pengaturan">
                         </form>
                     </div>
                 </div>

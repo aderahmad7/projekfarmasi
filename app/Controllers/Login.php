@@ -38,13 +38,13 @@ class Login extends BaseController
                 $rememberMe = esc($this->request->getPost('remember_me'));
 
                 if ($userModel->cekUser($username)) {
-                    return redirect()->back()->withInput()->with('error', 'Username not found.');
+                    return redirect()->back()->withInput()->with('error', 'Username tidak ditemukan.');
                 }
 
                 $pass_user = $userModel->getData($username)['password'];
 
                 if (!password_verify($password, $pass_user)) {
-                    return redirect()->back()->withInput()->with('error', 'Invalid username or password.');
+                    return redirect()->back()->withInput()->with('error', 'Nama pengguna atau kata sandi tidak valid.');
                 }
 
                 $id_user = $userModel->getData($username)['id'];

@@ -134,9 +134,9 @@ class Dokter extends BaseController
         ];
 
         if ($dokterModel->update($id_dokter, $dataDokter) && $userModel->update($idUser, $dataUser)) {
-            return redirect()->to('dokter')->with('success', 'Update successful.');
+            return redirect()->to('dokter')->with('success', 'Pembaruan berhasil.');
         } else {
-            return redirect()->back()->withInput()->with('error', 'Update failed. Please try again.');
+            return redirect()->back()->withInput()->with('error', 'Pembaruan gagal. Silakan coba lagi.');
         }
     }
 
@@ -164,21 +164,21 @@ class Dokter extends BaseController
                 'label' => 'Current Password',
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'The current password field is required.'
+                    'required' => 'Kolom kata sandi saat ini wajib diisi.'
                 ]
             ],
             'new-pass' => [
                 'label' => 'Password',
                 'rules' => 'required|min_length[8]|regex_match[/(?=.*[A-Z])(?=.*\d).{8,}/]',
                 'errors' => [
-                    'regex_match' => 'Password must be at least 8 characters long and contain at least one uppercase letter and one number.'
+                    'regex_match' => 'Kata sandi harus minimal 8 karakter dan mengandung minimal satu huruf besar dan satu angka.'
                 ]
             ],
             're-new-pass' => [
                 'label' => 'Confirm Password',
                 'rules' => 'required|matches[new-pass]',
                 'errors' => [
-                    'matches' => 'The password confirmation does not match the password.'
+                    'matches' => 'Konfirmasi kata sandi tidak cocok dengan kata sandi.'
                 ]
             ],
         ];
@@ -191,7 +191,7 @@ class Dokter extends BaseController
         $newPass = esc($this->request->getPost('new-pass'));
 
         if (!password_verify($currPass, $password)) {
-            return redirect()->back()->withInput()->with('error', 'Invalid password.');
+            return redirect()->back()->withInput()->with('error', 'Kata sandi tidak valid.');
         }
 
         $dataUpdate = [
@@ -201,7 +201,7 @@ class Dokter extends BaseController
         $id_user = session()->get('id_user');
         if ($userModel->update($id_user, $dataUpdate)) {
             // kode disini
-            return redirect()->to('dokter')->with('success', 'User updated successfully.');
+            return redirect()->to('dokter')->with('success', 'Berhasil memperbarui pengguna');
         } else {
             return redirect()->back()->withInput()->with('error', $userModel->errors());
         }

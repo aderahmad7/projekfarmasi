@@ -163,6 +163,6 @@ btnPostTest.addEventListener("click", function () {
     if (totalProgress >= 99.5) {
         location.href = `${baseUrl}/posttest/cek`;
     } else {
-        alert("Finish the video first");
+        alert("Selesaikan video terlebih dahulu");
     }
 });

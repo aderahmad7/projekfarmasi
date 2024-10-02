@@ -14,7 +14,7 @@ function displayVideos() {
     videoList.innerHTML = "";
 
     if (videoData.length === 0) {
-        videoList.innerHTML = "<p>No videos available. Add some!</p>";
+        videoList.innerHTML = "<p>Tidak ada video yang tersedia. Tambahkan beberapa!</p>";
         return;
     }
 
@@ -37,7 +37,7 @@ function displayVideos() {
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-sm btn-primary w-auto" onclick="editVideo(${startIndex + index})">Edit</button>
-                    <a href="${baseUrl}/course/delete_course/${video.id}" class="btn btn-sm btn-danger w-auto" onclick="return confirm('Are you sure you want to delete this video?');">Delete</a>
+                    <a href="${baseUrl}/course/delete_course/${video.id}" class="btn btn-sm btn-danger w-auto" onclick="return confirm('Are you sure you want to delete this video?');">Hapus</a>
                 </div>
             </div>
         `;

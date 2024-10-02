@@ -14,13 +14,13 @@ function showForm(index = null) {
     const doctorPassword = document.getElementById("doctor-password");
 
     if (index !== null) {
-        formTitle.textContent = "Edit Doctor";
+        formTitle.textContent = "Edit Tenaga Kesehatan";
         doctorId.value = doctors[index].id;
         fillFormWithDoctorData(doctors[index]);
         editIndex = index;
         doctorPassword.style.display = 'none';
     } else {
-        formTitle.textContent = "Add Doctor";
+        formTitle.textContent = "Tambah Tenaga Kesehatan";
         doctorForm.reset();
         doctorId.value = "";
         editIndex = null;
@@ -67,7 +67,7 @@ function saveDoctor(event) {
                 window.location.reload();
                 $("#form-modal").modal("hide");
             } else {
-                alert('Error updating doctor');
+                alert('Terjadi kesalahan saat memperbarui tenaga kesehatan');
             }
         })
         .catch(error => console.error('Error:', error));
@@ -85,7 +85,7 @@ function saveDoctor(event) {
                 window.location.reload();
                 $("#form-modal").modal("hide");
             } else {
-                alert('Error adding doctor');
+                alert('Terjadi kesalahan saat menambahkan tenaga kesehatan');
             }
         })
         .catch(error => console.error('Error:', error));
@@ -93,7 +93,7 @@ function saveDoctor(event) {
 }
 
 function deleteDoctor(index) {
-    if (confirm('Are you sure you want to delete this doctor?')) {
+    if (confirm('Apakah Anda yakin ingin menghapus tenaga kesehatan ini?')) {
         const url = `${baseUrl}/admin/delete_dokter/${doctors[index].id}`;
         const csrfToken = document.querySelector('meta[name="X-CSRF-TOKEN"]').getAttribute('content');
         
@@ -110,7 +110,7 @@ function deleteDoctor(index) {
                 doctors.splice(index, 1);
                 updateTable();
             } else {
-                alert('Error deleting doctor');
+                alert('Kesalahan saat menghapus tenaga kesehatan');
             }
         })
         .catch(error => {
@@ -132,7 +132,7 @@ function updateTable() {
         row.innerHTML = `
             <td>${no++}</td>
             <td>${doctor.name}</td>
-            <td>${doctor.gender === "Laki-laki" ? "Male" : "Female"}</td>
+            <td>${doctor.gender === "Laki-laki" ? "Laki-Laki" : "Perempuan"}</td>
             <td>${doctor.usia}</td>
             <td>${doctor.specialty}</td>
             <td>${doctor.tahunPengalaman}</td>
@@ -141,7 +141,7 @@ function updateTable() {
             <td>${doctor.username}</td> 
             <td>
                 <button class="btn btn-secondary btn-sm mb-2" onclick="showForm(${start + index})">Edit</button>
-                <button class="btn btn-danger btn-sm" onclick="deleteDoctor(${start + index})">Delete</button>
+                <button class="btn btn-danger btn-sm" onclick="deleteDoctor(${start + index})">Hapus</button>
             </td>
         `;
         tbody.appendChild(row);

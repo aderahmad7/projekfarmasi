@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="multikit" />
     <meta name="keywords" content="multikit" />
-    <title>Multikit - Multi-purpose Html Template</title>
+    <title>Projek Farmasi</title>
     <link rel="manifest" href="https://themes.pixelstrap.net/multikit/manifest.json" />
     <meta name="theme-color" content="#ff8d2f" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="header-bottom header-bottom-2">
-                        <h2 class="fw-500 text-white">Cources Data</h2>
+                        <h2 class="fw-500 text-white">Data Kursus</h2>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
     <section class="pre-test-section pt-25">
         <div class="custom-container">
             <button class="btn bg-web-primary text-white mb-3" data-bs-toggle="modal" data-bs-target="#addVideoModal">
-                <i class="bi bi-plus-circle"></i> Add New Video
+                <i class="bi bi-plus-circle"></i> Tambah Video Baru
             </button>
 
             <div id="videoList" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -86,26 +86,26 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addVideoModalLabel">Add New Video</h5>
+                    <h5 class="modal-title" id="addVideoModalLabel">Tambah Video Baru</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="addVideoForm">
                         <div class="mb-3">
-                            <label for="newVideoLink" class="form-label">YouTube Video Link</label>
+                            <label for="newVideoLink" class="form-label">Tautan Video YouTube</label>
                             <input type="text" class="form-control" id="newVideoLink" required>
                         </div>
                         <div class="mb-3">
-                            <label for="newVideoTitle" class="form-label">Video Title</label>
+                            <label for="newVideoTitle" class="form-label">Judul Video</label>
                             <input type="text" class="form-control" id="newVideoTitle" required>
                         </div>
                         <div class="mb-3">
-                            <label for="newVideoDescription" class="form-label">Video Description</label>
+                            <label for="newVideoDescription" class="form-label">Deskripsi Video</label>
                             <textarea class="form-control" id="newVideoDescription" rows="3" required></textarea>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" onclick="addVideo()">Add Video</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary" onclick="addVideo()">Tambah Video</button>
                         </div>
                     </form>
                 </div>
@@ -125,20 +125,20 @@
                     <form id="editVideoForm">
                         <input type="hidden" id="editVideoId">
                         <div class="mb-3">
-                            <label for="editVideoLink" class="form-label">YouTube Video Link</label>
+                            <label for="editVideoLink" class="form-label">Tautan Video YouTube</label>
                             <input type="text" class="form-control" id="editVideoLink" required>
                         </div>
                         <div class="mb-3">
-                            <label for="editVideoTitle" class="form-label">Video Title</label>
+                            <label for="editVideoTitle" class="form-label">Judul Video</label>
                             <input type="text" class="form-control" id="editVideoTitle" required>
                         </div>
                         <div class="mb-3">
-                            <label for="editVideoDescription" class="form-label">Video Description</label>
+                            <label for="editVideoDescription" class="form-label">Deskripsi Video</label>
                             <textarea class="form-control" id="editVideoDescription" rows="3" required></textarea>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" onclick="saveEditedVideo()">Save
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary" onclick="saveEditedVideo()">Simpan
                                 Changes</button>
                         </div>
                     </form>

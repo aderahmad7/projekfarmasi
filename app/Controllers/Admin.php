@@ -39,13 +39,13 @@ class Admin extends BaseController
         $password = esc($this->request->getPost('password'));
 
         if ($adminModel->cekUser($username)) {
-            return redirect()->back()->withInput()->with('error', 'Username not found.');
+            return redirect()->back()->withInput()->with('error', 'Username tidak ditemukan.');
         }
 
         $hassPass = $adminModel->getData($username)["password"];
 
         if (!password_verify($password, $hassPass)) {
-            return redirect()->back()->withInput()->with('error', 'Invalid username or password.');
+            return redirect()->back()->withInput()->with('error', 'Username atau kata sandi tidak valid');
         }
 
         $session_data = [

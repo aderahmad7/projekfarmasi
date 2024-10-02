@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="multikit" />
     <meta name="keywords" content="multikit" />
-    <title>Multikit - Multi-purpose Html Template</title>
+    <title>Projek Farmasi</title>
     <link rel="manifest" href="https://themes.pixelstrap.net/multikit/manifest.json" />
     <meta name="theme-color" content="#ff8d2f" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="header-bottom header-bottom-2">
-                        <h2 class="fw-500 text-white">Patient Data</h2>
+                        <h2 class="fw-500 text-white">Data Pasien</h2>
                     </div>
                 </div>
             </div>
@@ -67,20 +67,20 @@
 
     <section class="data-dokter-section pt-25 pe-3">
         <div class="custom-container table-responsive">
-            <button class="btn bg-web-primary text-white mb-3 w-auto" onclick="showForm()">Add Patient</button>
+            <button class="btn bg-web-primary text-white mb-3 w-auto" onclick="showForm()">Tambah Pasien</button>
             <table class="table table-bordered table-striped" id="patient-table">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Name</th>
+                        <th>Nama</th>
                         <th>Gender</th>
-                        <th>Age</th>
-                        <th>Medical History</th>
-                        <th>Job</th>
-                        <th>Phone Number</th>
+                        <th>Umur</th>
+                        <th>Riwayat Kesehatan</th>
+                        <th>Pekerjaan</th>
+                        <th>Nomor Handphone</th>
                         <th>Email</th>
-                        <th>Username</th>
-                        <th>Action</th>
+                        <th>Nama Pengguna</th>
+                        <th>Tindakan</th>
                     </tr>
                 </thead>
                 <tbody id="patient-table-body" data-pasien='<?= json_encode($pasiens) ?>'></tbody>></tbody>
@@ -107,31 +107,31 @@
                     <form id="patient-form" onsubmit="savePatient(event)">
                         <input type="hidden" id="patient-id" />
                         <div class="form-group">
-                            <label for="patient-name">Name:</label>
+                            <label for="patient-name">Nama:</label>
                             <input type="text" name="name" class="form-control" id="patient-name" required />
                         </div>
                         <div class="form-group">
                             <label for="patient-gender">Gender:</label>
                             <select name="gender" id="patient-gender" class="form-select">
                                 <option disabled selected></option>
-                                <option value="1">Male</option>
-                                <option value="2">Female</option>
+                                <option value="1">Laki-laki</option>
+                                <option value="2">Perempuan</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="patient-usia">Age:</label>
+                            <label for="patient-usia">Usia:</label>
                             <input name="usia" type="number" class="form-control" id="patient-usia" required />
                         </div>
                         <div class="form-group">
-                            <label for="patient-job">Job:</label>
+                            <label for="patient-job">Pekerjaan:</label>
                             <input name="pekerjaan" type="text" class="form-control" id="patient-job" required />
                         </div>
                         <div class="form-group">
-                            <label for="patient-history">Medical History:</label>
+                            <label for="patient-history">Riwayat Kesehatan:</label>
                             <input name="riwayat" type="text" class="form-control" id="patient-history" required />
                         </div>
                         <div class="form-group">
-                            <label for="patient-nomor-handphone">Phone Number:</label>
+                            <label for="patient-nomor-handphone">Nomor Handphone:</label>
                             <input name="no-hp" type="number" class="form-control" id="patient-nomor-handphone"
                                 required />
                         </div>
@@ -140,19 +140,19 @@
                             <input name="email" type="text" class="form-control" id="patient-email" required />
                         </div>
                         <div class="form-group">
-                            <label for="patient-username">Username:</label>
+                            <label for="patient-username">Nama Pengguna:</label>
                             <input name="username" type="text" class="form-control" id="patient-username" required />
                         </div>
                         <div class="form-group mb-4">
-                            <label for="patient-password">Password:</label>
+                            <label for="patient-password">Kata Sandi:</label>
                             <input name="password" type="text" class="form-control" id="patient-password" />
                         </div>
 
                         <button type="button" class="btn btn-secondary mb-1" data-dismiss="modal">
-                            Close
+                            Tutup
                         </button>
                         <button name="submit" type="submit" class="btn btn-primary">
-                            Save changes
+                            Simpan perubahan
                         </button>
                     </form>
                 </div>

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="multikit" />
     <meta name="keywords" content="multikit" />
-    <title>Multikit - Multi-purpose Html Template</title>
+    <title>Projek Farmasi</title>
     <link rel="manifest" href="https://themes.pixelstrap.net/multikit/manifest.json" />
     <meta name="theme-color" content="#ff8d2f" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -59,7 +59,7 @@
             </div>
 
             <div class="header-bottom header-bottom-2">
-                <h2 class="fw-500 text-white">Users</h2>
+                <h2 class="fw-500 text-white">Pengguna</h2>
             </div>
         </div>
     </header>
@@ -74,7 +74,7 @@
                         <i class="ri-home-5-line"></i>
                     </div>
                     <div class="mobile-name">
-                        <h5>Home</h5>
+                        <h5>Beranda</h5>
                     </div>
                 </a>
             </li>
@@ -85,7 +85,7 @@
                         <i class="ri-group-line"></i>
                     </div>
                     <div class="mobile-name">
-                        <h5>Users</h5>
+                        <h5>Pengguna</h5>
                     </div>
                 </a>
             </li>
@@ -96,7 +96,7 @@
                         <i class="ri-mac-line"></i>
                     </div>
                     <div class="mobile-name">
-                        <h5>Content</h5>
+                        <h5>Konten</h5>
                     </div>
                 </a>
             </li>
@@ -108,7 +108,7 @@
     <div class="setting-style-1 pt-25">
         <div class="custom-container">
             <div class="title">
-                <h4>Select Users</h4>
+                <h4>Pilih Pengguna</h4>
             </div>
             <ul class="menu-setting-list px-0">
                 <li>
@@ -117,7 +117,7 @@
                             <i class="ri-nurse-fill"></i>
                         </div>
                         <div class="setting-name">
-                            <h4>Doctor</h4>
+                            <h4>Tenaga Kesehatan</h4>
                             <i class="ri-arrow-right-s-line"></i>
                         </div>
                     </a>
@@ -129,7 +129,7 @@
                             <i class="ri-user-5-line"></i>
                         </div>
                         <div class="setting-name">
-                            <h4>Patient</h4>
+                            <h4>Pasien</h4>
                             <i class="ri-arrow-right-s-line"></i>
                         </div>
                     </a>
