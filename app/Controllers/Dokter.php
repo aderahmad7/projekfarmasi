@@ -230,4 +230,26 @@ class Dokter extends BaseController
         return view('dokter/account', $data);
     }
 
+    public function chat()
+    {
+        $userModel = new UserModel();
+        $username = session()->get('username');
+        $userData = $userModel->getData($username);
+        $data = [
+            "foto" => $userData["foto"],
+        ];
+        return view('dokter/chat', $data);
+    }
+
+    public function list_chat()
+    {
+        $userModel = new UserModel();
+        $username = session()->get('username');
+        $userData = $userModel->getData($username);
+        $data = [
+            "foto" => $userData["foto"],
+        ];
+        return view('dokter/list-chat', $data);
+    }
+
 }

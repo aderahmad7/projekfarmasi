@@ -36,6 +36,11 @@
 
     <!-- Style css -->
     <link id="change-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css">
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/custom.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body class="inter-body learning-color">
@@ -60,12 +65,11 @@
             </div>
 
             <div class="header-bottom header-bottom-2">
-                <h2 class="fw-500 text-white">Keamanan Akun</h2>
+                <h2 class="fw-500 text-white">Chat</h2>
             </div>
         </div>
     </header>
     <!-- header end -->
-
     <!-- Menampilkan pesan kesalahan -->
     <?php if (session()->has('errors')): ?>
         <div class="alert alert-danger">
@@ -91,75 +95,46 @@
         </script>
     <?php endif; ?>
 
-    <!-- Account Security Section Start -->
-    <section class="section-t-space account-security-section">
-        <div class="custom-container">
-            <form class="account-email-box form-style-1">
-                <div class="learning-theme-form">
-                    <label for="email" class="form-label">Email :</label>
-                    <div class="email-box with-icon">
-                        <input type="email" class="form-control" placeholder="Enter Your Email Address"
-                            value="<?= $email ?>" id="email" readonly>
-                        <!-- <button class="btn email-button" data-bs-toggle="offcanvas" type="button"
-                            data-bs-target="#changeEmail">
-                            <i class="ri-pencil-fill"></i>
-                        </button> -->
+    <!-- medical history data Section Start -->
+    <section class="section-t-space">
+        <div class="mb-4 custom-container">
+            <a href="<?= site_url('dokter/chat') ?>"
+                class="chat-list-container pb-1 pt-1 d-flex justify-content-between align-items-center border-1 border-start-0 border-end-0 border-top-0">
+                <div class="chat-profile-list d-flex align-items-center gap-2">
+                    <img src="<?= base_url($foto) ?>" class="img-fluid chat-img-profile" alt="" />
+                    <div class="detail-profile-chat">
+                        <h5 class="fw-bold">Dr. Henry Manik</h5>
+                        <p class="mb-0">Lorem ipsum dolor </p>
                     </div>
                 </div>
-            </form>
+            </a>
+            <div
+                class="chat-list-container pb-1 pt-1 d-flex justify-content-between align-items-center border-1 border-start-0 border-end-0 border-top-0">
+                <div class="chat-profile-list d-flex align-items-center gap-2">
+                    <img src="<?= base_url($foto) ?>" class="img-fluid chat-img-profile" alt="" />
+                    <div class="detail-profile-chat">
+                        <h5 class="fw-bold">Dr. Henry Manik</h5>
+                        <p class="mb-0">Lorem ipsum dolor </p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="chat-list-container pb-1 pt-1 d-flex justify-content-between align-items-center border-1 border-start-0 border-end-0 border-top-0">
+                <div class="chat-profile-list d-flex align-items-center gap-2">
+                    <img src="<?= base_url($foto) ?>" class="img-fluid chat-img-profile" alt="" />
+                    <div class="detail-profile-chat">
+                        <h5 class="fw-bold">Dr. Henry Manik</h5>
+                        <p class="mb-0">Lorem ipsum dolor </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- Account Security Section End -->
+    <!-- medical history data Section End -->
 
-    <!-- Change email address offcanvas start -->
-    <div class="offcanvas apply-coupon-offcanvas theme-bottom-offcanvas offcanvas-bottom" tabindex="-1"
-        id="changeEmail">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Change your email</h5>
-        </div>
-        <div class="offcanvas-body">
-            <form class="form-style-1">
-                <div class="learning-theme-form mb-3">
-                    <label for="email1" class="form-label">Email Anda</label>
-                    <input type="email" class="form-control" value="<?= $email ?>"
-                        placeholder="Your email address is <?= $email ?>" id="email1">
-                </div>
-
-                <div class="learning-theme-form mb-3">
-                    <label for="pass" class="form-label">Kata Sandi</label>
-                    <input type="password" class="form-control" placeholder="Kata Sandi Anda" id="pass">
-                </div>
-            </form>
-            <p class="content-modal-name">Demi keamanan Anda, jika Anda mengubah alamat email, informasi kartu kredit Anda yang tersimpan akan terhapus.</p>
-            <button class="btn btn-theme text-white" data-bs-dismiss="modal">Simpan</button>
-        </div>
-    </div>
-    <!-- Change email address offcanvas end -->
-
-    <!-- Divider Setting Start -->
-    <section class="section-t-space section-b-space">
-        <div class="divider"></div>
-    </section>
-    <!-- Divider Setting End -->
-
-    <!-- change password section start -->
-    <section class="change-password-section">
-        <div class="custom-container">
-            <form method="post" action="<?= site_url('dokter/ubah_sandi') ?>" class="form-style-1">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Kata Sandi :</label>
-                    <input type="password" class="form-control mb-3" name="curr-pass" placeholder="Kata Sandi Saat Ini"
-                        id="pass1">
-                    <input type="password" class="form-control mb-3" name="new-pass" placeholder="Kata Sandi Baru"
-                        id="pass2">
-                    <input type="password" class="form-control mb-3" name="re-new-pass"
-                        placeholder="Ketik Ulang Kata Sandi Baru" id="pass3">
-                    <input type="submit" class="btn btn-gradient mt-2" value="Kirim">
-                </div>
-            </form>
-        </div>
-    </section>
-    <!-- change password section end -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- Medical History Data js-->
+    <script src="<?= base_url() ?>assets/js/medical-history-data.js"></script>
 
     <!-- Bootstrap js-->
     <script src="<?= base_url() ?>assets/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>
@@ -173,6 +148,7 @@
 
     <!-- Theme Settings js-->
     <script src="<?= base_url() ?>assets/js/theme-setting.js"></script>
+
 </body>
 
 </html>

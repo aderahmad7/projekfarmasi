@@ -36,12 +36,15 @@
 
     <!-- Style css -->
     <link id="change-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css">
+
+    <!-- Custom css -->
+    <link id="change-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/custom.css">
 </head>
 
 <body class="inter-body learning-color">
 
     <!-- header start -->
-    <header class="main-header learning-header h-102">
+    <header class="main-header main-header-chat learning-header">
         <div class="custom-container">
             <div class="top-header">
                 <div class="header-left">
@@ -52,20 +55,23 @@
 
                 <div class="header-right">
                     <div class="notification-box">
-                        <a class="text-white" href="#">
+                        <a class="text-white" href="<?=site_url('dokter/list_chat') ?>">
                             <i class="ri-chat-4-line"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="header-bottom header-bottom-2">
-                <h2 class="fw-500 text-white">Keamanan Akun</h2>
+            <div class="profile-container d-flex gap-2 align-items-center">
+                <img src="<?= base_url($foto) ?>" class="img-fluid chat-img-profile" alt="" />
+                <div class="profile-info">
+                    <h2 class="fw-500 text-white chat-name">Dr. Henry Manik</h2>
+                    <p class="text-light mb-0">Dokter Umum</p>
+                </div>
             </div>
         </div>
     </header>
     <!-- header end -->
-
     <!-- Menampilkan pesan kesalahan -->
     <?php if (session()->has('errors')): ?>
         <div class="alert alert-danger">
@@ -91,75 +97,50 @@
         </script>
     <?php endif; ?>
 
-    <!-- Account Security Section Start -->
-    <section class="section-t-space account-security-section">
-        <div class="custom-container">
-            <form class="account-email-box form-style-1">
-                <div class="learning-theme-form">
-                    <label for="email" class="form-label">Email :</label>
-                    <div class="email-box with-icon">
-                        <input type="email" class="form-control" placeholder="Enter Your Email Address"
-                            value="<?= $email ?>" id="email" readonly>
-                        <!-- <button class="btn email-button" data-bs-toggle="offcanvas" type="button"
-                            data-bs-target="#changeEmail">
-                            <i class="ri-pencil-fill"></i>
-                        </button> -->
-                    </div>
+    <!-- chat Section Start -->
+    <section
+        class="section-chat section-t-space d-flex flex-column justify-content-between position-relative w-100 p-1">
+        <div class="chat-container m-3 pb-4 mb-5">
+            <div class="message-container d-flex flex-column gap-4">
+                <div class="message-receive">
+                    <p class="text-message mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
+                        repellendus tempora temporibus minus recusandae consequatur necessitatibus ipsam, quo error
+                        dolor hic natus nemo, obcaecati nam officia. Ad minus quidem rerum.</p>
                 </div>
+                <div class="message-sent align-self-end">
+                    <p class="text-message sent mb-0 btn-gradient">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Perspiciatis,
+                        repellendus tempora temporibus minus recusandae consequatur necessitatibus ipsam, quo error
+                        dolor hic natus nemo, obcaecati nam officia. Ad minus quidem rerum.</p>
+                </div>
+                <div class="message-receive">
+                    <img src="<?= base_url($foto) ?>" alt="" class="message-img">
+                </div>
+                <div class="message-receive">
+                    <p class="text-message mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
+                        repellendus tempora temporibus minus recusandae consequatur necessitatibus ipsam, quo error
+                        dolor hic natus nemo, obcaecati nam officia. Ad minus quidem rerum.</p>
+                </div>
+                <div class="message-sent align-self-end">
+                    <p class="text-message sent mb-0 btn-gradient">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Perspiciatis,
+                        repellendus tempora temporibus minus recusandae consequatur necessitatibus ipsam, quo error
+                        dolor hic natus nemo, obcaecati nam officia. Ad minus quidem rerum.</p>
+                </div>
+                <div class="message-sent  align-self-end">
+                    <img src="<?= base_url($foto) ?>" alt="" class="message-img">
+                </div>
+            </div>
+        </div>
+        <div class="chat-card">
+            <form action="" method="post" class="d-flex gap-1 p-2 bg-white pt-1">
+                <input type="text" placeholder="Ketik pesan..." class="chat-input">
+                <button class="border-0 btn-gradient p-1 btn-chat">📷</button>
+                <input type="submit" value="Kirim" class="border-0 btn-gradient p-1 btn-chat">
             </form>
         </div>
     </section>
-    <!-- Account Security Section End -->
-
-    <!-- Change email address offcanvas start -->
-    <div class="offcanvas apply-coupon-offcanvas theme-bottom-offcanvas offcanvas-bottom" tabindex="-1"
-        id="changeEmail">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Change your email</h5>
-        </div>
-        <div class="offcanvas-body">
-            <form class="form-style-1">
-                <div class="learning-theme-form mb-3">
-                    <label for="email1" class="form-label">Email Anda</label>
-                    <input type="email" class="form-control" value="<?= $email ?>"
-                        placeholder="Your email address is <?= $email ?>" id="email1">
-                </div>
-
-                <div class="learning-theme-form mb-3">
-                    <label for="pass" class="form-label">Kata Sandi</label>
-                    <input type="password" class="form-control" placeholder="Kata Sandi Anda" id="pass">
-                </div>
-            </form>
-            <p class="content-modal-name">Demi keamanan Anda, jika Anda mengubah alamat email, informasi kartu kredit Anda yang tersimpan akan terhapus.</p>
-            <button class="btn btn-theme text-white" data-bs-dismiss="modal">Simpan</button>
-        </div>
-    </div>
-    <!-- Change email address offcanvas end -->
-
-    <!-- Divider Setting Start -->
-    <section class="section-t-space section-b-space">
-        <div class="divider"></div>
-    </section>
-    <!-- Divider Setting End -->
-
-    <!-- change password section start -->
-    <section class="change-password-section">
-        <div class="custom-container">
-            <form method="post" action="<?= site_url('dokter/ubah_sandi') ?>" class="form-style-1">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Kata Sandi :</label>
-                    <input type="password" class="form-control mb-3" name="curr-pass" placeholder="Kata Sandi Saat Ini"
-                        id="pass1">
-                    <input type="password" class="form-control mb-3" name="new-pass" placeholder="Kata Sandi Baru"
-                        id="pass2">
-                    <input type="password" class="form-control mb-3" name="re-new-pass"
-                        placeholder="Ketik Ulang Kata Sandi Baru" id="pass3">
-                    <input type="submit" class="btn btn-gradient mt-2" value="Kirim">
-                </div>
-            </form>
-        </div>
-    </section>
-    <!-- change password section end -->
+    <!-- chat Section End -->
 
     <!-- Bootstrap js-->
     <script src="<?= base_url() ?>assets/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>

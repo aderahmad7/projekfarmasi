@@ -50,7 +50,7 @@
 
             <div class="header-right">
                 <div class="notification-box">
-                    <a class="text-white" href="#">
+                    <a class="text-white" href="<?=site_url('dokter/list_chat') ?>">
                         <i class="ri-chat-4-line"></i>
                     </a>
                 </div>

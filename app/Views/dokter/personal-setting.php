@@ -154,7 +154,7 @@
                                     placeholder="Enter your experience years" id="exp-years" value="<?= $exp_years ?>"
                                     required>
                             </div>
-                            <input type="submit" class="btn btn-gradient mb-4" value="Save Setting">
+                            <input type="submit" class="btn btn-gradient mb-4" value="Simpan Pengaturan">
                         </form>
                     </div>
                 </div>
