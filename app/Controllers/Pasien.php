@@ -216,7 +216,14 @@ class Pasien extends BaseController
 
     public function consultation()
     {
-        return view('pasien/consultation');
+        $userModel = new UserModel();
+        $username = session()->get('username');
+        $userData = $userModel->getData($username);
+        $data = [
+            "foto" => $userData["foto"],
+        ];
+
+        return view('pasien/consultation', $data);
     }
 
     public function akun()
@@ -234,5 +241,37 @@ class Pasien extends BaseController
         ];
 
         return view('pasien/account', $data);
+    }
+
+    public function medical_history_form()
+    {
+        return view('pasien/medical-history-form');
+
+    }
+    public function medical_history_data()
+    {
+        return view('pasien/medical-history-data');
+    }
+
+    public function chat()
+    {
+        $userModel = new UserModel();
+        $username = session()->get('username');
+        $userData = $userModel->getData($username);
+        $data = [
+            "foto" => $userData["foto"],
+        ];
+        return view('pasien/chat', $data);
+    }
+
+    public function list_chat()
+    {
+        $userModel = new UserModel();
+        $username = session()->get('username');
+        $userData = $userModel->getData($username);
+        $data = [
+            "foto" => $userData["foto"],
+        ];
+        return view('pasien/list-chat', $data);
     }
 }

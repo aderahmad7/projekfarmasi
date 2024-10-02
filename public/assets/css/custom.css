@@ -71,3 +71,157 @@ body {
 .bg-web-primary:hover {
     background-color: rgb(19, 79, 100);
 }
+
+.medical-history {
+    cursor: pointer;
+
+}
+
+.medical-history .setting-name .ri-arrow-right-s-line {
+    transition: all 0.4s ease-in-out;
+}
+
+.medical-history.active .setting-name .ri-arrow-right-s-line{
+    transform: rotate(90deg);
+}
+.dropdown-content {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.experience-container {
+    background-color: #b4b4b43b;
+    border-radius: 5px;
+    width: 83px !important;
+}
+
+.doctor-chat-btn {
+    width: 110px !important;
+    border-radius: 5px;
+    z-index: 1                                              ;
+}
+
+.doctor-img {
+    border-radius: 5px;
+    width: 100px !important;
+    height: 133px !important;
+    overflow: hidden;
+}
+
+.doctor-info-img {
+    width: 120px !important;
+    height: 153px !important;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.message-receive {
+    max-width: 70%;
+}
+
+.message-sent {
+    max-width: 70%;
+}
+
+.text-message {
+    background-color: #e1e1e1;
+    max-width: max-content;
+    padding: 10px 15px;
+    border-radius: 20px 20px 20px 0;
+    word-wrap: break-word;
+}
+
+.text-message.sent {
+    border-radius: 20px 20px 0 20px ;
+}
+
+.section-chat {
+    height: 100vh !important;
+    overflow: scroll;
+}
+
+.chat-card form{
+    position: fixed;
+    bottom: 0;
+    max-width: 600px !important;
+    /* left: 0; */
+    width: 100% !important;
+}
+
+.chat-card input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px 0 0 10px ;
+}
+
+.chat-card input[type="submit"] {
+    box-sizing: border-box;
+    border-radius: 0 10px 10px 0 ;
+}
+
+.sign-in-custom-input {
+    width: 40%;
+    border: 1px solid #ccc;
+    background: transparent;
+    padding: 8px 12px;
+    color: var(--3, #666);
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    border-radius: 5px;
+}
+
+.date-icon {
+    font-size: 30px;
+}
+
+.table > tbody > tr > * {
+    vertical-align: middle;
+}
+
+.chat-img-profile {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.profile-container {
+    padding-top: 60px;
+}
+
+.main-header-chat {
+    height: 120px !important;
+}
+
+.modal-btn {
+    border-radius: 5px;
+}
+
+.chat-count {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.chat-list-container {
+    border-bottom: 1px solid #66666660;
+}
+
+.chat-input {
+    border: 1px solid #66666660;
+    border-radius: 20px !important;
+}
+
+.btn-chat {
+    width: 60px;
+    border-radius: 15px !important;
+}
+
+.message-img {
+    width: 150px !important;
+    border-radius: 10px;
+}
