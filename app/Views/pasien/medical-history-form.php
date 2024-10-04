@@ -111,7 +111,7 @@
                     <input type="text" class="form-control mb-3" name="gula-darah-puasa"
                         placeholder="Gula Darah Puasa" id="gula-darah-puasa">
                     <input type="text" class="form-control mb-3" name="gula-darah-sewaktu"
-                        placeholder="Gula Darah Ketika" id="gula-darah-sewaktu">
+                        placeholder="Gula Darah Sewaktu" id="gula-darah-sewaktu">
                     <input type="text" class="form-control mb-3" name="gula-darah-setelah-makan"
                         placeholder="Gula Darah 2 Jam Setelah Makan" id="gula-darah-setelah-makan">
                     <!-- Input Gula Darah End -->
