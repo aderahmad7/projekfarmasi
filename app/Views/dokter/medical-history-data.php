@@ -50,7 +50,7 @@
         <div class="custom-container">
             <div class="top-header">
                 <div class="header-left">
-                    <a class="text-white" href="<?= site_url('pasien') ?>">
+                    <a class="text-white" href="<?= site_url('dokter') ?>">
                         <i class="ri-arrow-left-line"></i>
                     </a>
                 </div>
@@ -106,6 +106,17 @@
                 <input type="text" id="endDate" name="start-date" placeholder="Tanggal Akhir"
                     class="sign-in-custom-input" />
             </div>
+            <!-- Memilih pasien -->
+            <form action="" method="post" class="mb-4">
+                <label for="dropdown" class="custom-label">Pilih Pasien</label>
+                <select id="dropdown" name="user-medical-history" class="form-select custom-dropdown"
+                    aria-label="Default select example">
+                    <option value="1">Asep</option>
+                    <option value="2">Ujang</option>
+                    <option value="3">Ade cihuy asolole icikiwir</option>
+                </select>
+            </form>
+            <!-- Tabel medical history -->
             <div class="medical-history-data-container d-flex flex-column gap-3 mb-3">
                 <div class="medical-history-data">
                     <div class="card ps-2 pe-2">
@@ -271,20 +282,13 @@
                 </div>
             </div>
             <div id="pagination" class="pagination"></div>
-            <canvas id="barChart"></canvas>
         </div>
     </section>
     <!-- medical history data Section End -->
 
-    <!-- Barchart js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="<?= base_url() ?>assets/js/bar-chart.js"></script>
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <!-- Medical History Data js-->
-    <script src="<?= base_url() ?>assets/js/medical-history-data.js"></script>
+    <script src="<?= base_url() ?>assets/js/medical-history-doctor.js"></script>
 
     <!-- Bootstrap js-->
     <script src="<?= base_url() ?>assets/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>

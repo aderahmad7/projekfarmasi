@@ -225,3 +225,57 @@ body {
     width: 150px !important;
     border-radius: 10px;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.pagination button {
+    padding: 8px 12px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.pagination button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+.pagination button.active {
+    background-color: #0056b3;
+}
+
+.pagination .ellipsis {
+    padding: 8px 12px;
+}
+.medical-history-data.hidden {
+    display: none;
+}
+
+.doctor-card.hidden {
+    display: none !important;
+}
+
+.custom-dropdown {
+    background-color: white;
+    color: #0d3543;
+    border: 1px solid #0d354387;
+    padding: 10px;
+    padding-right: 30px;
+    border-radius: 5px;
+    width: 150px;
+    text-overflow: ellipsis;
+  }
+
+  .custom-dropdown:focus {
+    border-color: #0d3543;
+    box-shadow: 0 0 10px rgba(13, 53, 67, 0.5);
+  }
+
+  .custom-label {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }

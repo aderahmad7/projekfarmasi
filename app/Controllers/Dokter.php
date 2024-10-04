@@ -230,6 +230,11 @@ class Dokter extends BaseController
         return view('dokter/account', $data);
     }
 
+    public function medical_history_data()
+    {
+        return view('dokter/medical-history-data');
+    }
+
     public function chat()
     {
         $userModel = new UserModel();

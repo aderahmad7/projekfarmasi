@@ -174,3 +174,5 @@ function goToPage(page) {
 
 // Initialize table and pagination
 updateTable();
+
+

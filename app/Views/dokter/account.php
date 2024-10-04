@@ -50,7 +50,7 @@
 
             <div class="header-right">
                 <div class="notification-box">
-                    <a class="text-white" href="<?=site_url('dokter/list_chat') ?>">
+                    <a class="text-white" href="<?= site_url('dokter/list_chat') ?>">
                         <i class="ri-chat-4-line"></i>
                     </a>
                 </div>
@@ -122,6 +122,18 @@
                         </div>
                         <div class="setting-name">
                             <h4>Pengaturan Pribadi</h4>
+                            <i class="ri-arrow-right-s-line"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="<?= site_url('dokter/medical_history_data') ?>" class="menu-setting-box">
+                        <div class="setting-icon">
+                            <i class="ri-health-book-line"></i>
+                        </div>
+                        <div class="setting-name">
+                            <h4>Data Riwayat Kesehatan</h4>
                             <i class="ri-arrow-right-s-line"></i>
                         </div>
                     </a>

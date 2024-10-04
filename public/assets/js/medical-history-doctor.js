@@ -1,24 +1,10 @@
-const cards = document.querySelectorAll('.doctor-card');
-
-console.log(cards);
-
-console.log('ini adalah konsultasi');
-
-cards.forEach(element => {
-    element.addEventListener('click', function(e) {
-        if(e.target.tagName.toLowerCase() !== 'a') {
-            let modal = new bootstrap.Modal(document.getElementById('doctorInfoModal'));
-            modal.show();
-        }
-    })
-});
-
 ///////////////////////////////////////////
 // PAGINATION
 //////////////////////////////////////////
 
-const cardsPerPage = 5;
+const cardsPerPage = 2;
 let currentPage = 1;
+const cards = document.querySelectorAll(".medical-history-data");
 const totalPages = Math.ceil(cards.length / cardsPerPage); // Menghitung jumlah total halaman berdasarkan jumlah card dan jumlah card per halaman
 
 /**
@@ -127,3 +113,25 @@ function updatePaginationButtons() {
 showCards(currentPage); // Menampilkan card pertama kali saat halaman dimuat
 setupPagination(); // Mengatur button pagination pertama kali saat halaman dimuat
 updatePaginationButtons(); // Memperbarui tampilan button pagination
+
+///////////////////////////////////////////
+// DATE PICKER
+//////////////////////////////////////////
+const startDate = flatpickr("#startDate", {
+  dateFormat: "Y-m-d",
+  onChange: function (selectedDates, dateStr, instance) {
+    // Set the minDate for endDate after startDate is selected
+    endDate.set("minDate", dateStr);
+    console.log("Start date selected:", dateStr);
+  },
+});
+
+// Initialize flatpickr for endDate
+const endDate = flatpickr("#endDate", {
+  dateFormat: "Y-m-d",
+  onChange: function (selectedDates, dateStr, instance) {
+    // Set the maxDate for startDate after endDate is selected
+    startDate.set("maxDate", dateStr);
+    console.log("End date selected:", dateStr);
+  },
+});

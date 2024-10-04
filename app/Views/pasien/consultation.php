@@ -110,12 +110,12 @@
 
 
     <section
-        class="section-consultation feature-course-section flex-column d-flex justify-content-center text-black-50 m-3">
+        class="section-consultation feature-course-section flex-column d-flex justify-content-center text-black-50 m-3 mb-0">
         <div class="consultation-title">
             <h3 class="fw-bold mb-1">Rekomendasi tenaga kesehatan</h3>
             <p class="fw-500">Konsultasi online dengan tenaga kesehatan siaga kami</p>
         </div>
-        <div>
+        <div class="mb-3">
             <div class="doctor-card card h-100 d-flex flex-row gap-3 border-top-0 border-start-0 border-end-0 p-3"
                 style="cursor: pointer;">
                 <div class="doctor-img-container">
@@ -224,9 +224,8 @@
                         class="doctor-chat-btn btn-gradient w-100 mb-1 p-2 text-center">Chat</a>
                 </div>
             </div>
-
-
         </div>
+        <div id="pagination" class="pagination mb-0"></div>
     </section>
 
     <!-- doctor info Modal -->
