@@ -280,7 +280,7 @@ body {
     margin-bottom: 8px;
   }
 
-  .card {
+  .card-table {
     width: 100%; /* Menyesuaikan lebar untuk tampilan mobile */
     border: 1px solid rgba(13, 53, 67, 0.2);
     border-radius: 12px;

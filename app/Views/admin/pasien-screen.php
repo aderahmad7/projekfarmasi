@@ -91,7 +91,7 @@
         </div>
 
         <!-- Card 1 -->
-        <div class="card">
+        <div class="card-table">
             <div class="card-header">
                 <h5 class="card-title">John Doe</h5>
             </div>
@@ -112,7 +112,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="card">
+        <div class="card-table">
             <div class="card-header">
                 <h5 class="card-title">John Doe</h5>
             </div>
