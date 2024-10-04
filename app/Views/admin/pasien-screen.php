@@ -30,7 +30,7 @@
     <link id="rtl-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/vendors/bootstrap.css" />
 
     <!-- Swiper css -->
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/vendors/swiper/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/vendors/swiper/swiper-bundle.min.css" /> -->
 
     <!-- Remix Icon css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/remixicon.css" />
@@ -65,7 +65,7 @@
     </header>
     <!-- header end -->
 
-    <section class="data-dokter-section pt-25 pe-3">
+    <section class="data-dokter-section pt-25 d-flex justify-content-center flex-column m-3 mt-0 gap-3">
         <div class="custom-container table-responsive">
             <button class="btn bg-web-primary text-white mb-3 w-auto" onclick="showForm()">Tambah Pasien</button>
             <table class="table table-bordered table-striped" id="patient-table">
@@ -88,6 +88,48 @@
             <nav>
                 <ul class="pagination mb-5" id="pagination"></ul>
             </nav>
+        </div>
+
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">John Doe</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text"><strong>No:</strong> 1</p>
+                <p class="card-text"><strong>Gender:</strong> Laki-laki</p>
+                <p class="card-text"><strong>Umur:</strong> 30</p>
+                <p class="card-text"><strong>Riwayat Kesehatan:</strong> Asma</p>
+                <p class="card-text"><strong>Pekerjaan:</strong> Superhero</p>
+                <p class="card-text"><strong>Nomor Handphone:</strong> 08123456789</p>
+                <p class="card-text"><strong>Email:</strong> johndoe@example.com</p>
+                <p class="card-text"><strong>Nama Pengguna:</strong> johndoe</p>
+                <div class="d-flex justify-content-between mt-3 gap-5">
+                    <button class="btn btn-warning">Edit</button>
+                    <button class="btn btn-danger">Hapus</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">John Doe</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text"><strong>No:</strong> 1</p>
+                <p class="card-text"><strong>Gender:</strong> Laki-laki</p>
+                <p class="card-text"><strong>Umur:</strong> 30</p>
+                <p class="card-text"><strong>Riwayat Kesehatan:</strong> Asma</p>
+                <p class="card-text"><strong>Pekerjaan:</strong> Superhero</p>
+                <p class="card-text"><strong>Nomor Handphone:</strong> 08123456789</p>
+                <p class="card-text"><strong>Email:</strong> johndoe@example.com</p>
+                <p class="card-text"><strong>Nama Pengguna:</strong> johndoe</p>
+                <div class="d-flex justify-content-between mt-3 gap-5">
+                    <button class="btn btn-warning">Edit</button>
+                    <button class="btn btn-danger">Hapus</button>
+                </div>
+            </div>
         </div>
     </section>
 

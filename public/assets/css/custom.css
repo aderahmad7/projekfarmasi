@@ -279,3 +279,45 @@ body {
     font-weight: bold;
     margin-bottom: 8px;
   }
+
+  .card {
+    width: 100%; /* Menyesuaikan lebar untuk tampilan mobile */
+    border: 1px solid rgba(13, 53, 67, 0.2);
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.card-header {
+    background-color: rgba(13, 53, 67, 1);
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 0;
+}
+.card-body {
+    padding: 15px;
+}
+.card-text {
+    margin-bottom: 10px;
+    font-size: 1rem; /* Ukuran teks default 1rem */
+}
+.card-title {
+    font-size: 1.25rem; /* Ukuran judul kartu lebih besar */
+}
+.btn {
+    border-radius: 20px;
+}
+.btn-warning {
+    background-color: rgba(255, 193, 7, 1);
+    border: none;
+}
+.btn-danger {
+    background-color: rgba(220, 53, 69, 1);
+    border: none;
+}
+.btn-warning:hover, .btn-danger:hover {
+    opacity: 0.9;
+}
