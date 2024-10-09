@@ -3,7 +3,9 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\DosisObatModel;
 use App\Models\PasienModel;
+use App\Models\RiwayatMedisModel;
 use App\Models\UserModel;
 use App\Models\DokterModel;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -232,7 +234,46 @@ class Dokter extends BaseController
 
     public function medical_history_data()
     {
-        return view('dokter/medical-history-data');
+        $pasienModel = new PasienModel();
+        $riwayatModel = new RiwayatMedisModel();
+        $dosisModel = new DosisObatModel();
+
+        // Ambil data id dan nama pasien
+        $dataPasien = $pasienModel->getPatients();
+
+        // Siapkan array untuk menyimpan riwayat dan dosis obat terkait
+        $dataPasienWithDetails = [];
+
+        // Looping untuk setiap pasien
+        foreach ($dataPasien as $pasien) {
+            $id_pasien = $pasien['id'];
+
+            // Ambil semua data riwayat berdasarkan id pasien
+            $riwayat = $riwayatModel->getDataID($id_pasien);
+
+            // Array untuk menyimpan data riwayat beserta dosis obat terkait
+            $riwayatWithDosis = [];
+
+            foreach ($riwayat as $r) {
+                // Ambil dosis obat berdasarkan id riwayat
+                $dosis = $dosisModel->where('id_riwayat', $r['id'])->findAll();
+
+                // Simpan riwayat beserta dosis obat terkait dalam satu array
+                $riwayatWithDosis[] = [
+                    'riwayat' => $r,
+                    'dosis' => $dosis
+                ];
+            }
+
+            // Simpan data pasien dengan riwayat dan dosis obat terkait
+            $dataPasienWithDetails[] = [
+                'id' => $pasien['id'],
+                'nama' => $pasien['nama'],
+                'riwayat' => $riwayatWithDosis
+            ];
+        }
+        // Mengirim data pasien lengkap ke view
+        return view('dokter/medical-history-data', ['dataPasienWithDetails' => $dataPasienWithDetails]);
     }
 
     public function chat()

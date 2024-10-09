@@ -2,16 +2,19 @@ const cards = document.querySelectorAll('.doctor-card');
 
 console.log(cards);
 
-console.log('ini adalah konsultasi');
 
-cards.forEach(element => {
+
+cards.forEach((element, index) => {
     element.addEventListener('click', function(e) {
         if(e.target.tagName.toLowerCase() !== 'a') {
-            let modal = new bootstrap.Modal(document.getElementById('doctorInfoModal'));
+            let modalId = `doctorInfoModal${index + 1}`;
+            let modal = new bootstrap.Modal(document.getElementById(modalId));
+            console.log(modalId);
             modal.show();
         }
-    })
+    });
 });
+
 
 ///////////////////////////////////////////
 // PAGINATION

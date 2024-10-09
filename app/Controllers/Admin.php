@@ -190,7 +190,7 @@ class Admin extends BaseController
         $dokterModel->where('id_user', $id)->delete();
         $userModel->delete($id);
 
-        return $this->response->setJSON(['success' => true]);
+        return redirect()->back()->with('success', 'Menghapus tenaga kesehatan berhasil.');
     }
 
     public function pasien_screen()
@@ -297,11 +297,14 @@ class Admin extends BaseController
     public function delete_pasien($id)
     {
         $userModel = new UserModel();
+        $statusCourseModel = new StatCourseModel();
         $pasienModel = new PasienModel();
+        $id_pasien = $pasienModel->where('id_user', $id)->first()['id'];
+        $statusCourseModel->where('id_pasien', $id_pasien)->delete();
         $pasienModel->where('id_user', $id)->delete();
         $userModel->delete($id);
 
-        return $this->response->setJSON(['success' => true]);
+        return redirect()->back()->with('success', 'Menghapus pasien berhasil.');
     }
 
     public function content()

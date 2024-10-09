@@ -65,12 +65,60 @@
         </div>
     </header>
     <!-- header end -->
+    <!-- Menampilkan pesan kesalahan -->
+    <?php if (session()->has('errors')): ?>
+        <div class="alert alert-danger">
+            <ul>
+                <?php foreach (session('errors') as $error): ?>
+                    <li><?= esc($error) ?></li>
+                <?php endforeach ?>
+            </ul>
+        </div>
+    <?php endif; ?>
+
+    <!-- Menampilkan pesan error atau sukses -->
+    <?php if (session()->has('error')): ?>
+        <div class="alert alert-danger">
+            <?= esc(session('error')) ?>
+        </div>
+    <?php endif; ?>
+
+    <!-- Menampilkan pesan sukses -->
+    <?php if (session()->has('success')): ?>
+        <script>
+            alert("<?= esc(session('success')) ?>");
+        </script>
+    <?php endif; ?>
 
     <section class="data-dokter-section pt-25 d-flex justify-content-center flex-column m-3 mt-0 gap-3">
         <div class="custom-container table-responsive">
             <button class="btn bg-web-primary text-white mb-3 w-auto" onclick="showForm()">Tambah Tenaga
                 Kesehatan</button>
-            <table class="table table-bordered table-striped" id="doctor-table">
+            <?php
+            $no = 0;
+            foreach ($doctors as $doctor): ?>
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h5 class="card-title"><?= $doctor['name'] ?></h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text"><strong>Gender:</strong> <?= $doctor['gender'] ?></p>
+                        <p class="card-text"><strong>Umur:</strong> <?= $doctor['usia'] ?></p>
+                        <p class="card-text"><strong>Jenis Tenaga Kesehatan:</strong> <?= $doctor['specialty'] ?></p>
+                        <p class="card-text"><strong>Total Tahun Pengalaman:</strong> <?= $doctor['tahunPengalaman'] ?></p>
+                        <p class="card-text"><strong>Nomor Handphone:</strong> <?= $doctor['nomorHandphone'] ?></p>
+                        <p class="card-text"><strong>Email:</strong> <?= $doctor['email'] ?></p>
+                        <p class="card-text"><strong>Nama Pengguna:</strong> <?= $doctor['username'] ?></p>
+                        <div class="d-flex justify-content-between mt-3 gap-5">
+                            <button class="btn btn-warning" onclick="showForm(<?= $no++ ?>)">Edit</button>
+                            <a href="<?= base_url('admin/delete_dokter/' . $doctor['id_user']) ?>" class="btn btn-danger"
+                                onclick="confirm('Apakah Anda yakin ingin menghapus tenaga kesehatan ini?')">Hapus</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+            <div id="pagination" class="pagination mb-0"></div>
+            <table class="table table-bordered table-striped d-none" id="doctor-table">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -87,52 +135,12 @@
                 </thead>
                 <tbody id="doctor-table-body" data-dokter='<?= json_encode($doctors) ?>'></tbody>
             </table>
-            <nav>
+            <!-- <nav>
                 <ul class="pagination mb-5" id="pagination"></ul>
-            </nav>
+            </nav> -->
         </div>
 
         <!-- Card 1 -->
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">John Doe</h5>
-                </div>
-                <div class="card-body">
-                    <p class="card-text"><strong>No:</strong> 1</p>
-                    <p class="card-text"><strong>Gender:</strong> Laki-laki</p>
-                    <p class="card-text"><strong>Umur:</strong> 30</p>
-                    <p class="card-text"><strong>Jenis Tenaga Kesehatan:</strong> Dokter</p>
-                    <p class="card-text"><strong>Total Tahun Pengalaman:</strong> 5</p>
-                    <p class="card-text"><strong>Nomor Handphone:</strong> 08123456789</p>
-                    <p class="card-text"><strong>Email:</strong> johndoe@example.com</p>
-                    <p class="card-text"><strong>Nama Pengguna:</strong> johndoe</p>
-                    <div class="d-flex justify-content-between mt-3 gap-5">
-                        <button class="btn btn-warning">Edit</button>
-                        <button class="btn btn-danger">Hapus</button>
-                    </div>
-                </div>
-            </div>
-
-        <!-- Card 2 -->
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">John Doe</h5>
-                </div>
-                <div class="card-body">
-                    <p class="card-text"><strong>No:</strong> 2</p>
-                    <p class="card-text"><strong>Gender:</strong> Laki-laki</p>
-                    <p class="card-text"><strong>Umur:</strong> 30</p>
-                    <p class="card-text"><strong>Jenis Tenaga Kesehatan:</strong> Dokter</p>
-                    <p class="card-text"><strong>Total Tahun Pengalaman:</strong> 5</p>
-                    <p class="card-text"><strong>Nomor Handphone:</strong> 08123456789</p>
-                    <p class="card-text"><strong>Email:</strong> johndoe@example.com</p>
-                    <p class="card-text"><strong>Nama Pengguna:</strong> johndoe</p>
-                    <div class="d-flex justify-content-between mt-3 gap-5">
-                        <button class="btn btn-warning">Edit</button>
-                        <button class="btn btn-danger">Hapus</button>
-                    </div>
-                </div>
-            </div>
 
     </section>
 

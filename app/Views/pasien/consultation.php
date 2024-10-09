@@ -54,7 +54,7 @@
 
                 <div class="header-right">
                     <div class="notification-box">
-                        <a class="text-white" href="<?=site_url('pasien/list_chat') ?>">
+                        <a class="text-white" href="<?= site_url('pasien/list_chat') ?>">
                             <i class="ri-chat-4-line"></i>
                         </a>
                     </div>
@@ -115,148 +115,69 @@
             <h3 class="fw-bold mb-1">Rekomendasi tenaga kesehatan</h3>
             <p class="fw-500">Konsultasi online dengan tenaga kesehatan siaga kami</p>
         </div>
-        <div class="mb-3">
-            <div class="doctor-card card h-100 d-flex flex-row gap-3 border-top-0 border-start-0 border-end-0 p-3"
-                style="cursor: pointer;">
-                <div class="doctor-img-container">
-                    <img src="<?= base_url($foto) ?>" class="img-fluid doctor-img" alt="" width="100" />
-                </div>
-                <div class="doctor-detail-container d-flex flex-column justify-content-between">
-                    <div class="doctor-detail-content d-flex flex-column gap-2">
-                        <h5 class="fw-bold">Dr. Henry Manik</h5>
-                        <h6 class="fw-500 mb-1">Dokter Umum</h6>
-                        <div class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
-                            <i class="ri-briefcase-fill"></i>
-                            <p class="mb-0">15 Tahun</p>
-                        </div>
+        <?php
+        $no = 1;
+        foreach ($dokter_data as $dokter): ?>
+            <div class="mb-3">
+                <div class="doctor-card card h-100 d-flex flex-row gap-3 border-top-0 border-start-0 border-end-0 p-3"
+                    style="cursor: pointer;">
+                    <div class="doctor-img-container">
+                        <img src="<?= base_url($dokter["foto"]) ?>" class="img-fluid doctor-img" alt="" width="100" />
                     </div>
-                    <a href="<?= site_url('pasien/chat') ?>"
-                        class="doctor-chat-btn btn-gradient w-100 mb-1 p-2 text-center">Chat</a>
+                    <div class="doctor-detail-container d-flex flex-column justify-content-between">
+                        <div class="doctor-detail-content d-flex flex-column gap-2">
+                            <h5 class="fw-bold"><?= $dokter['nama'] ?></h5>
+                            <h6 class="fw-500 mb-1"><?= $dokter['spesialis'] ?></h6>
+                            <div class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
+                                <i class="ri-briefcase-fill"></i>
+                                <p class="mb-0"><?= $dokter['exp_years'] ?> Tahun</p>
+                            </div>
+                        </div>
+                        <a href="<?= site_url('pasien/chat') ?>"
+                            class="doctor-chat-btn btn-gradient w-100 mb-1 p-2 text-center">Chat</a>
+                    </div>
                 </div>
             </div>
-            <div class="doctor-card card h-100 d-flex flex-row gap-3 border-top-0 border-start-0 border-end-0 p-3"
-                style="cursor: pointer;">
-                <div class="doctor-img-container">
-                    <img src="<?= base_url($foto) ?>" class="img-fluid doctor-img" alt="" width="100" />
-                </div>
-                <div class="doctor-detail-container d-flex flex-column justify-content-between">
-                    <div class="doctor-detail-content d-flex flex-column gap-2">
-                        <h5 class="fw-bold">Dr. Henry Manik</h5>
-                        <h6 class="fw-500 mb-1">Dokter Umum</h6>
-                        <div class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
-                            <i class="ri-briefcase-fill"></i>
-                            <p class="mb-0">15 Tahun</p>
-                        </div>
-                    </div>
-                    <a href="<?= site_url('pasien/chat') ?>"
-                        class="doctor-chat-btn btn-gradient w-100 mb-1 p-2 text-center">Chat</a>
-                </div>
-            </div>
-            <div class="doctor-card card h-100 d-flex flex-row gap-3 border-top-0 border-start-0 border-end-0 p-3"
-                style="cursor: pointer;">
-                <div class="doctor-img-container">
-                    <img src="<?= base_url($foto) ?>" class="img-fluid doctor-img" alt="" width="100" />
-                </div>
-                <div class="doctor-detail-container d-flex flex-column justify-content-between">
-                    <div class="doctor-detail-content d-flex flex-column gap-2">
-                        <h5 class="fw-bold">Dr. Henry Manik</h5>
-                        <h6 class="fw-500 mb-1">Dokter Umum</h6>
-                        <div class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
-                            <i class="ri-briefcase-fill"></i>
-                            <p class="mb-0">15 Tahun</p>
-                        </div>
-                    </div>
-                    <a href="<?= site_url('pasien/chat') ?>"
-                        class="doctor-chat-btn btn-gradient w-100 mb-1 p-2 text-center">Chat</a>
-                </div>
-            </div>
-            <div class="doctor-card card h-100 d-flex flex-row gap-3 border-top-0 border-start-0 border-end-0 p-3"
-                style="cursor: pointer;">
-                <div class="doctor-img-container">
-                    <img src="<?= base_url($foto) ?>" class="img-fluid doctor-img" alt="" width="100" />
-                </div>
-                <div class="doctor-detail-container d-flex flex-column justify-content-between">
-                    <div class="doctor-detail-content d-flex flex-column gap-2">
-                        <h5 class="fw-bold">Dr. Henry Manik</h5>
-                        <h6 class="fw-500 mb-1">Dokter Umum</h6>
-                        <div class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
-                            <i class="ri-briefcase-fill"></i>
-                            <p class="mb-0">15 Tahun</p>
-                        </div>
-                    </div>
-                    <a href="<?= site_url('pasien/chat') ?>"
-                        class="doctor-chat-btn btn-gradient w-100 mb-1 p-2 text-center">Chat</a>
-                </div>
-            </div>
-            <div class="doctor-card card h-100 d-flex flex-row gap-3 border-top-0 border-start-0 border-end-0 p-3"
-                style="cursor: pointer;">
-                <div class="doctor-img-container">
-                    <img src="<?= base_url($foto) ?>" class="img-fluid doctor-img" alt="" width="100" />
-                </div>
-                <div class="doctor-detail-container d-flex flex-column justify-content-between">
-                    <div class="doctor-detail-content d-flex flex-column gap-2">
-                        <h5 class="fw-bold">Dr. Henry Manik</h5>
-                        <h6 class="fw-500 mb-1">Dokter Umum</h6>
-                        <div class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
-                            <i class="ri-briefcase-fill"></i>
-                            <p class="mb-0">15 Tahun</p>
-                        </div>
-                    </div>
-                    <a href="<?= site_url('pasien/chat') ?>"
-                        class="doctor-chat-btn btn-gradient w-100 mb-1 p-2 text-center">Chat</a>
-                </div>
-            </div>
-            <div class="doctor-card card h-100 d-flex flex-row gap-3 border-top-0 border-start-0 border-end-0 p-3"
-                style="cursor: pointer;">
-                <div class="doctor-img-container">
-                    <img src="<?= base_url($foto) ?>" class="img-fluid doctor-img" alt="" width="100" />
-                </div>
-                <div class="doctor-detail-container d-flex flex-column justify-content-between">
-                    <div class="doctor-detail-content d-flex flex-column gap-2">
-                        <h5 class="fw-bold">Dr. Henry Manik</h5>
-                        <h6 class="fw-500 mb-1">Dokter Umum</h6>
-                        <div class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
-                            <i class="ri-briefcase-fill"></i>
-                            <p class="mb-0">15 Tahun</p>
-                        </div>
-                    </div>
-                    <a href="<?= site_url('pasien/chat') ?>"
-                        class="doctor-chat-btn btn-gradient w-100 mb-1 p-2 text-center">Chat</a>
-                </div>
-            </div>
-        </div>
+        <?php endforeach; ?>
         <div id="pagination" class="pagination mb-0"></div>
     </section>
 
-    <!-- doctor info Modal -->
-    <div class="modal fade" id="doctorInfoModal" tabindex="-1" aria-labelledby="doctorInfoLabel" aria-hidden="true">
-        <div class="modal-dialog d-flex justify-content-center align-items-center h-75">
-            <div class="modal-content w-75">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="doctorInfoLabel">Informasi Tenaga Kesehatan</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body pt-0">
-                    <div class="card p-2 border-top-0 border-start-0 border-end-0">
-                        <div class="doctor-img-container d-flex justify-content-center">
-                            <img src="<?= base_url($foto) ?>" class="img-fluid doctor-info-img" alt="" width="100" />
-                        </div>
+    <?php
+    $no = 1;
+    foreach ($dokter_data as $dokter): ?>
+        <!-- doctor info Modal -->
+        <div class="modal fade" id="doctorInfoModal<?= $no++ ?>" tabindex="-1" aria-labelledby="doctorInfoLabel"
+            aria-hidden="true">
+            <div class="modal-dialog d-flex justify-content-center align-items-center h-75">
+                <div class="modal-content w-75">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="doctorInfoLabel">Informasi Tenaga Kesehatan</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="card p-2 border-start-0 border-end-0 border-top-0">
-                        <h4 class="fw-bold mb-1">Dr. Henry Manik</h4>
-                        <h6 class="fw-500 mb-2">Dokter Umum</h6>
-                        <div class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
-                            <i class="ri-briefcase-fill"></i>
-                            <p class="mb-0">15 Tahun</p>
+                    <div class="modal-body pt-0">
+                        <div class="card p-2 border-top-0 border-start-0 border-end-0">
+                            <div class="doctor-img-container d-flex justify-content-center">
+                                <img src="<?= base_url($dokter['foto']) ?>" class="img-fluid doctor-info-img"
+                                    alt="Foto profil" width="100" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="card border-0 pt-2">
-                        <a href="<?= site_url('pasien/chat') ?>" class="btn-gradient modal-btn p-2 w-100 text-center">Chat</a>
+                        <div class="card p-2 border-start-0 border-end-0 border-top-0">
+                            <h4 class="fw-bold mb-1"><?= $dokter['nama'] ?></h4>
+                            <h6 class="fw-500 mb-2"><?= $dokter['spesialis'] ?></h6>
+                            <div class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
+                                <i class="ri-briefcase-fill"></i>
+                                <p class="mb-0"><?= $dokter['exp_years'] ?> Tahun</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 pt-2">
+                            <a href="<?= site_url('pasien/chat') ?>"
+                                class="btn-gradient modal-btn p-2 w-100 text-center">Chat</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    <?php endforeach; ?>
 
     <!-- space box start -->
     <div class="learning-box"></div>

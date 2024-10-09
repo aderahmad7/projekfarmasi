@@ -3,6 +3,9 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\DokterModel;
+use App\Models\DosisObatModel;
+use App\Models\RiwayatMedisModel;
 use App\Models\UserModel;
 use App\Models\PasienModel;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -216,11 +219,10 @@ class Pasien extends BaseController
 
     public function consultation()
     {
-        $userModel = new UserModel();
-        $username = session()->get('username');
-        $userData = $userModel->getData($username);
+        $dokterModel = new DokterModel();
+        $dokterData = $dokterModel->getAllDoctors();
         $data = [
-            "foto" => $userData["foto"],
+            'dokter_data' => $dokterData
         ];
 
         return view('pasien/consultation', $data);
@@ -233,8 +235,10 @@ class Pasien extends BaseController
 
         $idUser = session()->get('id_user');
         $username = session()->get('username');
+        $pasienData = $pasienModel->getDataID($idUser);
         $userData = $userModel->getData($username);
         $data = [
+            "id_pasien" => $pasienData["id"],
             "nama" => $userData["nama"],
             "email" => $userData["email"],
             "foto" => $userData["foto"],
@@ -243,14 +247,83 @@ class Pasien extends BaseController
         return view('pasien/account', $data);
     }
 
-    public function medical_history_form()
+    public function medical_history_form($id)
     {
-        return view('pasien/medical-history-form');
-
+        return view('pasien/medical-history-form', ['id_pasien' => $id]);
     }
-    public function medical_history_data()
+    public function medical_history_data($id)
     {
-        return view('pasien/medical-history-data');
+        $riwayatModel = new RiwayatMedisModel();
+        $dosisModel = new DosisObatModel();
+
+        $riwayatData = $riwayatModel->getDataID($id);
+
+        $dosisData = [];
+        foreach ($riwayatData as $riwayat) {
+            $dosisData[$riwayat['id']] = $dosisModel->where('id_riwayat', $riwayat['id'])->findAll();
+        }
+
+        $data = [
+            'riwayat' => $riwayatData,
+            'dosis' => $dosisData
+        ];
+
+        return view('pasien/medical-history-data', $data);
+    }
+
+    public function add_riwayat($id_pasien)
+    {
+        $pasienModel = new PasienModel();
+        $riwayatModel = new RiwayatMedisModel();
+        $dosisModel = new DosisObatModel();
+
+        $rules = [
+            'keluhan' => 'required',
+            'gula-darah-puasa' => 'required|numeric',
+            'gula-darah-sewaktu' => 'required|numeric',
+            'gula-darah-setelah-makan' => 'required|numeric',
+            'nama-obat.*' => 'required',
+            'aturan-pakai.*' => 'required'
+        ];
+
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        $keluhan = esc($this->request->getPost('keluhan'));
+        $gd_puasa = esc($this->request->getPost('gula-darah-puasa'));
+        $gd_sewaktu = esc($this->request->getPost('gula-darah-sewaktu'));
+        $gd_setelah_makan = esc($this->request->getPost('gula-darah-setelah-makan'));
+        $tanggal = date('Y-m-d');
+        $nama_obat = array_map('esc', $this->request->getPost('nama-obat'));
+        $aturan_pakai = array_map('esc', $this->request->getPost('aturan-pakai'));
+
+        $dataRiwayat = [
+            'id_pasien' => $id_pasien,
+            'tanggal' => $tanggal,
+            'keluhan' => $keluhan,
+            'guldar_puasa' => $gd_puasa,
+            'guldar_sewaktu' => $gd_sewaktu,
+            'guldar_2jam' => $gd_setelah_makan
+        ];
+        if ($riwayatModel->insert($dataRiwayat)) {
+            $id_riwayat = $riwayatModel->insertID(); // Dapatkan ID dari riwayat yang baru disimpan
+
+            // Insert data obat dan aturan pakai ke tabel dosis_obat
+            foreach ($nama_obat as $key => $obat) {
+                $dataDosis = [
+                    'id_riwayat' => $id_riwayat,
+                    'nama_obat' => $obat,
+                    'aturan_pakai' => $aturan_pakai[$key]
+                ];
+
+                $dosisModel->insert($dataDosis);
+            }
+
+            return redirect()->back()->with('success', 'Berhasil menambahkan data riwayat dan obat.');
+        } else {
+            return redirect()->back()->withInput()->with('errors', 'Gagal menambahkan data.');
+        }
     }
 
     public function chat()

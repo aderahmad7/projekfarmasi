@@ -93,7 +93,7 @@
     <!-- medical history form Section Start -->
     <section class="section-t-space">
         <div class="custom-container">
-            <form class="form-style-1 pb-4" action="" method="post">
+            <form class="form-style-1 pb-4" action="<?= base_url('pasien/add_riwayat/' . $id_pasien) ?>" method="post">
                 <div class="learning-theme-form">
                     <!-- Input Keluhan Start -->
                     <label for="keluhan" class="form-label">Keluhan :</label>
@@ -108,8 +108,8 @@
 
                     <!-- Input Gula Darah Start -->
                     <label for="gula-darah-puasa" class="form-label">Gula Darah :</label>
-                    <input type="text" class="form-control mb-3" name="gula-darah-puasa"
-                        placeholder="Gula Darah Puasa" id="gula-darah-puasa">
+                    <input type="text" class="form-control mb-3" name="gula-darah-puasa" placeholder="Gula Darah Puasa"
+                        id="gula-darah-puasa">
                     <input type="text" class="form-control mb-3" name="gula-darah-sewaktu"
                         placeholder="Gula Darah Sewaktu" id="gula-darah-sewaktu">
                     <input type="text" class="form-control mb-3" name="gula-darah-setelah-makan"
@@ -132,10 +132,10 @@
                                 <p class="form-label mb-0">Tambah Obat</p>
                             </button>
                         </div>
-                        <input type="text" class="form-control mb-3" name="nama-obat" placeholder="Nama Obat"
+                        <input type="text" class="form-control mb-3" name="nama-obat[]" placeholder="Nama Obat"
                             id="nama-obat">
-                        <input type="text" class="form-control mb-3" name="aturan-pakai"
-                            placeholder="Aturan Pakai" id="aturan-pakai">
+                        <input type="text" class="form-control mb-3" name="aturan-pakai[]" placeholder="Aturan Pakai"
+                            id="aturan-pakai">
                     </div>
                     <!-- Input Obat End -->
 
@@ -149,9 +149,9 @@
                                     <p class="form-label mb-0 text-danger remove-obat">Hapus Obat</p>
                                 </button>
                             </div>
-                            <input type="text" class="form-control mb-3" name="nama-obat" placeholder="Nama Obat"
+                            <input type="text" class="form-control mb-3" name="nama-obat[]" placeholder="Nama Obat"
                                 id="nama-obat">
-                            <input type="text" class="form-control mb-3" name="aturan-pakai"
+                            <input type="text" class="form-control mb-3" name="aturan-pakai[]"
                                 placeholder="Aturan Pakai" id="aturan-pakai">
                         </div>
                     </template>

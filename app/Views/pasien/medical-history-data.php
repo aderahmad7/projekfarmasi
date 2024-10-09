@@ -106,169 +106,66 @@
                 <input type="text" id="endDate" name="start-date" placeholder="Tanggal Akhir"
                     class="sign-in-custom-input" />
             </div>
-            <div class="medical-history-data-container d-flex flex-column gap-3 mb-3">
-                <div class="medical-history-data">
-                    <div class="card ps-2 pe-2">
-                        <div class="card p-2 border-top-0 border-start-0 border-end-0">
-                            <h4 class="text-center">19/08/2024</h4>
-                        </div>
-                        <div class="card border-0 p-2">
-                            <h4 class="mb-1">Keluhan</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusamus
-                                temporibus
-                                incidunt dignissimos possimus, culpa necessitatibus.</p>
-                            <h4 class="mb-2 text-center">Gula Darah</h4>
-                            <div class="card mb-3 border-start-0 border-end-0 border-bottom-0">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" class="text-center">Puasa</th>
-                                            <th scope="col" class="text-center">Sewaktu</th>
-                                            <th scope="col" class="text-center">2 Jam</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-center">20</td>
-                                            <td class="text-center">32</td>
-                                            <td class="text-center">22</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
+            <div class="medical-history-data-container d-flex flex-column gap-3 mb-3" id="historyContainer">
+                <?php foreach ($riwayat as $hist): ?>
+                    <div class="medical-history-data" data-tanggal="<?= $hist['tanggal'] ?>">
+                        <div class="card ps-2 pe-2">
+                            <div class="card p-2 border-top-0 border-start-0 border-end-0">
+                                <h4 class="text-center"><?= date('d/m/Y', strtotime($hist['tanggal'])) ?></h4>
                             </div>
-                            <h4 class="mb-2 text-center">Konsumsi Obat</h4>
-                            <div class="card border-start-0 border-end-0 border-bottom-0">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" class="text-center">Nama Obat</th>
-                                            <th scope="col" class="text-center">Aturan Pakai</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-center">Mixagrip</td>
-                                            <td class="text-center">3x1</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">Mixagrip</td>
-                                            <td class="text-center">3x1</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="card border-0 p-2">
+                                <h4 class="mb-1">Keluhan</h4>
+                                <p class="mb-4"><?= $hist['keluhan'] ?></p>
+                                <h4 class="mb-2 text-center">Gula Darah</h4>
+                                <div class="card mb-3 border-start-0 border-end-0 border-bottom-0">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="text-center">Puasa</th>
+                                                <th scope="col" class="text-center">Sewaktu</th>
+                                                <th scope="col" class="text-center">2 Jam</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center"><?= $hist['guldar_puasa'] ?></td>
+                                                <td class="text-center"><?= $hist['guldar_sewaktu'] ?></td>
+                                                <td class="text-center"><?= $hist['guldar_2jam'] ?></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <h4 class="mb-2 text-center">Konsumsi Obat</h4>
+                                <div class="card border-start-0 border-end-0 border-bottom-0">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="text-center">Nama Obat</th>
+                                                <th scope="col" class="text-center">Aturan Pakai</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php if (isset($dosis[$hist['id']])): ?>
+                                                <?php foreach ($dosis[$hist['id']] as $obat): ?>
+                                                    <tr>
+                                                        <td class="text-center"><?= esc($obat['nama_obat']) ?></td>
+                                                        <td class="text-center"><?= esc($obat['aturan_pakai']) ?></td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            <?php else: ?>
+                                                <tr>
+                                                    <td colspan="2" class="text-center">Tidak ada dosis obat yang terdaftar.
+                                                    </td>
+                                                </tr>
+                                            <?php endif; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="medical-history-data">
-                    <div class="card ps-2 pe-2">
-                        <div class="card p-2 border-top-0 border-start-0 border-end-0">
-                            <h4 class="text-center">19/08/2024</h4>
-                        </div>
-                        <div class="card border-0 p-2">
-                            <h4 class="mb-1">Keluhan</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusamus
-                                temporibus
-                                incidunt dignissimos possimus, culpa necessitatibus.</p>
-                            <h4 class="mb-2 text-center">Gula Darah</h4>
-                            <div class="card mb-3 border-start-0 border-end-0 border-bottom-0">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" class="text-center">Puasa</th>
-                                            <th scope="col" class="text-center">Sewaktu</th>
-                                            <th scope="col" class="text-center">2 Jam</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-center">20</td>
-                                            <td class="text-center">32</td>
-                                            <td class="text-center">22</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <h4 class="mb-2 text-center">Konsumsi Obat</h4>
-                            <div class="card border-start-0 border-end-0 border-bottom-0">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" class="text-center">Nama Obat</th>
-                                            <th scope="col" class="text-center">Aturan Pakai</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-center">Mixagrip</td>
-                                            <td class="text-center">3x1</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">Mixagrip</td>
-                                            <td class="text-center">3x1</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="medical-history-data">
-                    <div class="card ps-2 pe-2">
-                        <div class="card p-2 border-top-0 border-start-0 border-end-0">
-                            <h4 class="text-center">19/08/2024</h4>
-                        </div>
-                        <div class="card border-0 p-2">
-                            <h4 class="mb-1">Keluhan</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusamus
-                                temporibus
-                                incidunt dignissimos possimus, culpa necessitatibus.</p>
-                            <h4 class="mb-2 text-center">Gula Darah</h4>
-                            <div class="card mb-3 border-start-0 border-end-0 border-bottom-0">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" class="text-center">Puasa</th>
-                                            <th scope="col" class="text-center">Sewaktu</th>
-                                            <th scope="col" class="text-center">2 Jam</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-center">20</td>
-                                            <td class="text-center">32</td>
-                                            <td class="text-center">22</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <h4 class="mb-2 text-center">Konsumsi Obat</h4>
-                            <div class="card border-start-0 border-end-0 border-bottom-0">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" class="text-center">Nama Obat</th>
-                                            <th scope="col" class="text-center">Aturan Pakai</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-center">Mixagrip</td>
-                                            <td class="text-center">3x1</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">Mixagrip</td>
-                                            <td class="text-center">3x1</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
             <div id="pagination" class="pagination"></div>
             <canvas id="barChart"></canvas>
@@ -279,8 +176,6 @@
     <!-- Barchart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="<?= base_url() ?>assets/js/bar-chart.js"></script>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <!-- Medical History Data js-->

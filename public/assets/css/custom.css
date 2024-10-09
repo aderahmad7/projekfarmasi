@@ -259,6 +259,11 @@ body {
     display: none !important;
 }
 
+.card-table.hidden {
+    display: none !important;
+}
+
+
 .custom-dropdown {
     background-color: white;
     color: #0d3543;
