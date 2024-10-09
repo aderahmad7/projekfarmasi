@@ -114,7 +114,7 @@ class Pretest extends BaseController
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        $text = $this->request->getPost('text');
+        $text = esc($this->request->getPost('text'));
         $data = [
             'pertanyaan' => $text,
             'id_jawaban' => 0

@@ -37,8 +37,8 @@
     <!-- Style css -->
     <link id="change-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css" />
 
-        <!-- Custom css -->
-        <link id="change-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/custom.css" />
+    <!-- Custom css -->
+    <link id="change-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/custom.css" />
 </head>
 
 <body class="inter-body learning-color">
@@ -53,7 +53,7 @@
 
             <div class="header-right">
                 <div class="notification-box">
-                    <a class="text-white" href="<?=site_url('pasien/list_chat') ?>">
+                    <a class="text-white" href="<?= site_url('pasien/list_chat') ?>">
                         <i class="ri-chat-4-line"></i>
                     </a>
                 </div>
@@ -141,7 +141,8 @@
                         </div>
                     </div>
                     <div class="dropdown-content">
-                        <a href="<?= site_url('pasien/medical_history_form') ?>" class="menu-setting-box ps-15 mt-3">
+                        <a href="<?= site_url('pasien/medical_history_form/' . $id_pasien) ?>"
+                            class="menu-setting-box ps-15 mt-3">
                             <div class="setting-icon">
                                 <i class="ri-dossier-line"></i>
                             </div>
@@ -150,7 +151,8 @@
                                 <i class="ri-arrow-right-s-line"></i>
                             </div>
                         </a>
-                        <a href="<?= site_url('pasien/medical_history_data') ?>" class="menu-setting-box ps-15 mt-3">
+                        <a href="<?= site_url('pasien/medical_history_data/' . $id_pasien) ?>"
+                            class="menu-setting-box ps-15 mt-3">
                             <div class="setting-icon">
                                 <i class="ri-health-book-line"></i>
                             </div>

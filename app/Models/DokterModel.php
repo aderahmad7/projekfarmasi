@@ -22,7 +22,7 @@ class DokterModel extends Model
 
     public function getAllDoctors()
     {
-        return $this->select('dokter.*, user.id, user.nama, user.gender, user.usia, user.no_hp, user.email, user.username')
+        return $this->select('dokter.*, user.id, user.nama, user.gender, user.usia, user.no_hp, user.email, user.username, user.foto')
             ->join('user', 'user.id = dokter.id_user')
             ->where('user.role', 'dokter')
             ->findAll();

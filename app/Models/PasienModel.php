@@ -29,4 +29,12 @@ class PasienModel extends Model
             ->where('user.role', 'pasien')
             ->findAll();
     }
+
+    public function getPatients()
+    {
+        return $this->select('pasien.id, user.nama')
+            ->join('user', 'user.id = pasien.id_user')
+            ->where('user.role', 'pasien')
+            ->findAll();
+    }
 }

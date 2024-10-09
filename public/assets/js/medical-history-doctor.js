@@ -4,104 +4,78 @@
 
 const cardsPerPage = 2;
 let currentPage = 1;
-const cards = document.querySelectorAll(".medical-history-data");
-const totalPages = Math.ceil(cards.length / cardsPerPage); // Menghitung jumlah total halaman berdasarkan jumlah card dan jumlah card per halaman
+let filteredCards = [];
 
 /**
- * Fungsi untuk menampilkan card pada halaman yang dipilih.
- * Hanya card dalam rentang indeks yang sesuai dengan halaman yang aktif akan ditampilkan.
- *
+ * Fungsi untuk memfilter kartu berdasarkan rentang tanggal.
+ */
+function filterCardsByDate() {
+  const startDateStr = document.getElementById("startDate").value;
+  const endDateStr = document.getElementById("endDate").value;
+  const cards = document.querySelectorAll(".medical-history-data");
+
+  if (!startDateStr && !endDateStr) {
+    filteredCards = Array.from(cards);
+  } else {
+    const startDate = startDateStr
+      ? new Date(startDateStr.split("/").reverse().join("-"))
+      : new Date(0);
+    const endDate = endDateStr
+      ? new Date(endDateStr.split("/").reverse().join("-"))
+      : new Date("9999-12-31");
+
+    filteredCards = Array.from(cards).filter((card) => {
+      const cardDate = new Date(card.getAttribute("data-tanggal"));
+      return cardDate >= startDate && cardDate <= endDate;
+    });
+  }
+
+  currentPage = 1;
+  showCards(currentPage);
+  setupPagination();
+}
+
+/**
+ * Fungsi untuk menampilkan kartu pada halaman yang dipilih.
  * @param {number} page - Nomor halaman yang akan ditampilkan.
  */
 function showCards(page) {
-  // Menghitung indeks awal dan akhir card yang akan ditampilkan pada halaman tertentu
   const startIndex = (page - 1) * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
+  const cards = document.querySelectorAll(".medical-history-data");
 
-  // Melakukan iterasi pada semua card dan menentukan mana yang akan ditampilkan atau disembunyikan
-  cards.forEach((card, index) => {
-    if (index >= startIndex && index < endIndex) {
-      card.classList.remove("hidden");
-    } else {
-      card.classList.add("hidden");
-    }
+  cards.forEach((card) => card.classList.add("hidden"));
+
+  filteredCards.slice(startIndex, endIndex).forEach((card) => {
+    card.classList.remove("hidden");
   });
 }
 
 /**
- * Fungsi untuk mengatur button pagination.
- * Membuat button navigasi berdasarkan jumlah halaman dan menambahkan ellipsis untuk halaman yang terlalu jauh.
+ * Fungsi untuk mengatur tombol paginasi.
  */
 function setupPagination() {
-  // Mengambil elemen kontainer untuk pagination dan membersihkannya
   const paginationContainer = document.getElementById("pagination");
   paginationContainer.innerHTML = "";
 
-  /**
-   * Fungsi untuk membuat button halaman.
-   *
-   * @param {number} page - Nomor halaman yang akan diwakili oleh button.
-   * @returns {HTMLElement} - Elemen button HTML untuk pagination.
-   */
-  const createPageButton = (page) => {
-    const button = document.createElement("button"); // Membuat elemen button
-    button.innerText = page; // Menyisipkan nomor halaman pada button
+  const totalPages = Math.ceil(filteredCards.length / cardsPerPage);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const button = document.createElement("button");
+    button.innerText = i;
     button.addEventListener("click", () => {
-      // Mengubah halaman saat button diklik
-      currentPage = page; // Menampilkan card pada halaman yang dipilih
-      showCards(currentPage); // Menampilkan card pada halaman yang dipilih
-      setupPagination(); // Mengatur ulang pagination setelah klik
+      currentPage = i;
+      showCards(currentPage);
+      updatePaginationButtons();
     });
-    if (page === currentPage) {
-      button.classList.add("active");
-    }
-    return button;
-  };
-
-  /**
-   * Fungsi untuk membuat ellipsis (titik-titik) jika ada banyak halaman yang tidak ditampilkan.
-   *
-   * @returns {HTMLElement} - Elemen span HTML untuk ellipsis.
-   */
-
-  const createEllipsis = () => {
-    const span = document.createElement("span");
-    span.className = "ellipsis"; // Menetapkan kelas 'ellipsis'
-    span.innerText = "..."; // Mengisi elemen dengan teks titik-titik
-    return span; // Mengembalikan elemen span
-  };
-
-  // Menambahkan button untuk halaman pertama
-  paginationContainer.appendChild(createPageButton(1));
-
-  // Menambahkan ellipsis jika halaman saat ini lebih besar dari 3
-  if (currentPage > 3) {
-    paginationContainer.appendChild(createEllipsis());
+    paginationContainer.appendChild(button);
   }
 
-  // Menambahkan button untuk halaman-halaman di sekitar halaman saat ini
-  for (
-    let i = Math.max(2, currentPage - 1); // Mengatur agar button di dekat halaman saat ini dibuat
-    i <= Math.min(totalPages - 1, currentPage + 1); // Membatasi agar tidak melampaui halaman terakhir
-    i++
-  ) {
-    paginationContainer.appendChild(createPageButton(i));
-  }
-
-  // Menambahkan ellipsis jika halaman saat ini lebih kecil dari total halaman - 2
-  if (currentPage < totalPages - 2) {
-    paginationContainer.appendChild(createEllipsis());
-  }
-
-  // Menambahkan button untuk halaman terakhir
-  if (totalPages > 1) {
-    paginationContainer.appendChild(createPageButton(totalPages));
-  }
+  updatePaginationButtons();
 }
 
 /**
- * Fungsi untuk memperbarui tampilan button pagination.
- * button halaman yang aktif akan memiliki kelas 'active'.
+ * Fungsi untuk memperbarui tampilan tombol paginasi.
  */
 function updatePaginationButtons() {
   const buttons = document.querySelectorAll(".pagination button");
@@ -110,28 +84,132 @@ function updatePaginationButtons() {
   });
 }
 
-showCards(currentPage); // Menampilkan card pertama kali saat halaman dimuat
-setupPagination(); // Mengatur button pagination pertama kali saat halaman dimuat
-updatePaginationButtons(); // Memperbarui tampilan button pagination
-
 ///////////////////////////////////////////
 // DATE PICKER
 //////////////////////////////////////////
 const startDate = flatpickr("#startDate", {
-  dateFormat: "Y-m-d",
+  dateFormat: "d/m/Y",
   onChange: function (selectedDates, dateStr, instance) {
-    // Set the minDate for endDate after startDate is selected
     endDate.set("minDate", dateStr);
-    console.log("Start date selected:", dateStr);
+    filterCardsByDate();
   },
 });
 
-// Initialize flatpickr for endDate
 const endDate = flatpickr("#endDate", {
-  dateFormat: "Y-m-d",
+  dateFormat: "d/m/Y",
   onChange: function (selectedDates, dateStr, instance) {
-    // Set the maxDate for startDate after endDate is selected
     startDate.set("maxDate", dateStr);
-    console.log("End date selected:", dateStr);
+    filterCardsByDate();
   },
+});
+
+// Fungsi untuk menampilkan riwayat pasien
+function tampilkanRiwayatPasien(idPasien) {
+  const containerRiwayat = document.querySelector(
+    ".medical-history-data-container"
+  );
+  containerRiwayat.innerHTML = "";
+
+  const pasien = pasienData.find((p) => p.id === idPasien);
+
+  if (!pasien || pasien.riwayat.length === 0) {
+    containerRiwayat.innerHTML =
+      '<p class="text-center">Tidak ada riwayat medis untuk pasien ini.</p>';
+    return;
+  }
+
+  pasien.riwayat.forEach((r) => {
+    const riwayat = r.riwayat;
+    const dosis = r.dosis;
+
+    const tanggal = new Date(riwayat.tanggal);
+    const formattedTanggal = `${tanggal
+      .getDate()
+      .toString()
+      .padStart(2, "0")}/${(tanggal.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}/${tanggal.getFullYear()}`;
+
+    let htmlRiwayat = `
+      <div class="medical-history-data" data-tanggal="${riwayat.tanggal}">
+        <div class="card ps-2 pe-2">
+          <div class="card p-2 border-top-0 border-start-0 border-end-0">
+            <h4 class="text-center">${formattedTanggal}</h4>
+          </div>
+          <div class="card border-0 p-2">
+            <h4 class="mb-1">Keluhan</h4>
+            <p class="mb-4">${riwayat.keluhan}</p>
+            <h4 class="mb-2 text-center">Gula Darah</h4>
+            <div class="card mb-3 border-start-0 border-end-0 border-bottom-0">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-center">Puasa</th>
+                    <th scope="col" class="text-center">Sewaktu</th>
+                    <th scope="col" class="text-center">2 Jam</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">${riwayat.guldar_puasa}</td>
+                    <td class="text-center">${riwayat.guldar_sewaktu}</td>
+                    <td class="text-center">${riwayat.guldar_2jam}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <h4 class="mb-2 text-center">Konsumsi Obat</h4>
+            <div class="card border-start-0 border-end-0 border-bottom-0">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-center">Nama Obat</th>
+                    <th scope="col" class="text-center">Aturan Pakai</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${dosis
+                    .map(
+                      (d) => `
+                    <tr>
+                      <td class="text-center">${d.nama_obat}</td>
+                      <td class="text-center">${d.aturan_pakai}</td>
+                    </tr>
+                  `
+                    )
+                    .join("")}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    containerRiwayat.innerHTML += htmlRiwayat;
+  });
+
+  filteredCards = Array.from(
+    document.querySelectorAll(".medical-history-data")
+  );
+  filterCardsByDate(); // Terapkan filter tanggal jika ada
+}
+
+// Event listener untuk dropdown
+document.getElementById("dropdown").addEventListener("change", function () {
+  const idPasien = this.value;
+  if (idPasien !== "#") {
+    tampilkanRiwayatPasien(idPasien);
+    startDate.clear();
+    endDate.clear();
+  }
+});
+
+// Inisialisasi paginasi saat halaman dimuat
+document.addEventListener("DOMContentLoaded", () => {
+  filteredCards = Array.from(
+    document.querySelectorAll(".medical-history-data")
+  );
+  showCards(currentPage);
+  setupPagination();
 });
