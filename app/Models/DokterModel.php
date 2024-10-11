@@ -27,4 +27,14 @@ class DokterModel extends Model
             ->where('user.role', 'dokter')
             ->findAll();
     }
+
+    public function getDoctors($id)
+    {
+        return $this->select('dokter.*, user.id, user.nama, user.gender, user.usia, user.no_hp, user.email, user.username, user.foto')
+            ->join('user', 'user.id = dokter.id_user')
+            ->where('user.role', 'dokter')
+            ->where('dokter.id_user', $id)  // Tambahkan kondisi untuk mencocokkan id_user dengan $id
+            ->findAll();
+    }
+
 }

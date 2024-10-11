@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\ChatModel;
 use App\Models\DokterModel;
 use App\Models\DosisObatModel;
 use App\Models\RiwayatMedisModel;
@@ -273,7 +274,6 @@ class Pasien extends BaseController
 
     public function add_riwayat($id_pasien)
     {
-        $pasienModel = new PasienModel();
         $riwayatModel = new RiwayatMedisModel();
         $dosisModel = new DosisObatModel();
 
@@ -326,15 +326,27 @@ class Pasien extends BaseController
         }
     }
 
-    public function chat()
+    public function chat($id)
     {
+        // id = id usernya dokter
+        $dokterModel = new DokterModel();
         $userModel = new UserModel();
+        $chatModel = new ChatModel();
         $username = session()->get('username');
-        $userData = $userModel->getData($username);
+        $idUser = $userModel->getID($username);
+        $dataDokter = $dokterModel->getDoctors($id);
+        $dataChat = $chatModel->getChatByUsers($idUser, $id);
         $data = [
-            "foto" => $userData["foto"],
+            'data_dokter' => $dataDokter,
+            'data_chat' => $dataChat,
+            'id_user' => $idUser,
         ];
         return view('pasien/chat', $data);
+    }
+
+    public function kirim_chat()
+    {
+
     }
 
     public function list_chat()

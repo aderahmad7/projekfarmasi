@@ -133,7 +133,7 @@
                                 <p class="mb-0"><?= $dokter['exp_years'] ?> Tahun</p>
                             </div>
                         </div>
-                        <a href="<?= site_url('pasien/chat') ?>"
+                        <a href="<?= site_url('pasien/chat/' . $dokter['id_user']) ?>"
                             class="doctor-chat-btn btn-gradient w-100 mb-1 p-2 text-center">Chat</a>
                     </div>
                 </div>

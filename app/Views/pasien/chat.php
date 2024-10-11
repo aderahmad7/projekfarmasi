@@ -42,7 +42,6 @@
 </head>
 
 <body class="inter-body learning-color">
-
     <!-- header start -->
     <header class="main-header main-header-chat learning-header">
         <div class="custom-container">
@@ -63,10 +62,10 @@
             </div>
 
             <div class="profile-container d-flex gap-2 align-items-center">
-                <img src="<?= base_url($foto) ?>" class="img-fluid chat-img-profile" alt="" />
+                <img src="<?= base_url($data_dokter[0]['foto']) ?>" class="img-fluid chat-img-profile" alt="" />
                 <div class="profile-info">
-                    <h2 class="fw-500 text-white chat-name">Dr. Henry Manik</h2>
-                    <p class="text-light mb-0">Dokter Umum</p>
+                    <h2 class="fw-500 text-white chat-name"><?= $data_dokter[0]['nama'] ?></h2>
+                    <p class="text-light mb-0"><?= $data_dokter[0]['spesialis'] ?></p>
                 </div>
             </div>
         </div>
@@ -85,6 +84,10 @@
 
     <!-- Menampilkan pesan error atau sukses -->
     <?php if (session()->has('error')): ?>
+        <!-- perbarui alertnya anjing -->
+        <script>
+            alert(<?= esc(session('error')) ?>);
+        </script>
         <div class="alert alert-danger">
             <?= esc(session('error')) ?>
         </div>
@@ -102,45 +105,33 @@
         class="section-chat section-t-space d-flex flex-column justify-content-between position-relative w-100 p-1">
         <div class="chat-container m-3 pb-4 mb-5">
             <div class="message-container d-flex flex-column gap-4">
-                <div class="message-receive">
-                    <p class="text-message mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
-                        repellendus tempora temporibus minus recusandae consequatur necessitatibus ipsam, quo error
-                        dolor hic natus nemo, obcaecati nam officia. Ad minus quidem rerum.</p>
-                </div>
-                <div class="message-sent align-self-end">
-                    <p class="text-message sent mb-0 btn-gradient">Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Perspiciatis,
-                        repellendus tempora temporibus minus recusandae consequatur necessitatibus ipsam, quo error
-                        dolor hic natus nemo, obcaecati nam officia. Ad minus quidem rerum.</p>
-                </div>
-                <div class="message-receive">
-                    <img src="<?= base_url($foto) ?>" alt="" class="message-img">
-                </div>
-                <div class="message-receive">
-                    <p class="text-message mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
-                        repellendus tempora temporibus minus recusandae consequatur necessitatibus ipsam, quo error
-                        dolor hic natus nemo, obcaecati nam officia. Ad minus quidem rerum.</p>
-                </div>
-                <div class="message-sent align-self-end">
-                    <p class="text-message sent mb-0 btn-gradient">Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Perspiciatis,
-                        repellendus tempora temporibus minus recusandae consequatur necessitatibus ipsam, quo error
-                        dolor hic natus nemo, obcaecati nam officia. Ad minus quidem rerum.</p>
-                </div>
-                <div class="message-sent  align-self-end">
-                    <img src="<?= base_url($foto) ?>" alt="" class="message-img">
-                </div>
+                <?php foreach ($data_chat as $chat): ?>
+                    <div
+                        class="<?= ($chat["id_pengirim"] === $id_user) ? "message-sent align-self-end" : "message-receive" ?>">
+                        <?php if ($chat['jenis'] === 'teks'): ?>
+                            <p
+                                class="<?= ($chat["id_pengirim"] === $id_user) ? "text-message sent mb-0 btn-gradient" : "text-message mb-0" ?>">
+                                <?= $chat["pesan"] ?>
+                            </p>
+                        <?php else: ?>
+                            <img src="<?=base_url($chat['pesan'])?>" alt="" class="message-img">
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
         <div class="chat-card">
-            <form action="" method="post" class="d-flex gap-1 p-2 bg-white pt-1">
-                <input type="text" placeholder="Type a message..." class="chat-input">
-                <label for="file-upload" class="border-0 btn-gradient btn-chat p-2 text-center"><svg class="w-50" viewBox="0 0 24 24"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <form enctype="multipart/form-data" id="chat-form" action="<?= site_url('chat/kirim') ?>" method="post"
+                class="d-flex gap-1 p-2 bg-white pt-1">
+                <input type="hidden" name="id_pengirim" value="<?= $id_user; ?>">
+                <input type="hidden" name="id_penerima" value="<?= $data_dokter[0]['id_user'] ?>">
+                <input type="text" name="pesan" placeholder="Type a message..." class="chat-input">
+                <label for="file-upload" class="border-0 btn-gradient btn-chat p-2 text-center"><svg class="w-50"
+                        viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M9 3H15L17 5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V6C2 5.44772 2.44772 5 3 5H7L9 3ZM12 19C15.3137 19 18 16.3137 18 13C18 9.68629 15.3137 7 12 7C8.68629 7 6 9.68629 6 13C6 16.3137 8.68629 19 12 19ZM12 17C9.79086 17 8 15.2091 8 13C8 10.7909 9.79086 9 12 9C14.2091 9 16 10.7909 16 13C16 15.2091 14.2091 17 12 17Z" />
                     </svg></label>
-                    <input id="file-upload" type="file" name="upload-image">
+                <input id="file-upload" type="file" name="foto" accept="image/*" class="d-none">
                 <input type="submit" value="Kirim" class="border-0 btn-gradient p-1 btn-chat">
             </form>
         </div>
@@ -153,6 +144,9 @@
     <!-- swiper js -->
     <script src="<?= base_url() ?>assets/js/swiper-bundle.min.js"></script>
     <script src="<?= base_url() ?>assets/js/custom_swiper.js"></script>
+
+    <!-- Chat js -->
+    <script src="<?= base_url() ?>assets/js/chat.js"></script>
 
     <!-- Theme js-->
     <script src="<?= base_url() ?>assets/js/script.js"></script>

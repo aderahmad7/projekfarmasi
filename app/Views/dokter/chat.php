@@ -63,10 +63,10 @@
             </div>
 
             <div class="profile-container d-flex gap-2 align-items-center">
-                <img src="<?= base_url($foto) ?>" class="img-fluid chat-img-profile" alt="" />
+                <img src="<?= base_url($data_dokter['foto']) ?>" class="img-fluid chat-img-profile" alt="" />
                 <div class="profile-info">
-                    <h2 class="fw-500 text-white chat-name">Dr. Henry Manik</h2>
-                    <p class="text-light mb-0">Dokter Umum</p>
+                    <h2 class="fw-500 text-white chat-name"><?= $data_dokter['nama'] ?></h2>
+                    <p class="text-light mb-0" <?= $data_dokter['spesialis'] ?>></p>
                 </div>
             </div>
         </div>
@@ -114,7 +114,7 @@
                         dolor hic natus nemo, obcaecati nam officia. Ad minus quidem rerum.</p>
                 </div>
                 <div class="message-receive">
-                    <img src="<?= base_url($foto) ?>" alt="" class="message-img">
+                    <img src="<?= base_url() ?>" alt="" class="message-img">
                 </div>
                 <div class="message-receive">
                     <p class="text-message mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
@@ -128,7 +128,7 @@
                         dolor hic natus nemo, obcaecati nam officia. Ad minus quidem rerum.</p>
                 </div>
                 <div class="message-sent  align-self-end">
-                    <img src="<?= base_url($foto) ?>" alt="" class="message-img">
+                    <img src="<?= base_url() ?>" alt="" class="message-img">
                 </div>
             </div>
         </div>
