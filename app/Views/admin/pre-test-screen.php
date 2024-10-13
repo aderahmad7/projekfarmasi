@@ -48,7 +48,7 @@
                 <div class="col-12">
                     <div class="top-header">
                         <div class="header-left">
-                            <a class="text-white" href="<?= site_url('admin/content') ?>">
+                            <a class="text-white" href="javascript:history.back()">
                                 <i class="ri-arrow-left-line"></i>
                             </a>
                         </div>

@@ -44,7 +44,7 @@
         <div class="custom-container">
             <div class="top-header">
                 <div class="header-left">
-                    <a class="text-white" href="home-screen-admin.html">
+                    <a class="text-white" href="javascript:history.back()">
                         <i class="ri-arrow-left-line"></i>
                     </a>
                 </div>
@@ -63,7 +63,7 @@
     <div class="mobile-style-1">
         <ul>
             <li>
-                <a href="home-screen-admin.html" class="mobile-box">
+                <a href="<?= site_url('admin/dashboard') ?>" class="mobile-box">
                     <div class="mobile-icon">
                         <i class="ri-home-5-line"></i>
                     </div>
@@ -74,7 +74,7 @@
             </li>
 
             <li>
-                <a href="users-screen.html" class="mobile-box">
+                <a href="<?= site_url('admin/users') ?>" class="mobile-box">
                     <div class="mobile-icon">
                         <i class="ri-group-line"></i>
                     </div>
@@ -85,7 +85,7 @@
             </li>
 
             <li class="active">
-                <a href="content-screen.html" class="mobile-box">
+                <a href="<?= site_url('admin/content') ?>" class="mobile-box">
                     <div class="mobile-icon">
                         <i class="ri-mac-line"></i>
                     </div>

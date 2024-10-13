@@ -51,14 +51,14 @@
         <div class="custom-container">
             <div class="top-header">
                 <div class="header-left">
-                    <a class="text-white" href="<?= site_url('pasien') ?>">
+                    <a class="text-white" href="javascript:history.back()">
                         <i class="ri-arrow-left-line"></i>
                     </a>
                 </div>
 
                 <div class="header-right">
                     <div class="notification-box">
-                        <a class="text-white" href="#">
+                        <a class="text-white" href="<?= site_url('pasien/list_chat') ?>">
                             <i class="ri-chat-4-line"></i>
                         </a>
                     </div>
@@ -107,7 +107,7 @@
                             <img src="<?= base_url($chat['foto']) ?>" class="img-fluid chat-img-profile" alt="" />
                             <div class="detail-profile-chat">
                                 <h5 class="fw-bold"><?= $chat['nama'] ?></h5>
-                                <p class="mb-0">
+                                <p class="mb-0 text-truncate text-last-chat">
                                     <?= $chat['jenis'] === 'teks' ? $chat['pesan'] : '<i class="fa fa-camera"></i> <em>foto</em>' ?>
                                 </p>
                             </div>

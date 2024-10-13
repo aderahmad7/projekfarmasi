@@ -118,10 +118,12 @@ body {
 
 .message-receive {
     max-width: 70%;
+    z-index: -1;
 }
 
 .message-sent {
     max-width: 70%;
+    z-index: -1;
 }
 
 .text-message {
@@ -136,9 +138,15 @@ body {
     border-radius: 20px 20px 0 20px ;
 }
 
+.chat-header {
+    min-width: 600px !important;
+    z-index: 10 !important;
+}
+
 .section-chat {
-    height: 100vh !important;
-    overflow: scroll;
+    z-index: 2 !important;
+    margin-top: 120px !important;
+    height: 100% !important;
 }
 
 .chat-card form{
@@ -329,4 +337,22 @@ body {
 
 input[type="file"] {
     display: none;
+}
+
+.text-last-chat {
+    max-width: 200px !important;
+}
+
+.swal-list-left ul {
+    text-align: left;
+}
+
+.chat-alert {
+    margin-top: 120px;
+    z-index: 10 ;
+    max-width: 600px !important;
+}
+
+#error-alert {
+    transition: opacity 2s ease; /* Transisi selama 1 detik */
 }

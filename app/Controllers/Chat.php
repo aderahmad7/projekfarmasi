@@ -51,7 +51,7 @@ class Chat extends BaseController
             'pesan' => 'permit_empty',  // Allow empty 'pesan'
             'foto' => [
                 'label' => 'Image File',
-                'rules' => 'permit_empty|is_image[foto]|max_size[foto,5120]',
+                'rules' => 'permit_empty|is_image[foto]|max_size[foto,1024]',
             ],
         ];
 
@@ -66,7 +66,12 @@ class Chat extends BaseController
         // Jika keduanya kosong, tampilkan error
         if (empty($pesan) && $foto->getError() == 4) {
             return redirect()->back()->withInput()->with('errors', ['Harus mengirimkan pesan atau foto.']);
-        }else if ($foto && $foto->isValid() && !$foto->hasMoved()) {
+        } else if ($foto && $foto->isValid() && !$foto->hasMoved()) {
+
+            if ($foto->getSize() > 1024 * 1024) {
+                return redirect()->back()->withInput()->with('errors', ['Ukuran gambar terlalu besar. Maksimal 1 MB.']);
+            }
+
             $newName = $foto->getRandomName();
             $foto->move(FCPATH . 'assets/images/fitur-chat', $newName);
             $jenis = 'gambar';

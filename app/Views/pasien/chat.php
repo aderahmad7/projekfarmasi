@@ -43,11 +43,11 @@
 
 <body class="inter-body learning-color">
     <!-- header start -->
-    <header class="main-header main-header-chat learning-header">
+    <header class="chat-header main-header main-header-chat learning-header position-fixed top-0">
         <div class="custom-container">
             <div class="top-header">
                 <div class="header-left">
-                    <a class="text-white" href="<?= site_url('pasien') ?>">
+                    <a class="text-white" href="javascript:history.back()">
                         <i class="ri-arrow-left-line"></i>
                     </a>
                 </div>
@@ -73,7 +73,7 @@
     <!-- header end -->
     <!-- Menampilkan pesan kesalahan -->
     <?php if (session()->has('errors')): ?>
-        <div class="alert alert-danger">
+        <div id="error-alert" class="alert alert-danger position-fixed top-0 chat-alert w-100">
             <ul>
                 <?php foreach (session('errors') as $error): ?>
                     <li><?= esc($error) ?></li>

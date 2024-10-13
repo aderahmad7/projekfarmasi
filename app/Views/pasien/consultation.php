@@ -47,7 +47,7 @@
         <div class="custom-container">
             <div class="top-header">
                 <div class="header-left">
-                    <a class="text-white" href="<?= site_url('pasien') ?>">
+                    <a class="text-white" href="javascript:history.back()">
                         <i class="ri-arrow-left-line"></i>
                     </a>
                 </div>
