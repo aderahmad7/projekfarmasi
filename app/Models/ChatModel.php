@@ -24,5 +24,26 @@ class ChatModel extends Model
             ->findAll();
     }
 
+    public function getListChat($id_user)
+    {
+        $builder = $this->db->table($this->table);
 
+        // Subquery untuk mendapatkan last_chat_id untuk setiap percakapan
+        $subquery = $this->db->table($this->table)
+            ->select('MAX(chat.id) as last_chat_id')
+            ->groupStart()
+            ->where('chat.id_pengirim', $id_user)
+            ->orWhere('chat.id_penerima', $id_user)
+            ->groupEnd()
+            ->groupBy('IF(chat.id_pengirim = ' . $id_user . ', chat.id_penerima, chat.id_pengirim)')
+            ->getCompiledSelect();
+
+        // Menggunakan subquery untuk mendapatkan pesan terakhir dan menambahkan nama dari lawan chat
+        return $builder->select('IF(chat.id_pengirim = ' . $id_user . ', chat.id_penerima, chat.id_pengirim) as lawan_chat, chat.pesan, chat.jenis, chat.id as chat_id, user.nama, user.foto')
+            ->join('user', 'user.id = IF(chat.id_pengirim = ' . $id_user . ', chat.id_penerima, chat.id_pengirim)', 'left')
+            ->where('chat.id IN (' . $subquery . ')')
+            ->orderBy('chat.id', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
 }

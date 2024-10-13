@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\ChatModel;
 use App\Models\DosisObatModel;
 use App\Models\PasienModel;
 use App\Models\RiwayatMedisModel;
@@ -276,13 +277,22 @@ class Dokter extends BaseController
         return view('dokter/medical-history-data', ['dataPasienWithDetails' => $dataPasienWithDetails]);
     }
 
-    public function chat()
+    public function chat($id)
     {
+        // id = id usernya pasien
         $userModel = new UserModel();
+        $pasienModel = new PasienModel();
+        $chatModel = new ChatModel();
         $username = session()->get('username');
         $userData = $userModel->getData($username);
+        $idUser = $userModel->getID($username);
+        $dataPasien = $pasienModel->getPatient($id);
+        $dataChat = $chatModel->getChatByUsers($idUser,$id);
+
         $data = [
-            "foto" => $userData["foto"],
+            'data_pasien' => $dataPasien,
+            'data_chat' => $dataChat,
+            'id_user' => $idUser,
         ];
         return view('dokter/chat', $data);
     }
@@ -290,10 +300,12 @@ class Dokter extends BaseController
     public function list_chat()
     {
         $userModel = new UserModel();
+        $chatModel = new ChatModel();
         $username = session()->get('username');
-        $userData = $userModel->getData($username);
+        $idUser = $userModel->getID($username);
+        $listChat = $chatModel->getListChat($idUser);
         $data = [
-            "foto" => $userData["foto"],
+            'list_chat' => $listChat
         ];
         return view('dokter/list-chat', $data);
     }

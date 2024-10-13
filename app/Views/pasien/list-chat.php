@@ -26,6 +26,7 @@
         rel="stylesheet">
 
     <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link id="rtl-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/vendors/bootstrap.css">
 
     <!-- Swiper css -->
@@ -98,33 +99,24 @@
     <!-- medical history data Section Start -->
     <section class="section-t-space">
         <div class="mb-4 custom-container">
-            <a href="<?= site_url('pasien/chat') ?>" class="chat-list-container pb-1 pt-1 d-flex justify-content-between align-items-center border-1 border-start-0 border-end-0 border-top-0">
-                <div class="chat-profile-list d-flex align-items-center gap-2">
-                    <img src="<?= base_url($foto) ?>" class="img-fluid chat-img-profile" alt="" />
-                    <div class="detail-profile-chat">
-                        <h5 class="fw-bold">Dr. Henry Manik</h5>
-                        <p class="mb-0">Lorem ipsum dolor </p>
-                    </div>
-                </div>
-            </a>
-            <div class="chat-list-container pb-1 pt-1 d-flex justify-content-between align-items-center border-1 border-start-0 border-end-0 border-top-0">
-                <div class="chat-profile-list d-flex align-items-center gap-2">
-                    <img src="<?= base_url($foto) ?>" class="img-fluid chat-img-profile" alt="" />
-                    <div class="detail-profile-chat">
-                        <h5 class="fw-bold">Dr. Henry Manik</h5>
-                        <p class="mb-0">Lorem ipsum dolor </p>
-                    </div>
-                </div>
-            </div>
-            <div class="chat-list-container pb-1 pt-1 d-flex justify-content-between align-items-center border-1 border-start-0 border-end-0 border-top-0">
-                <div class="chat-profile-list d-flex align-items-center gap-2">
-                    <img src="<?= base_url($foto) ?>" class="img-fluid chat-img-profile" alt="" />
-                    <div class="detail-profile-chat">
-                        <h5 class="fw-bold">Dr. Henry Manik</h5>
-                        <p class="mb-0">Lorem ipsum dolor </p>
-                    </div>
-                </div>
-            </div>
+            <?php if (!empty($list_chat)): ?>
+                <?php foreach ($list_chat as $chat): ?>
+                    <a href="<?= site_url('pasien/chat/' . $chat['lawan_chat']) ?>"
+                        class="chat-list-container pb-1 pt-1 d-flex justify-content-between align-items-center border-1 border-start-0 border-end-0 border-top-0">
+                        <div class="chat-profile-list d-flex align-items-center gap-2">
+                            <img src="<?= base_url($chat['foto']) ?>" class="img-fluid chat-img-profile" alt="" />
+                            <div class="detail-profile-chat">
+                                <h5 class="fw-bold"><?= $chat['nama'] ?></h5>
+                                <p class="mb-0">
+                                    <?= $chat['jenis'] === 'teks' ? $chat['pesan'] : '<i class="fa fa-camera"></i> <em>foto</em>' ?>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p class="text-center mt-3">Tidak ditemukan chat.</p>
+            <?php endif; ?>
         </div>
     </section>
     <!-- medical history data Section End -->

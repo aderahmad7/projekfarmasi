@@ -114,7 +114,7 @@
                                 <?= $chat["pesan"] ?>
                             </p>
                         <?php else: ?>
-                            <img src="<?=base_url($chat['pesan'])?>" alt="" class="message-img">
+                            <img src="<?= base_url($chat['pesan']) ?>" alt="" class="message-img">
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>

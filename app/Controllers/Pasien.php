@@ -344,18 +344,15 @@ class Pasien extends BaseController
         return view('pasien/chat', $data);
     }
 
-    public function kirim_chat()
-    {
-
-    }
-
     public function list_chat()
     {
         $userModel = new UserModel();
+        $chatModel = new ChatModel();
         $username = session()->get('username');
-        $userData = $userModel->getData($username);
+        $idUser = $userModel->getID($username);
+        $listChat = $chatModel->getListChat($idUser);
         $data = [
-            "foto" => $userData["foto"],
+            'list_chat' => $listChat
         ];
         return view('pasien/list-chat', $data);
     }

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\AdminModel;
+use App\Models\ChatModel;
 use App\Models\DokterModel;
 use App\Models\OptPostTestModel;
 use App\Models\OptPretestModel;
@@ -187,6 +188,8 @@ class Admin extends BaseController
     {
         $userModel = new UserModel();
         $dokterModel = new DokterModel();
+        $chatModel = new ChatModel();
+        $chatModel->where('id_penerima', $id)->orWhere('id_pengirim', $id)->delete();
         $dokterModel->where('id_user', $id)->delete();
         $userModel->delete($id);
 
@@ -299,6 +302,8 @@ class Admin extends BaseController
         $userModel = new UserModel();
         $statusCourseModel = new StatCourseModel();
         $pasienModel = new PasienModel();
+        $chatModel = new ChatModel();
+        $chatModel->where('id_penerima', $id)->orWhere('id_pengirim', $id)->delete();
         $id_pasien = $pasienModel->where('id_user', $id)->first()['id'];
         $statusCourseModel->where('id_pasien', $id_pasien)->delete();
         $pasienModel->where('id_user', $id)->delete();

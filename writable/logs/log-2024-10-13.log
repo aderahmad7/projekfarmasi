@@ -1,0 +1,717 @@
+INFO - 2024-10-13 07:23:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:23:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:23:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:23:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:23:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:23:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:23:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:23:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:29:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:29:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:29:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:29:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:35:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:35:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:35:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:35:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:35:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-13 07:35:47 --> ErrorException: Undefined array key 0
+[Method: GET, Route: pasien/chat/18]
+in APPPATH\Views\pasien\chat.php on line 65.
+ 1 APPPATH\Views\pasien\chat.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\pasien\\chat.php', 65)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\pasien\\chat.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pasien/chat', [], true)
+ 5 APPPATH\Controllers\Pasien.php(344): view('pasien/chat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->chat('18')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-13 07:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:36:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:36:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:37:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:37:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:37:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:37:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-13 07:37:20 --> ErrorException: Undefined array key 0
+[Method: GET, Route: pasien/chat/20]
+in APPPATH\Views\pasien\chat.php on line 65.
+ 1 APPPATH\Views\pasien\chat.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\pasien\\chat.php', 65)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\pasien\\chat.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pasien/chat', [], true)
+ 5 APPPATH\Controllers\Pasien.php(344): view('pasien/chat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->chat('20')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-13 07:38:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-13 07:38:07 --> ErrorException: Undefined array key 0
+[Method: GET, Route: pasien/chat/20]
+in APPPATH\Views\pasien\chat.php on line 65.
+ 1 APPPATH\Views\pasien\chat.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\pasien\\chat.php', 65)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\pasien\\chat.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pasien/chat', [], true)
+ 5 APPPATH\Controllers\Pasien.php(344): view('pasien/chat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->chat('20')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-13 07:38:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:38:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:38:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:38:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:38:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:38:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:39:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:39:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:39:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:39:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:40:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:40:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:40:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:40:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:40:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:40:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:40:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:40:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:40:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:41:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:41:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:54:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:55:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:55:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:56:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 07:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:03:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:05:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:05:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:05:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:05:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:05:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:05:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:08:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-13 08:08:21 --> ErrorException: Undefined variable $foto
+[Method: GET, Route: pasien/list_chat]
+in APPPATH\Views\pasien\list-chat.php on line 103.
+ 1 APPPATH\Views\pasien\list-chat.php(103): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $foto', 'C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\pasien\\list-chat.php', 103)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\pasien\\list-chat.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pasien/list-chat', [], true)
+ 5 APPPATH\Controllers\Pasien.php(361): view('pasien/list-chat', [])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->list_chat()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-13 08:08:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:17:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:17:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:17:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:17:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:17:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:17:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:17:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:28:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:28:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:29:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:29:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:29:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:29:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:30:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:32:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:32:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:33:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:33:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:33:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:33:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:33:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:35:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:35:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:35:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:39:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:39:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:40:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:41:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:41:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:41:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:41:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:41:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:47:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-13 08:47:02 --> ErrorException: Undefined variable $foto
+[Method: GET, Route: pasien/list_chat]
+in APPPATH\Views\pasien\list-chat.php on line 110.
+ 1 APPPATH\Views\pasien\list-chat.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $foto', 'C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\pasien\\list-chat.php', 110)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\pasien\\list-chat.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pasien/list-chat', [], true)
+ 5 APPPATH\Controllers\Pasien.php(362): view('pasien/list-chat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->list_chat()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-13 08:47:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:47:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:49:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-13 08:49:34 --> mysqli_sql_exception: Table 'projekfarmasi.users' doesn't exist in C:\xampp\htdocs\projekfarmasi\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\projekfarmasi\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT IF(id_pe...', 0)
+#1 C:\xampp\htdocs\projekfarmasi\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT IF(id_pe...')
+#2 C:\xampp\htdocs\projekfarmasi\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT IF(id_pe...')
+#3 C:\xampp\htdocs\projekfarmasi\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT IF(id_pe...', Array, false)
+#4 C:\xampp\htdocs\projekfarmasi\app\Models\ChatModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\projekfarmasi\app\Controllers\Pasien.php(358): App\Models\ChatModel->getListChat('13')
+#6 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(933): App\Controllers\Pasien->list_chat()
+#7 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+#8 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\projekfarmasi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\projekfarmasi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\projekfarmasi\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-10-13 08:49:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'projekfarmasi.users' doesn't exist
+[Method: GET, Route: pasien/list_chat]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `users`.`foto`
+FROM `chat`
+LEFT JOIN `users` ON `users`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC', [], false)
+ 2 APPPATH\Models\ChatModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Pasien.php(358): App\Models\ChatModel->getListChat('13')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->list_chat()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-13 08:49:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'projekfarmasi.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `users`.`foto`
+FROM `chat`
+LEFT JOIN `users` ON `users`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `users`.`foto`
+FROM `chat`
+LEFT JOIN `users` ON `users`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `users`.`foto`
+FROM `chat`
+LEFT JOIN `users` ON `users`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC', [], false)
+ 4 APPPATH\Models\ChatModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Pasien.php(358): App\Models\ChatModel->getListChat('13')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->list_chat()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-13 08:49:34 --> [Caused by] mysqli_sql_exception: Table 'projekfarmasi.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `users`.`foto`
+FROM `chat`
+LEFT JOIN `users` ON `users`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `users`.`foto`
+FROM `chat`
+LEFT JOIN `users` ON `users`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `users`.`foto`
+FROM `chat`
+LEFT JOIN `users` ON `users`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `users`.`foto`
+FROM `chat`
+LEFT JOIN `users` ON `users`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC', [], false)
+ 5 APPPATH\Models\ChatModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Pasien.php(358): App\Models\ChatModel->getListChat('13')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->list_chat()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-13 08:50:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-13 08:50:02 --> mysqli_sql_exception: Column 'id' in field list is ambiguous in C:\xampp\htdocs\projekfarmasi\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\projekfarmasi\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT IF(id_pe...', 0)
+#1 C:\xampp\htdocs\projekfarmasi\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT IF(id_pe...')
+#2 C:\xampp\htdocs\projekfarmasi\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT IF(id_pe...')
+#3 C:\xampp\htdocs\projekfarmasi\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT IF(id_pe...', Array, false)
+#4 C:\xampp\htdocs\projekfarmasi\app\Models\ChatModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\projekfarmasi\app\Controllers\Pasien.php(358): App\Models\ChatModel->getListChat('13')
+#6 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(933): App\Controllers\Pasien->list_chat()
+#7 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+#8 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\projekfarmasi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\projekfarmasi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\projekfarmasi\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-10-13 08:50:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in field list is ambiguous
+[Method: GET, Route: pasien/list_chat]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC', [], false)
+ 2 APPPATH\Models\ChatModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Pasien.php(358): App\Models\ChatModel->getListChat('13')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->list_chat()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-13 08:50:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC', [], false)
+ 4 APPPATH\Models\ChatModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Pasien.php(358): App\Models\ChatModel->getListChat('13')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->list_chat()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-13 08:50:02 --> [Caused by] mysqli_sql_exception: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC', [], false)
+ 5 APPPATH\Models\ChatModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Pasien.php(358): App\Models\ChatModel->getListChat('13')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->list_chat()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-13 08:52:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:52:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-13 08:52:10 --> mysqli_sql_exception: Column 'id' in field list is ambiguous in C:\xampp\htdocs\projekfarmasi\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\projekfarmasi\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT IF(id_pe...', 0)
+#1 C:\xampp\htdocs\projekfarmasi\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT IF(id_pe...')
+#2 C:\xampp\htdocs\projekfarmasi\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT IF(id_pe...')
+#3 C:\xampp\htdocs\projekfarmasi\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT IF(id_pe...', Array, false)
+#4 C:\xampp\htdocs\projekfarmasi\app\Models\ChatModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\projekfarmasi\app\Controllers\Pasien.php(358): App\Models\ChatModel->getListChat('13')
+#6 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(933): App\Controllers\Pasien->list_chat()
+#7 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+#8 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\projekfarmasi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\projekfarmasi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\projekfarmasi\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-10-13 08:52:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in field list is ambiguous
+[Method: GET, Route: pasien/list_chat]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC', [], false)
+ 2 APPPATH\Models\ChatModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Pasien.php(358): App\Models\ChatModel->getListChat('13')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->list_chat()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-13 08:52:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC', [], false)
+ 4 APPPATH\Models\ChatModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Pasien.php(358): App\Models\ChatModel->getListChat('13')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->list_chat()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-13 08:52:10 --> [Caused by] mysqli_sql_exception: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT IF(id_pengirim = 13, `id_penerima`, id_pengirim) as lawan_chat, `pesan`, `id`, `user`.`foto`
+FROM `chat`
+LEFT JOIN `user` ON `user`.`id` = IF(id_pengirim = 13, id_penerima, id_pengirim)
+WHERE chat.id IN (SELECT MAX(id) as last_chat_id
+FROM `chat`
+WHERE   (
+`id_pengirim` = \'13\'
+OR `id_penerima` = \'13\'
+ )
+GROUP BY IF(id_pengirim = 13, `id_penerima`, id_pengirim))
+ORDER BY `chat`.`id` DESC', [], false)
+ 5 APPPATH\Models\ChatModel.php(46): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Pasien.php(358): App\Models\ChatModel->getListChat('13')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->list_chat()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-13 08:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:55:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:56:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-13 08:56:44 --> ArgumentCountError: Too few arguments to function App\Controllers\Pasien::chat(), 0 passed in C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: pasien/chat]
+in APPPATH\Controllers\Pasien.php on line 329.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Pasien->chat()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pasien))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-13 08:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 08:59:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:00:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:00:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:00:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:00:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:01:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:01:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:01:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:01:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:05:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:05:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:05:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:46:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:46:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:46:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:48:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:51:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:51:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:51:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:52:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:52:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:53:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:54:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:54:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 09:55:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:36:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:36:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:36:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:36:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:36:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:36:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:36:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:36:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:36:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-13 10:36:55 --> ErrorException: Undefined variable $data_dokter
+[Method: GET, Route: dokter/chat]
+in APPPATH\Views\dokter\chat.php on line 66.
+ 1 APPPATH\Views\dokter\chat.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_dokter', 'C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\dokter\\chat.php', 66)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\dokter\\chat.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('dokter/chat', [], true)
+ 5 APPPATH\Controllers\Dokter.php(287): view('dokter/chat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dokter->chat()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dokter))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-10-13 10:37:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:37:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:37:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:37:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:37:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:37:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:38:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:38:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:49:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:57:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:57:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:57:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:58:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:58:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:58:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:58:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:58:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:58:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:58:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:58:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:58:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:59:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:59:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:59:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 10:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 11:00:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 11:00:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 11:00:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 11:00:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 11:00:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 11:00:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 11:00:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 11:00:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 11:00:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 11:00:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 11:00:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 11:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 11:01:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-13 11:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -115,31 +115,35 @@
             <h3 class="fw-bold mb-1">Rekomendasi tenaga kesehatan</h3>
             <p class="fw-500">Konsultasi online dengan tenaga kesehatan siaga kami</p>
         </div>
-        <?php
-        $no = 1;
-        foreach ($dokter_data as $dokter): ?>
-            <div class="mb-3">
-                <div class="doctor-card card h-100 d-flex flex-row gap-3 border-top-0 border-start-0 border-end-0 p-3"
-                    style="cursor: pointer;">
-                    <div class="doctor-img-container">
-                        <img src="<?= base_url($dokter["foto"]) ?>" class="img-fluid doctor-img" alt="" width="100" />
-                    </div>
-                    <div class="doctor-detail-container d-flex flex-column justify-content-between">
-                        <div class="doctor-detail-content d-flex flex-column gap-2">
-                            <h5 class="fw-bold"><?= $dokter['nama'] ?></h5>
-                            <h6 class="fw-500 mb-1"><?= $dokter['spesialis'] ?></h6>
-                            <div class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
-                                <i class="ri-briefcase-fill"></i>
-                                <p class="mb-0"><?= $dokter['exp_years'] ?> Tahun</p>
-                            </div>
+        <?php if (!empty($dokter_data)): ?>
+            <?php
+            $no = 1;
+            foreach ($dokter_data as $dokter): ?>
+                <div class="mb-3">
+                    <div class="doctor-card card h-100 d-flex flex-row gap-3 border-top-0 border-start-0 border-end-0 p-3"
+                        style="cursor: pointer;">
+                        <div class="doctor-img-container">
+                            <img src="<?= base_url($dokter["foto"]) ?>" class="img-fluid doctor-img" alt="" width="100" />
                         </div>
-                        <a href="<?= site_url('pasien/chat/' . $dokter['id_user']) ?>"
-                            class="doctor-chat-btn btn-gradient w-100 mb-1 p-2 text-center">Chat</a>
+                        <div class="doctor-detail-container d-flex flex-column justify-content-between">
+                            <div class="doctor-detail-content d-flex flex-column gap-2">
+                                <h5 class="fw-bold"><?= $dokter['nama'] ?></h5>
+                                <h6 class="fw-500 mb-1"><?= $dokter['spesialis'] ?></h6>
+                                <div class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
+                                    <i class="ri-briefcase-fill"></i>
+                                    <p class="mb-0"><?= $dokter['exp_years'] ?> Tahun</p>
+                                </div>
+                            </div>
+                            <a href="<?= site_url('pasien/chat/' . $dokter['id_user']) ?>"
+                                class="doctor-chat-btn btn-gradient w-100 mb-1 p-2 text-center">Chat</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
-        <div id="pagination" class="pagination mb-0"></div>
+            <?php endforeach; ?>
+            <div id="pagination" class="pagination mb-0"></div>
+        <?php else: ?>
+            <p class="text-center mt-3">Tidak ada data tenaga kesehatan.</p>
+        <?php endif; ?>
     </section>
 
     <?php
