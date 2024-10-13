@@ -110,7 +110,7 @@
                         <div class="d-flex justify-content-between mt-3 gap-5">
                             <button class="btn btn-warning" onclick="showForm(<?= $no++ ?>)">Edit</button>
                             <a href="<?= base_url('admin/delete_pasien/' . $pasien['id_user']) ?>" class="btn btn-danger"
-                                onclick="confirm('Apakah Anda yakin ingin menghapus pasien ini?')">Hapus</a>
+                                onclick="return confirm('Apakah Anda yakin ingin menghapus pasien ini?')">Hapus</a>
                         </div>
                     </div>
                 </div>
