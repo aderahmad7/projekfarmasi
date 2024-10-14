@@ -174,7 +174,7 @@
                             </div>
                         </div>
                         <div class="card border-0 pt-2">
-                            <a href="<?= site_url('pasien/chat') ?>"
+                            <a href="<?= site_url('pasien/chat/' . $dokter['id_user']) ?>"
                                 class="btn-gradient modal-btn p-2 w-100 text-center">Chat</a>
                         </div>
                     </div>

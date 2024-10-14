@@ -58,7 +58,7 @@
 
                     <div class="header-right">
                         <div class="notification-box">
-                            <a class="text-white" href="<?=site_url('pasien/list_chat') ?>">
+                            <a class="text-white" href="<?= site_url('pasien/list_chat') ?>">
                                 <i class="ri-chat-4-line"></i>
                             </a>
                         </div>
