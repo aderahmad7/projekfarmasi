@@ -145,7 +145,6 @@ body {
 
 .section-chat {
     z-index: 2 !important;
-    margin-top: 120px !important;
     height: 100% !important;
 }
 
@@ -227,6 +226,11 @@ body {
 .btn-chat {
     width: 60px;
     border-radius: 15px !important;
+}
+
+.message-container {
+    margin-top: 120px !important;
+
 }
 
 .message-img {

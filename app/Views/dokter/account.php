@@ -84,12 +84,12 @@
             </li>
 
             <li>
-                <a href="<?= site_url('dokter/consultation') ?>" class="mobile-box">
+                <a href="<?= site_url('dokter/list_chat') ?>" class="mobile-box">
                     <div class="mobile-icon">
-                        <i class="ri-contacts-book-2-line"></i>
+                        <i class="ri-chat-3-line"></i>
                     </div>
                     <div class="mobile-name">
-                        <h5>Konsultasi</h5>
+                        <h5>Chat</h5>
                     </div>
                 </a>
             </li>
