@@ -49,7 +49,8 @@
         <!-- Sign in screen start -->
         <section id="sign-in-screen-content" class="d-flex flex-column gap-4">
             <div class="container">
-                <div class="sign-in-login">
+            <div class="d-flex flex-column align-items-center justify-content-start">
+                    <img src="<?= base_url() ?>assets/images/favicon/logo-bakul-sehat.png" alt="" width="250px">
                     <h1 class="login-txt">Buat Akun Anda</h1>
                 </div>
                 <!-- Menampilkan pesan kesalahan -->
