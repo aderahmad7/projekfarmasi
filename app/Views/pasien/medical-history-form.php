@@ -2,22 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="multikit">
-    <meta name="keywords" content="multikit">
-    <title>Projek Farmasi</title>
-    <link rel="manifest" href="https://themes.pixelstrap.net/multikit/manifest.json">
-    <meta name="theme-color" content="#ff8d2f">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="multikit">
-    <meta name="msapplication-TileImage" content="https://themes.pixelstrap.net/multikit/assets/images/favicon/1.svg">
-    <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/x-icon" href="https://themes.pixelstrap.net/multikit/assets/images/favicon/9.svg">
-    <link rel="shortcut icon" href="https://themes.pixelstrap.net/" type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="multikit" />
+    <meta name="keywords" content="multikit" />
+    <title>Bakul Sehat ULM</title>
+    <link rel="icon" href="<?= base_url() ?>assets/images/favicon/logo.jpg" />
+    <link rel="manifest" href="https://themes.pixelstrap.net/multikit/manifest.json" />
+    <meta name="theme-color" content="#ff8d2f" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="multikit" />
+    <meta name="msapplication-TileImage" content="https://themes.pixelstrap.net/multikit/assets/images/favicon/1.svg" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!--Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
