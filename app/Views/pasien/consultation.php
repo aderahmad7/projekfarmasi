@@ -128,17 +128,14 @@
                             <div class="doctor-detail-content d-flex flex-column gap-2">
                                 <h5 class="fw-bold"><?= $dokter['nama'] ?></h5>
                                 <h6 class="fw-500 mb-1"><?= $dokter['spesialis'] ?></h6>
-                                <div class="d-flex align-items-center justify-content-center gap-2">
-                                    <div
-                                        class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
-                                        <i class="ri-briefcase-fill"></i>
-                                        <p class="mb-0"><?= $dokter['exp_years'] ?> Tahun</p>
-                                    </div>
-                                    <div
-                                        class="schedule-container fw-500 d-flex align-items-center gap-1 justify-content-center w-75">
-                                        <i class="ri-time-fill"></i>
-                                        <p class="mb-0">Senin | 10.00 - 12.00</p>
-                                    </div>
+                                <div class="experience-container d-flex align-items-center gap-1 justify-content-center w-75 mb-1">
+                                    <i class="ri-briefcase-fill"></i>
+                                    <p class="mb-0"><?= $dokter['exp_years'] ?> Tahun</p>
+                                </div>
+                                <div
+                                    class="schedule-container fw-500 d-flex align-items-center gap-1 justify-content-center w-75 mb-2">
+                                    <i class="ri-time-fill"></i>
+                                    <p class="mb-0">Senin | 10.00 - 12.00</p>
                                 </div>
                             </div>
                             <a href="<?= site_url('pasien/chat/' . $dokter['id_user']) ?>"
