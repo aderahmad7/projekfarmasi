@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="multikit" />
@@ -52,7 +52,7 @@
 
                         <div class="header-right">
                             <div class="notification-box">
-                                <a class="text-white" href="<?=site_url('dokter/list_chat') ?>">
+                                <a class="text-white" href="<?= site_url('dokter/list_chat') ?>">
                                     <i class="ri-chat-4-line"></i>
                                 </a>
                             </div>
@@ -147,11 +147,34 @@
                                     placeholder="Enter your specialist" id="spesialis" value="<?= $spesialis ?>"
                                     required>
                             </div>
-                            <div class="mb-5">
+                            <div class="mb-3">
                                 <label for="exp-years" class="form-label">Tahun Pengalaman</label>
                                 <input type="number" min="0" name="exp-years" class="form-control" min="0"
                                     placeholder="Enter your experience years" id="exp-years" value="<?= $exp_years ?>"
                                     required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="hari-aktif" class="form-label">Hari Aktif</label>
+                                <select name="hari-aktif" class="form-select">
+                                    <option disabled>Pilih Hari Aktif</option>
+                                    <option value="Senin">Senin</option>
+                                    <option value="Selasa">Selasa</option>
+                                    <option value="Rabu">Rabu</option>
+                                    <option value="Kamis">Kamis</option>
+                                    <option value="Jumat">Jumat</option>
+                                    <option value="Sabtu">Sabtu</option>
+                                    <option value="Minggu">Minggu</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="jam-mulai" class="form-label">Jam Mulai</label>
+                                <input type="time" name="jam-mulai" class="form-control"
+                                    placeholder="Enter your start time" id="jam-mulai" value="" required>
+                            </div>
+                            <div class="mb-5">
+                                <label for="jam-selesai" class="form-label">Jam Selesai</label>
+                                <input type="time" name="jam-selesai" class="form-control"
+                                    placeholder="Enter your end time" id="jam-selesai" value="" required>
                             </div>
                             <input type="submit" class="btn btn-gradient mb-4" value="Simpan Pengaturan">
                         </form>

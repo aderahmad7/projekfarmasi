@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="multikit" />
@@ -128,9 +128,17 @@
                             <div class="doctor-detail-content d-flex flex-column gap-2">
                                 <h5 class="fw-bold"><?= $dokter['nama'] ?></h5>
                                 <h6 class="fw-500 mb-1"><?= $dokter['spesialis'] ?></h6>
-                                <div class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
-                                    <i class="ri-briefcase-fill"></i>
-                                    <p class="mb-0"><?= $dokter['exp_years'] ?> Tahun</p>
+                                <div class="d-flex align-items-center justify-content-center gap-2">
+                                    <div
+                                        class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
+                                        <i class="ri-briefcase-fill"></i>
+                                        <p class="mb-0"><?= $dokter['exp_years'] ?> Tahun</p>
+                                    </div>
+                                    <div
+                                        class="schedule-container fw-500 d-flex align-items-center gap-1 justify-content-center w-75">
+                                        <i class="ri-time-fill"></i>
+                                        <p class="mb-0">Senin | 10.00 - 12.00</p>
+                                    </div>
                                 </div>
                             </div>
                             <a href="<?= site_url('pasien/chat/' . $dokter['id_user']) ?>"
@@ -167,10 +175,12 @@
                         <div class="card p-2 border-start-0 border-end-0 border-top-0">
                             <h4 class="fw-bold mb-1"><?= $dokter['nama'] ?></h4>
                             <h6 class="fw-500 mb-2"><?= $dokter['spesialis'] ?></h6>
-                            <div class="experience-container d-flex align-items-center gap-1 justify-content-center w-75">
+                            <div
+                                class="experience-container d-flex align-items-center gap-1 justify-content-center w-75 mb-2">
                                 <i class="ri-briefcase-fill"></i>
                                 <p class="mb-0"><?= $dokter['exp_years'] ?> Tahun</p>
                             </div>
+                            <h5 class="fw-500 mb-2">Senin | 10.00 - 12.00</h5>
                         </div>
                         <div class="card border-0 pt-2">
                             <a href="<?= site_url('pasien/chat/' . $dokter['id_user']) ?>"

@@ -1,6 +1,9 @@
 let dokterElement = document.getElementById("doctor-table-body");
 let doctors = JSON.parse(dokterElement.getAttribute("data-dokter"));
 
+const inputWaktuAwal = document.getElementById("doctor-jam-mulai");
+const inputWaktuAkhir = document.getElementById("doctor-jam-selesai");
+
 let editIndex = null;
 const itemsPerPage = 10;
 const baseUrl = "http://localhost/projekfarmasi/public";
@@ -10,6 +13,7 @@ function showForm(index = null) {
   const doctorForm = document.getElementById("doctor-form");
   const doctorId = document.getElementById("doctor-id");
   const doctorPassword = document.getElementById("doctor-password");
+  const passwordLabel = document.getElementById("password-label");
 
   if (index !== null) {
     formTitle.textContent = "Edit Tenaga Kesehatan";
@@ -17,12 +21,14 @@ function showForm(index = null) {
     fillFormWithDoctorData(doctors[index]);
     editIndex = index;
     doctorPassword.style.display = "none";
+    passwordLabel.style.display = "none";
   } else {
     formTitle.textContent = "Tambah Tenaga Kesehatan";
     doctorForm.reset();
     doctorId.value = "";
     editIndex = null;
     doctorPassword.style.display = "block";
+    passwordLabel.style.display = "block";
   }
 
   $("#form-modal").modal("show");
@@ -233,6 +239,23 @@ function updatePaginationButtons() {
     button.classList.toggle("active", index + 1 === currentPage);
   });
 }
+
+document.getElementById("simpanButton").addEventListener("click", function (e) {
+  const waktuAwal = inputWaktuAwal.value;
+  const waktuAkhir = inputWaktuAkhir.value;
+
+  if (!waktuAwal || !waktuAkhir) {
+    alert("Harap masukkan waktu awal dan akhir.");
+    e.preventDefault();
+    return false;
+  }
+
+  if (waktuAkhir < waktuAwal) {
+    alert("Waktu akhir tidak boleh lebih awal dari waktu awal.");
+    e.preventDefault();
+    return false;
+  }
+});
 
 showCards(currentPage); // Menampilkan card pertama kali saat halaman dimuat
 setupPagination(); // Mengatur button pagination pertama kali saat halaman dimuat

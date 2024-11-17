@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="multikit" />
@@ -107,6 +107,7 @@
                         <p class="card-text"><strong>Nomor Handphone:</strong> <?= $doctor['nomorHandphone'] ?></p>
                         <p class="card-text"><strong>Email:</strong> <?= $doctor['email'] ?></p>
                         <p class="card-text"><strong>Nama Pengguna:</strong> <?= $doctor['username'] ?></p>
+                        <p class="card-text"><strong>Jadwal Aktif:</strong> Senin | 08.00 - 10.00</p>
                         <div class="d-flex justify-content-between mt-3 gap-5">
                             <button class="btn btn-warning" onclick="showForm(<?= $no++ ?>)">Edit</button>
                             <a href="<?= base_url('admin/delete_dokter/' . $doctor['id_user']) ?>" class="btn btn-danger"
@@ -191,17 +192,38 @@
                             <input type="text" name="username" class="form-control" id="doctor-username" required />
                         </div>
                         <div class="form-group">
-                            <label for="doctor-password">Kata Sandi:</label>
+                            <label for="doctor-password" id="password-label">Kata Sandi:</label>
                             <input type="text" name="password" class="form-control" id="doctor-password" />
                         </div>
-                        <div class="form-group mb-4">
+                        <div class="form-group">
                             <label for="doctor-specialty">Jenis Tenaga Kesehatan:</label>
                             <input type="text" name="spesialis" class="form-control" id="doctor-specialty" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="doctor-hari-aktif">Hari Aktif:</label>
+                            <select name="hari-aktif" id="doctor-har9-aktif" class="form-select">
+                                <option value="Senin">Senin</option>
+                                <option value="Selasa">Selasa</option>
+                                <option value="Rabu">Rabu</option>
+                                <option value="Kamis">Kamis</option>
+                                <option value="Jumat">Jumat</option>
+                                <option value="Sabtu">Sabtu</option>
+                                <option value="Minggu">Minggu</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctor-jam-mulai">Jam Mulai:</label>
+                            <input type="time" name="jam-mulai" class="form-control" id="doctor-jam-mulai" required />
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="doctor-jam-selesai">Jam Selesai:</label>
+                            <input type="time" name="jam-selesai" class="form-control" id="doctor-jam-selesai"
+                                required />
                         </div>
                         <button type="button" class="btn btn-secondary mb-1" data-dismiss="modal">
                             Tutup
                         </button>
-                        <button type="submit" name="submit" class="btn btn-primary">
+                        <button type="submit" name="submit" class="btn btn-primary" id="simpanButton">
                             Simpan perubahan
                         </button>
                     </form>

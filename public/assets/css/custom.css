@@ -96,6 +96,12 @@ body {
     width: 83px !important;
 }
 
+.schedule-container {
+    background-color: #90fc733b;
+    border-radius: 5px;
+    width: 150px !important;
+}
+
 .doctor-chat-btn {
     width: 110px !important;
     border-radius: 5px;
