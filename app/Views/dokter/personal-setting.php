@@ -154,9 +154,22 @@
                                     required>
                             </div>
                             <div class="mb-3">
-                                <label for="hari-aktif" class="form-label">Hari Aktif</label>
-                                <select name="hari-aktif" class="form-select">
-                                    <option disabled>Pilih Hari Aktif</option>
+                                <label for="hari-mulai" class="form-label">Hari Mulai</label>
+                                <select name="hari-mulai" class="form-select">
+                                    <option disabled>Pilih Hari Mulai</option>
+                                    <option value="Senin">Senin</option>
+                                    <option value="Selasa">Selasa</option>
+                                    <option value="Rabu">Rabu</option>
+                                    <option value="Kamis">Kamis</option>
+                                    <option value="Jumat">Jumat</option>
+                                    <option value="Sabtu">Sabtu</option>
+                                    <option value="Minggu">Minggu</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="hari-selesai" class="form-label">Hari Selesai</label>
+                                <select name="hari-selesai" class="form-select">
+                                    <option disabled>Pilih Hari Selesai</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
                                     <option value="Rabu">Rabu</option>

@@ -135,7 +135,7 @@
                                 <div
                                     class="schedule-container fw-500 d-flex align-items-center gap-1 justify-content-center w-75 mb-2">
                                     <i class="ri-time-fill"></i>
-                                    <p class="mb-0">Senin | 10.00 - 12.00</p>
+                                    <p class="mb-0">Senin - Kamis | 10.00 - 12.00</p>
                                 </div>
                             </div>
                             <a href="<?= site_url('pasien/chat/' . $dokter['id_user']) ?>"
@@ -177,7 +177,7 @@
                                 <i class="ri-briefcase-fill"></i>
                                 <p class="mb-0"><?= $dokter['exp_years'] ?> Tahun</p>
                             </div>
-                            <h5 class="fw-500 mb-2">Senin | 10.00 - 12.00</h5>
+                            <h5 class="fw-500 mb-2">Senin - Kamis | 10.00 - 12.00</h5>
                         </div>
                         <div class="card border-0 pt-2">
                             <a href="<?= site_url('pasien/chat/' . $dokter['id_user']) ?>"

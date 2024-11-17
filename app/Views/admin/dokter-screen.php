@@ -200,8 +200,20 @@
                             <input type="text" name="spesialis" class="form-control" id="doctor-specialty" required />
                         </div>
                         <div class="form-group">
-                            <label for="doctor-hari-aktif">Hari Aktif:</label>
-                            <select name="hari-aktif" id="doctor-har9-aktif" class="form-select">
+                            <label for="doctor-hari-mulai">Hari Mulai:</label>
+                            <select name="hari-mulai" id="doctor-har9-mulai" class="form-select">
+                                <option value="Senin">Senin</option>
+                                <option value="Selasa">Selasa</option>
+                                <option value="Rabu">Rabu</option>
+                                <option value="Kamis">Kamis</option>
+                                <option value="Jumat">Jumat</option>
+                                <option value="Sabtu">Sabtu</option>
+                                <option value="Minggu">Minggu</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctor-hari-selesai">Hari Selesai:</label>
+                            <select name="hari-selesai" id="doctor-har9-selesai" class="form-select">
                                 <option value="Senin">Senin</option>
                                 <option value="Selasa">Selasa</option>
                                 <option value="Rabu">Rabu</option>
