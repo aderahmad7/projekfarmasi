@@ -135,7 +135,7 @@
                             <div class="poster-detail p-center">
                                 <div>
                                     <h3 class="text-white">
-                                        <?= $status_posttest === 'sudah' ? 'Anda sudah melakukan posttest' : 'Selesaikan video untuk melakukan post-test' ?>
+                                        <?= $status_posttest === 'sudah' ? 'Anda sudah melakukan Post Test' : 'Selesaikan video untuk melakukan Post Test' ?>
                                     </h3>
                                     <?php if ($status_posttest != 'sudah'): ?>
                                         <button class="btn btn-sm btn-white" id="btnPost">

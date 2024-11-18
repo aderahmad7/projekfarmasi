@@ -43,7 +43,7 @@
                 <h1 class="d-none">Goal</h1>
                 <h2 class="d-none">Hidden</h2>
                 <div class="primary_goal-wrap mt-32">
-                    <form id="quiz-form" class="primary-form" method="POST" action="<?= base_url('posttest/done') ?>">
+                    <form id="quiz-form" class="primary-form" method="POST" action="<?= base_url('posttest/submit') ?>">
                         <?php
                         $i = 0;
                         $idQuestion = [];

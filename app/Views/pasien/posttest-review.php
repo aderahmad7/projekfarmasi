@@ -77,9 +77,6 @@
                         <p>Total jawaban benar: <?= $totalBenar ?> dari <?= $jumlahSoal ?> soal</p>
                     </div>
                     <div class="row">
-                        <div class="col">
-                            <a href="<?= base_url('posttest') ?>" class="btn btn-danger mt-32 w-100">Kerjakan Ulang</a>
-                        </div>
                         <div class="col"><a href="<?= base_url('posttest/done') ?>"
                                 class="btn btn-primary mt-32 w-100">Selesai</a></div>
                     </div>
