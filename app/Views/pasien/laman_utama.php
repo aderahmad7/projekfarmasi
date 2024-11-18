@@ -121,7 +121,6 @@
             </ul>
         </div>
         <!-- Mobile Section End -->
-
         <!-- Progress start -->
         <section class="section-t-space poster-section">
             <div class="custom-container">
@@ -136,11 +135,13 @@
                             <div class="poster-detail p-center">
                                 <div>
                                     <h3 class="text-white">
-                                        Selesaikan video untuk melakukan post-test
+                                        <?= $status_posttest === 'sudah' ? 'Anda sudah melakukan posttest' : 'Selesaikan video untuk melakukan post-test' ?>
                                     </h3>
-                                    <button class="btn btn-sm btn-white" id="btnPost">
-                                        Post-Test
-                                    </button>
+                                    <?php if ($status_posttest != 'sudah'): ?>
+                                        <button class="btn btn-sm btn-white" id="btnPost">
+                                            Post-Test
+                                        </button>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>

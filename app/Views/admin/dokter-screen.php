@@ -107,7 +107,9 @@
                         <p class="card-text"><strong>Nomor Handphone:</strong> <?= $doctor['nomorHandphone'] ?></p>
                         <p class="card-text"><strong>Email:</strong> <?= $doctor['email'] ?></p>
                         <p class="card-text"><strong>Nama Pengguna:</strong> <?= $doctor['username'] ?></p>
-                        <p class="card-text"><strong>Jadwal Aktif:</strong> Senin | 08.00 - 10.00</p>
+                        <p class="card-text"><strong>Jadwal Aktif:</strong> <?= $doctor['hari_mulai'] ?> -
+                            <?= $doctor['hari_selesai'] ?> | <?= $doctor['jam_mulai'] ?> - <?= $doctor['jam_selesai'] ?>
+                        </p>
                         <div class="d-flex justify-content-between mt-3 gap-5">
                             <button class="btn btn-warning" onclick="showForm(<?= $no++ ?>)">Edit</button>
                             <a href="<?= base_url('admin/delete_dokter/' . $doctor['id_user']) ?>" class="btn btn-danger"
@@ -129,6 +131,7 @@
                         <th>Nomor Handphone</th>
                         <th>Email</th>
                         <th>Nama Pengguna</th>
+                        <th>Jadwal Aktif</th>
                         <th>Tindakan</th>
                     </tr>
                 </thead>
@@ -201,7 +204,7 @@
                         </div>
                         <div class="form-group">
                             <label for="doctor-hari-mulai">Hari Mulai:</label>
-                            <select name="hari-mulai" id="doctor-har9-mulai" class="form-select">
+                            <select name="hari-mulai" id="doctor-hari-mulai" class="form-select">
                                 <option value="Senin">Senin</option>
                                 <option value="Selasa">Selasa</option>
                                 <option value="Rabu">Rabu</option>
@@ -213,7 +216,7 @@
                         </div>
                         <div class="form-group">
                             <label for="doctor-hari-selesai">Hari Selesai:</label>
-                            <select name="hari-selesai" id="doctor-har9-selesai" class="form-select">
+                            <select name="hari-selesai" id="doctor-hari-selesai" class="form-select">
                                 <option value="Senin">Senin</option>
                                 <option value="Selasa">Selasa</option>
                                 <option value="Rabu">Rabu</option>

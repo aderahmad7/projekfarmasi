@@ -45,6 +45,10 @@ function fillFormWithDoctorData(doctor) {
   document.getElementById("doctor-email").value = doctor.email;
   document.getElementById("doctor-username").value = doctor.username;
   document.getElementById("doctor-specialty").value = doctor.specialty;
+  document.getElementById("doctor-hari-mulai").value = doctor.hari_mulai;
+  document.getElementById("doctor-hari-selesai").value = doctor.hari_selesai;
+  document.getElementById("doctor-jam-mulai").value = doctor.jam_mulai;
+  document.getElementById("doctor-jam-selesai").value = doctor.jam_selesai;
 }
 
 function saveDoctor(event) {

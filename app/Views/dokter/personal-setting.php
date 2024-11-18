@@ -157,37 +157,42 @@
                                 <label for="hari-mulai" class="form-label">Hari Mulai</label>
                                 <select name="hari-mulai" class="form-select">
                                     <option disabled>Pilih Hari Mulai</option>
-                                    <option value="Senin">Senin</option>
-                                    <option value="Selasa">Selasa</option>
-                                    <option value="Rabu">Rabu</option>
-                                    <option value="Kamis">Kamis</option>
-                                    <option value="Jumat">Jumat</option>
-                                    <option value="Sabtu">Sabtu</option>
-                                    <option value="Minggu">Minggu</option>
+                                    <option <?= $hari_mulai === "Senin" ? 'selected' : '' ?> value="Senin">Senin</option>
+                                    <option <?= $hari_mulai === "Selasa" ? 'selected' : '' ?> value="Selasa">Selasa
+                                    </option>
+                                    <option <?= $hari_mulai === "Rabu" ? 'selected' : '' ?> value="Rabu">Rabu</option>
+                                    <option <?= $hari_mulai === "Kamis" ? 'selected' : '' ?> value="Kamis">Kamis</option>
+                                    <option <?= $hari_mulai === "Jumat" ? 'selected' : '' ?> value="Jumat">Jumat</option>
+                                    <option <?= $hari_mulai === "Sabtu" ? 'selected' : '' ?> value="Sabtu">Sabtu</option>
+                                    <option <?= $hari_mulai === "Minggu" ? 'selected' : '' ?> value="Minggu">Minggu
+                                    </option>
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label for="hari-selesai" class="form-label">Hari Selesai</label>
                                 <select name="hari-selesai" class="form-select">
                                     <option disabled>Pilih Hari Selesai</option>
-                                    <option value="Senin">Senin</option>
-                                    <option value="Selasa">Selasa</option>
-                                    <option value="Rabu">Rabu</option>
-                                    <option value="Kamis">Kamis</option>
-                                    <option value="Jumat">Jumat</option>
-                                    <option value="Sabtu">Sabtu</option>
-                                    <option value="Minggu">Minggu</option>
+                                    <option <?= $hari_selesai === "Senin" ? 'selected' : '' ?> value="Senin">Senin</option>
+                                    <option <?= $hari_selesai === "Selasa" ? 'selected' : '' ?> value="Selasa">Selasa
+                                    </option>
+                                    <option <?= $hari_selesai === "Rabu" ? 'selected' : '' ?> value="Rabu">Rabu</option>
+                                    <option <?= $hari_selesai === "Kamis" ? 'selected' : '' ?> value="Kamis">Kamis</option>
+                                    <option <?= $hari_selesai === "Jumat" ? 'selected' : '' ?> value="Jumat">Jumat</option>
+                                    <option <?= $hari_selesai === "Sabtu" ? 'selected' : '' ?> value="Sabtu">Sabtu</option>
+                                    <option <?= $hari_selesai === "Minggu" ? 'selected' : '' ?> value="Minggu">Minggu
+                                    </option>
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label for="jam-mulai" class="form-label">Jam Mulai</label>
                                 <input type="time" name="jam-mulai" class="form-control"
-                                    placeholder="Enter your start time" id="jam-mulai" value="" required>
+                                    placeholder="Enter your start time" id="jam-mulai" value="<?= $jam_mulai ?>" required>
                             </div>
                             <div class="mb-5">
                                 <label for="jam-selesai" class="form-label">Jam Selesai</label>
                                 <input type="time" name="jam-selesai" class="form-control"
-                                    placeholder="Enter your end time" id="jam-selesai" value="" required>
+                                    placeholder="Enter your end time" id="jam-selesai" value="<?= $jam_selesai ?>"
+                                    required>
                             </div>
                             <input type="submit" class="btn btn-gradient mb-4" value="Simpan Pengaturan">
                         </form>

@@ -87,6 +87,10 @@ class Dokter extends BaseController
             "foto" => $userData["foto"],
             "spesialis" => $dokterData["spesialis"],
             "exp_years" => $dokterData["exp_years"],
+            "hari_mulai" => $dokterData["hari_mulai"],
+            "hari_selesai" => $dokterData["hari_selesai"],
+            "jam_mulai" => $dokterData["jam_mulai"],
+            "jam_selesai" => $dokterData["jam_selesai"],
         ];
 
         return view('dokter/personal-setting', $data);
@@ -134,6 +138,10 @@ class Dokter extends BaseController
         $dataDokter = [
             "spesialis" => esc($this->request->getPost('spesialis')),
             "exp_years" => esc($this->request->getPost('exp-years')),
+            "hari_mulai" => esc($this->request->getPost('hari-mulai')),
+            "hari_selesai" => esc($this->request->getPost('hari-selesai')),
+            "jam_mulai" => esc($this->request->getPost('jam-mulai')),
+            "jam_selesai" => esc($this->request->getPost('jam-selesai')),
         ];
 
         if ($dokterModel->update($id_dokter, $dataDokter) && $userModel->update($idUser, $dataUser)) {
@@ -287,7 +295,7 @@ class Dokter extends BaseController
         $userData = $userModel->getData($username);
         $idUser = $userModel->getID($username);
         $dataPasien = $pasienModel->getPatient($id);
-        $dataChat = $chatModel->getChatByUsers($idUser,$id);
+        $dataChat = $chatModel->getChatByUsers($idUser, $id);
 
         $data = [
             'data_pasien' => $dataPasien,

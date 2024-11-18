@@ -8,7 +8,7 @@ class DokterModel extends Model
 {
     protected $table = 'dokter';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['id_user', 'spesialis', 'exp_years'];
+    protected $allowedFields = ['id_user', 'spesialis', 'exp_years', 'hari_mulai', 'hari_selesai', 'jam_mulai', 'jam_selesai'];
 
     public function insertData($data)
     {

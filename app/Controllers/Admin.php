@@ -112,7 +112,11 @@ class Admin extends BaseController
                     'tahunPengalaman' => $doctor['exp_years'],
                     'nomorHandphone' => $doctor['no_hp'],
                     'specialty' => $doctor['spesialis'],
-                    'email' => $doctor['email']
+                    'email' => $doctor['email'],
+                    'hari_mulai' => $doctor['hari_mulai'],
+                    'hari_selesai' => $doctor['hari_selesai'],
+                    'jam_mulai' => substr($doctor['jam_mulai'], 0, 5), 
+                    'jam_selesai' => substr($doctor['jam_selesai'], 0, 5), 
                 ];
             }
             return view('admin/dokter-screen', ['doctors' => $filteredDoctors]);
@@ -148,6 +152,10 @@ class Admin extends BaseController
             'id_user' => $userId,
             'spesialis' => $data['spesialis'],
             'exp_years' => $data['exp-years'],
+            'hari_mulai' => $data['hari-mulai'],
+            'hari_selesai' => $data['hari-selesai'],
+            'jam_mulai' => $data['jam-mulai'],
+            'jam_selesai' => $data['jam-selesai'],
         ];
 
         $dokterModel->insert($dokterData);

@@ -7,6 +7,7 @@ use App\Models\ChatModel;
 use App\Models\DokterModel;
 use App\Models\DosisObatModel;
 use App\Models\RiwayatMedisModel;
+use App\Models\StatCourseModel;
 use App\Models\UserModel;
 use App\Models\PasienModel;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -53,12 +54,14 @@ class Pasien extends BaseController
         $pasienModel = new PasienModel();
         $userModel = new UserModel();
         $courseModel = new \App\Models\CourseModel();
+        $statModel = new StatCourseModel();
 
         $idUser = session()->get('id_user');
         $username = session()->get('username');
 
         $userData = $userModel->getData($username);
         $pasienData = $pasienModel->getDataID($idUser);
+        $statData = $statModel->getData($pasienData["id"]);
         $data = [
             "role" => $userData["role"],
             "nama" => $userData["nama"],
@@ -69,7 +72,8 @@ class Pasien extends BaseController
             "foto" => $userData["foto"],
             "pekerjaan" => $pasienData["pekerjaan"],
             "riwayat" => $pasienData["riwayat"],
-            "courses" => $courseModel->findAll()
+            "courses" => $courseModel->findAll(),
+            "status_posttest" => $statData["posttest"]
         ];
 
         return view('pasien/laman_utama', $data);
