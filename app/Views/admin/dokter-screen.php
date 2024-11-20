@@ -37,6 +37,9 @@
     <link id="change-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css" />
 
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/custom.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
     <style>
         .alert {
             padding: 15px;
@@ -121,7 +124,7 @@
             <?php
             $no = 0;
             foreach ($doctors as $doctor): ?>
-                <div class="card mb-3">
+                <div class="card-table mb-3">
                     <div class="card-header">
                         <h5 class="card-title"><?= $doctor['name'] ?></h5>
                     </div>
@@ -198,9 +201,10 @@
                                 <option value="Perempuan">Perempuan</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="doctor-usia">Usia:</label>
-                            <input type="number" name="usia" class="form-control" id="doctor-usia" required />
+                        <div class="form-group d-flex flex-column">
+                            <label for="doctor-tanggal-lahir">Tanggal Lahir:</label>
+                            <input type="text" name="tanggal-lahir" class="form-control" id="doctor-tanggal-lahir"
+                                required />
                         </div>
                         <div class="form-group">
                             <label for="doctor-tahun-pengalaman">Total Tahun Pengalaman:</label>
@@ -277,6 +281,7 @@
     </div>
 
     <!-- Bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

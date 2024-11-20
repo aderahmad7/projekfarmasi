@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/styleSecond.css" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/media-query.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
     <style>
         .alert {
             padding: 15px;
@@ -49,7 +51,7 @@
         <!-- Sign in screen start -->
         <section id="sign-in-screen-content" class="d-flex flex-column gap-4">
             <div class="container">
-            <div class="d-flex flex-column align-items-center justify-content-start">
+                <div class="d-flex flex-column align-items-center justify-content-start">
                     <img src="<?= base_url() ?>assets/images/favicon/logo-bakul-sehat.png" alt="" width="250px">
                     <h1 class="login-txt">Buat Akun Anda</h1>
                 </div>
@@ -130,22 +132,17 @@
                             <span>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <mask id="mask0_330_7186" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0"
-                                        y="0" width="24" height="24">
-                                        <rect width="24" height="24" fill="white" />
-                                    </mask>
-                                    <g mask="url(#mask0_330_7186)">
-                                        <path
-                                            d="M19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5Z"
-                                            stroke="black" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M3 7L12 13L21 7" stroke="black" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </g>
+                                    <rect x="3" y="5" width="18" height="16" rx="2" stroke="black" stroke-width="2" />
+                                    <line x1="3" y1="9" x2="21" y2="9" stroke="black" stroke-width="2" />
+                                    <line x1="7" y1="3" x2="7" y2="7" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <line x1="17" y1="3" x2="17" y2="7" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" />
                                 </svg>
+
                             </span>
-                            <input type="number" name="usia" id="Usia" placeholder="Usia (tahun)"
-                                class="sign-in-custom-input" min="0" />
+                            <input type="text" id="tanggal-lahir" name="tanggal-lahir" placeholder="Tanggal Lahir"
+                                class="sign-in-custom-input date-input" />
                         </div>
                         <div class="form-details-sign-in mt-12">
                             <span>
@@ -319,13 +316,15 @@
             </div>
             <div class="block-footer">
                 <p>
-                Sudah punya akun?
+                    Sudah punya akun?
                     <a href="<?= base_url('login') ?>">Masuk</a>
                 </p>
             </div>
         </section>
         <!-- Sign in screen end -->
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="<?= base_url() ?>assets/js/umur.js"></script>
     <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
     <script src="<?= base_url() ?>assets/js/slick.min.js"></script>
     <script src="<?= base_url() ?>assets/js/bootstrap.bundle.min.js"></script>

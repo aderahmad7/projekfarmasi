@@ -37,6 +37,9 @@
     <link id="change-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css" />
 
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/custom.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
     <style>
         .alert {
             padding: 15px;
@@ -193,9 +196,10 @@
                                 <option value="Perempuan">Perempuan</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="patient-usia">Usia:</label>
-                            <input name="usia" type="number" class="form-control" id="patient-usia" required />
+                        <div class="form-group d-flex flex-column">
+                            <label for="patient-tanggal-lahir">Tanggal Lahir:</label>
+                            <input name="tanggal-lahir" type="text" class="form-control" id="patient-tanggal-lahir"
+                                required />
                         </div>
                         <div class="form-group">
                             <label for="patient-job">Pekerjaan:</label>
@@ -314,6 +318,8 @@
     <!-- end modal edit -->
 
     <!-- Bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
     <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

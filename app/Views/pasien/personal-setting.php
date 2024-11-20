@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="multikit" />
@@ -35,6 +35,9 @@
 
     <!-- Style css -->
     <link id="change-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 </head>
 
 <body class="inter-body learning-color">
@@ -135,15 +138,16 @@
                                     </option>
                                 </select>
                             </div>
-                            <div class="mb-3">
-                                <label for="usia" class="form-label">Usia</label>
-                                <input type="number" name="usia" class="form-control" min="0"
-                                    placeholder="Masukkan usia Anda" id="usia" value="<?= $usia ?>" required>
+                            <div class="mb-3 d-flex flex-column">
+                                <label for="tanggal-lahir" class="form-label">Tanggal Lahir</label>
+                                <input type="text" id="tanggal-lahir" name="tanggal-lahir" placeholder="Tanggal Lahir"
+                                    class="form-control" />
                             </div>
                             <div class="mb-3">
                                 <label for="no-hp" class="form-label">Nomor Handphone</label>
                                 <input type="text" name="no-hp" class="form-control" min="0"
-                                    placeholder="Masukkan nomor handphone Anda" id="no-hp" value="<?= $no_hp ?>" required>
+                                    placeholder="Masukkan nomor handphone Anda" id="no-hp" value="<?= $no_hp ?>"
+                                    required>
                             </div>
                             <div class="mb-3">
                                 <label for="riwayat" class="form-label">Riwayat Kesehatan</label>
@@ -153,8 +157,9 @@
                             </div>
                             <div class="mb-5">
                                 <label for="pekerjaan" class="form-label">Pekerjaan</label>
-                                <input type="text" name="pekerjaan" class="form-control" placeholder="Masukkan pekerjaan Anda"
-                                    id="pekerjaan" value="<?= $pekerjaan ?>" required>
+                                <input type="text" name="pekerjaan" class="form-control"
+                                    placeholder="Masukkan pekerjaan Anda" id="pekerjaan" value="<?= $pekerjaan ?>"
+                                    required>
                             </div>
                             <input type="submit" name="submit" class="btn btn-gradient mb-4" value="Simpan Pengaturan">
                         </form>
@@ -165,6 +170,8 @@
     </section>
     <!-- account name section end -->
 
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="<?= base_url() ?>assets/js/umur.js"></script>
     <!-- Bootstrap js-->
     <script src="<?= base_url() ?>assets/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>
 

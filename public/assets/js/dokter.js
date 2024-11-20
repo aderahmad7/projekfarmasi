@@ -286,3 +286,12 @@ document.getElementById("simpanButton").addEventListener("click", function (e) {
 showCards(currentPage); // Menampilkan card pertama kali saat halaman dimuat
 setupPagination(); // Mengatur button pagination pertama kali saat halaman dimuat
 updatePaginationButtons(); // Memperbarui tampilan button pagination
+
+const umur = flatpickr("#doctor-tanggal-lahir", {
+  dateFormat: "Y-m-d",
+  onChange: function (selectedDates, dateStr, instance) {
+    endDate.set("minDate", dateStr);
+    filterCardsByDate();
+  },
+  static: true,
+});

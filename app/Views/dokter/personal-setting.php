@@ -35,6 +35,8 @@
 
     <!-- Style css -->
     <link id="change-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body class="inter-body learning-color">
@@ -131,10 +133,10 @@
                                     </option>
                                 </select>
                             </div>
-                            <div class="mb-3">
-                                <label for="usia" class="form-label">Usia</label>
-                                <input type="number" name="usia" class="form-control" min="0"
-                                    placeholder="Enter your age" id="usia" value="<?= $usia ?>" required>
+                            <div class="mb-3 d-flex flex-column">
+                                <label for="tanggal-lahir" class="form-label">Tanggal Lahir</label>
+                                <input type="text" id="tanggal-lahir" name="tanggal-lahir" placeholder="Tanggal Lahir"
+                                    class="form-control" />
                             </div>
                             <div class="mb-3">
                                 <label for="no-hp" class="form-label">Nomor Handphone</label>
@@ -186,7 +188,8 @@
                             <div class="mb-3">
                                 <label for="jam-mulai" class="form-label">Jam Mulai</label>
                                 <input type="time" name="jam-mulai" class="form-control"
-                                    placeholder="Enter your start time" id="jam-mulai" value="<?= $jam_mulai ?>" required>
+                                    placeholder="Enter your start time" id="jam-mulai" value="<?= $jam_mulai ?>"
+                                    required>
                             </div>
                             <div class="mb-5">
                                 <label for="jam-selesai" class="form-label">Jam Selesai</label>
@@ -202,6 +205,10 @@
         </div>
     </section>
     <!-- account name section end -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="<?= base_url() ?>assets/js/umur.js"></script>
 
     <!-- Bootstrap js-->
     <script src="<?= base_url() ?>assets/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>
