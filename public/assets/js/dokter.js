@@ -76,6 +76,17 @@ function saveDoctor(event) {
           doctors[editIndex] = newDoctor;
           window.location.reload();
           $("#form-modal").modal("hide");
+        } else if (data.errors) {
+          // Jika ada kesalahan validasi
+          const errorMessages = data.errors;
+          let errorList = "";
+          for (const [field, message] of Object.entries(errorMessages)) {
+            errorList += `<li>${message}</li>`;
+          }
+          document.getElementById("error-container").innerHTML = `
+                <ol class="alert alert-danger">${errorList}</ol>
+            `;
+          $("#form-modal").modal("hide");
         } else {
           alert("Terjadi kesalahan saat memperbarui tenaga kesehatan");
         }
@@ -93,6 +104,17 @@ function saveDoctor(event) {
         if (data.success) {
           doctors.push(newDoctor);
           window.location.reload();
+          $("#form-modal").modal("hide");
+        } else if (data.errors) {
+          // Jika ada kesalahan validasi
+          const errorMessages = data.errors;
+          let errorList = "";
+          for (const [field, message] of Object.entries(errorMessages)) {
+            errorList += `<li>${message}</li>`;
+          }
+          document.getElementById("error-container").innerHTML = `
+                <ol class="alert alert-danger">${errorList}</ol>
+            `;
           $("#form-modal").modal("hide");
         } else {
           alert("Terjadi kesalahan saat menambahkan tenaga kesehatan");

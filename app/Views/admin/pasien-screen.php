@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="multikit" />
@@ -37,7 +37,31 @@
     <link id="change-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css" />
 
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/custom.css">
+    <style>
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
 
+        .alert-danger {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+
+        .alert-success {
+            color: #3c763d;
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+        }
+
+        #pass-require {
+            color: black;
+            font-size: 13px;
+        }
+    </style>
 </head>
 
 <body class="inter-body learning-color">
@@ -89,6 +113,7 @@
 
     <section class="data-dokter-section pt-25 d-flex justify-content-center flex-column m-3 mt-0 gap-3">
         <div class="custom-container table-responsive">
+            <div id="error-container"></div>
             <button class="btn bg-web-primary text-white mb-3 w-auto" onclick="showForm()">Tambah Pasien</button>
             <?php
             $no = 0;
@@ -164,9 +189,8 @@
                         <div class="form-group">
                             <label for="patient-gender">Gender:</label>
                             <select name="gender" id="patient-gender" class="form-select">
-                                <option disabled selected></option>
-                                <option value="1">Laki-laki</option>
-                                <option value="2">Perempuan</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -195,7 +219,7 @@
                             <input name="username" type="text" class="form-control" id="patient-username" required />
                         </div>
                         <div class="form-group mb-4">
-                            <label for="patient-password">Kata Sandi:</label>
+                            <label id="user-pw" for="patient-password">Kata Sandi:</label>
                             <input name="password" type="text" class="form-control" id="patient-password" />
                         </div>
 

@@ -37,6 +37,31 @@
     <link id="change-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css" />
 
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/custom.css">
+    <style>
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .alert-danger {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+
+        .alert-success {
+            color: #3c763d;
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+        }
+
+        #pass-require {
+            color: black;
+            font-size: 13px;
+        }
+    </style>
 </head>
 
 <body class="inter-body learning-color">
@@ -90,6 +115,7 @@
 
     <section class="data-dokter-section pt-25 d-flex justify-content-center flex-column m-3 mt-0 gap-3">
         <div class="custom-container table-responsive">
+            <div id="error-container"></div>
             <button class="btn bg-web-primary text-white mb-3 w-auto" onclick="showForm()">Tambah Tenaga
                 Kesehatan</button>
             <?php

@@ -115,8 +115,8 @@ class Admin extends BaseController
                     'email' => $doctor['email'],
                     'hari_mulai' => $doctor['hari_mulai'],
                     'hari_selesai' => $doctor['hari_selesai'],
-                    'jam_mulai' => substr($doctor['jam_mulai'], 0, 5), 
-                    'jam_selesai' => substr($doctor['jam_selesai'], 0, 5), 
+                    'jam_mulai' => substr($doctor['jam_mulai'], 0, 5),
+                    'jam_selesai' => substr($doctor['jam_selesai'], 0, 5),
                 ];
             }
             return view('admin/dokter-screen', ['doctors' => $filteredDoctors]);
@@ -130,6 +130,46 @@ class Admin extends BaseController
         $userModel = new UserModel();
         $dokterModel = new DokterModel();
         $data = esc($this->request->getPost());
+
+        $rules = [
+            'name' => 'required',
+            'gender' => 'required',
+            'usia' => 'required|greater_than[-1]',
+            'spesialis' => 'required',
+            'exp_years' => 'required|greater_than[-1]',
+            'hari-mulai' => 'required',
+            'hari-selesai' => 'required',
+            'jam-mulai' => 'required',
+            'jam-selesai' => 'required',
+            'no-hp' => 'required',
+            'email' => [
+                'label' => 'Email',
+                'rules' => 'required|valid_email|is_unique[user.email]',
+                'errors' => [
+                    'is_unique' => 'Email ini sudah terdaftar.'
+                ]
+            ],
+            'username' => [
+                'label' => 'Username',
+                'rules' => 'required|is_unique[user.username]',
+                'errors' => [
+                    'is_unique' => 'Nama pengguna ini sudah digunakan.'
+                ]
+            ],
+            'password' => [
+                'label' => 'Password',
+                'rules' => 'required|min_length[8]|regex_match[/(?=.*[A-Z])(?=.*\d).{8,}/]',
+                'errors' => [
+                    'regex_match' => 'Kata sandi harus minimal 8 karakter dan mengandung minimal satu huruf besar dan satu angka.'
+                ]
+            ],
+        ];
+        if (!$this->validate($rules)) {
+            return $this->response->setJSON([
+                'success' => false,
+                'errors' => $this->validator->getErrors()
+            ]);
+        }
 
         // Simpan ke tabel user
         $userData = [
@@ -168,6 +208,39 @@ class Admin extends BaseController
         $userModel = new UserModel();
         $dokterModel = new DokterModel();
         $data = esc($this->request->getPost());
+
+        $rules = [
+            'name' => 'required',
+            'gender' => 'required',
+            'usia' => 'required|greater_than[-1]',
+            'spesialis' => 'required',
+            'exp-years' => 'required|greater_than[-1]',
+            'hari-mulai' => 'required',
+            'hari-selesai' => 'required',
+            'jam-mulai' => 'required',
+            'jam-selesai' => 'required',
+            'no-hp' => 'required',
+            'email' => [
+                'label' => 'Email',
+                'rules' => "required|valid_email|is_unique[user.email,id,{$id}]",
+                'errors' => [
+                    'is_unique' => 'Email ini sudah terdaftar.'
+                ]
+            ],
+            'username' => [
+                'label' => 'Username',
+                'rules' => "required|is_unique[user.username,id,{$id}]",
+                'errors' => [
+                    'is_unique' => 'Nama pengguna ini sudah digunakan.'
+                ]
+            ],
+        ];
+        if (!$this->validate($rules)) {
+            return $this->response->setJSON([
+                'success' => false,
+                'errors' => $this->validator->getErrors()
+            ]);
+        }
 
         // Update tabel user
         $userData = [
@@ -240,6 +313,42 @@ class Admin extends BaseController
         $statCourseModel = new StatCourseModel();
         $data = esc($this->request->getPost());
 
+        $rules = [
+            'name' => 'required',
+            'gender' => 'required',
+            'usia' => 'required|greater_than[-1]',
+            'pekerjaan' => 'required',
+            'riwayat' => 'required',
+            'no-hp' => 'required',
+            'email' => [
+                'label' => 'Email',
+                'rules' => 'required|valid_email|is_unique[user.email]',
+                'errors' => [
+                    'is_unique' => 'Email ini sudah terdaftar.'
+                ]
+            ],
+            'username' => [
+                'label' => 'Username',
+                'rules' => 'required|is_unique[user.username]',
+                'errors' => [
+                    'is_unique' => 'Nama pengguna ini sudah digunakan.'
+                ]
+            ],
+            'password' => [
+                'label' => 'Password',
+                'rules' => 'required|min_length[8]|regex_match[/(?=.*[A-Z])(?=.*\d).{8,}/]',
+                'errors' => [
+                    'regex_match' => 'Kata sandi harus minimal 8 karakter dan mengandung minimal satu huruf besar dan satu angka.'
+                ]
+            ],
+        ];
+        if (!$this->validate($rules)) {
+            return $this->response->setJSON([
+                'success' => false,
+                'errors' => $this->validator->getErrors()
+            ]);
+        }
+
         // Simpan ke tabel user
         $userData = [
             'role' => 'pasien',
@@ -281,6 +390,36 @@ class Admin extends BaseController
         $userModel = new UserModel();
         $pasienModel = new PasienModel();
         $data = esc($this->request->getPost());
+
+        $rules = [
+            'name' => 'required',
+            'gender' => 'required',
+            'usia' => 'required|greater_than[-1]',
+            'pekerjaan' => 'required',
+            'riwayat' => 'required',
+            'no-hp' => 'required',
+            'email' => [
+                'label' => 'Email',
+                'rules' => "required|valid_email|is_unique[user.email,id,{$id}]",
+                'errors' => [
+                    'is_unique' => 'Email ini sudah terdaftar oleh pengguna lain.'
+                ]
+            ],
+            'username' => [
+                'label' => 'Username',
+                'rules' => "required|is_unique[user.username,id,{$id}]",
+                'errors' => [
+                    'is_unique' => 'Nama pengguna ini sudah digunakan oleh orang lain.'
+                ]
+            ],
+        ];
+
+        if (!$this->validate($rules)) {
+            return $this->response->setJSON([
+                'success' => false,
+                'errors' => $this->validator->getErrors()
+            ]);
+        }
 
         // Update tabel user
         $userData = [

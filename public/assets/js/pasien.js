@@ -1,116 +1,144 @@
-let pasienElement = document.getElementById('patient-table-body');
-let patients = JSON.parse(pasienElement.getAttribute('data-pasien'));
+let pasienElement = document.getElementById("patient-table-body");
+let patients = JSON.parse(pasienElement.getAttribute("data-pasien"));
 console.log(patients);
 
 let editIndex = null;
 const itemsPerPage = 10;
-const baseUrl = 'http://localhost/projekfarmasi/public';
+const baseUrl = "http://localhost/projekfarmasi/public";
 
 function showForm(index = null) {
-    const formTitle = document.getElementById("form-title");
-    const patientForm = document.getElementById("patient-form");
-    const patientId = document.getElementById("patient-id");
-    const patientPassword = document.getElementById("patient-password");
+  const formTitle = document.getElementById("form-title");
+  const patientForm = document.getElementById("patient-form");
+  const patientId = document.getElementById("patient-id");
+  const patientPassword = document.getElementById("patient-password");
+  const userPw = document.getElementById("user-pw");
 
-    if (index !== null) {
-        formTitle.textContent = `Edit Pasien ${patients[index].id}`;
-        patientId.value = patients[index].id;
-        fillFormWithPatientData(patients[index]);
-        editIndex = index;
-        patientPassword.style.display = 'none';
-    } else {
-        formTitle.textContent = "Tambah Pasien";
-        patientForm.reset();
-        patientId.value = "";
-        editIndex = null;
-        patientPassword.style.display = 'block';
-    }
+  if (index !== null) {
+    formTitle.textContent = `Edit Pasien`;
+    patientId.value = patients[index].id;
+    fillFormWithPatientData(patients[index]);
+    editIndex = index;
+    patientPassword.style.display = "none";
+    userPw.style.display = "none";
+  } else {
+    formTitle.textContent = "Tambah Pasien";
+    patientForm.reset();
+    patientId.value = "";
+    editIndex = null;
+    patientPassword.style.display = "block";
+    userPw.style.display = "block";
+  }
 
-    $("#form-modal").modal("show");
+  $("#form-modal").modal("show");
 }
 
 function fillFormWithPatientData(patient) {
-    document.getElementById("patient-name").value = patient.name;
-    document.getElementById("patient-gender").value = patient.gender;
-    document.getElementById("patient-usia").value = patient.usia;
-    document.getElementById("patient-history").value = patient.history;
-    document.getElementById("patient-nomor-handphone").value = patient.nomorHandphone;
-    document.getElementById("patient-email").value = patient.email;
-    document.getElementById("patient-username").value = patient.username;
-    document.getElementById("patient-job").value = patient.pekerjaan;
+  document.getElementById("patient-name").value = patient.name;
+  document.getElementById("patient-gender").value = patient.gender;
+  document.getElementById("patient-usia").value = patient.usia;
+  document.getElementById("patient-history").value = patient.history;
+  document.getElementById("patient-nomor-handphone").value =
+    patient.nomorHandphone;
+  document.getElementById("patient-email").value = patient.email;
+  document.getElementById("patient-username").value = patient.username;
+  document.getElementById("patient-job").value = patient.pekerjaan;
 }
 
 function savePatient(event) {
-    event.preventDefault();
-    const patienForm = document.getElementById("patient-form");
-    const formData = new FormData(patienForm);
+  event.preventDefault();
+  const patienForm = document.getElementById("patient-form");
+  const formData = new FormData(patienForm);
 
-    const newPatient = Object.fromEntries(formData.entries());
+  const newPatient = Object.fromEntries(formData.entries());
 
-    if (editIndex !== null) {
-        // Edit existing patient
-        const url = `${baseUrl}/admin/update_pasien/${patients[editIndex].id}`;
-        fetch(url, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                patients[editIndex] = newPatient;
-                window.location.reload();
-                $("#form-modal").modal("hide");
-            } else {
-                alert('Terjadi kesalahan saat memperbarui pasien');
-            }
-        })
-        .catch(error => console.error('Error:', error));
-    } else {
-        // Add new patient
-        const url = `${baseUrl}/admin/save_pasien`;
-        fetch(url, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                patients.push(newPatient);
-                window.location.reload();
-                $("#form-modal").modal("hide");
-            } else {
-                alert('Terjadi kesalahan saat menambahkan pasien');
-            }
-        })
-        .catch(error => console.error('Error:', error));
-    }
+  if (editIndex !== null) {
+    // Edit existing patient
+    const url = `${baseUrl}/admin/update_pasien/${patients[editIndex].id}`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          patients[editIndex] = newPatient;
+          window.location.reload();
+          $("#form-modal").modal("hide");
+        } else if (data.errors) {
+          // Jika ada kesalahan validasi
+          const errorMessages = data.errors;
+          let errorList = "";
+          for (const [field, message] of Object.entries(errorMessages)) {
+            errorList += `<li>${message}</li>`;
+          }
+          document.getElementById("error-container").innerHTML = `
+                <ol class="alert alert-danger">${errorList}</ol>
+            `;
+          $("#form-modal").modal("hide");
+        } else {
+          alert("Terjadi kesalahan saat memperbarui pasien");
+        }
+      })
+      .catch((error) => console.error("Error:", error));
+  } else {
+    // Add new patient
+    const url = `${baseUrl}/admin/save_pasien`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          patients.push(newPatient);
+          window.location.reload();
+          $("#form-modal").modal("hide");
+        } else if (data.errors) {
+          // Jika ada kesalahan validasi
+          const errorMessages = data.errors;
+          let errorList = "";
+          for (const [field, message] of Object.entries(errorMessages)) {
+            errorList += `<li>${message}</li>`;
+          }
+          document.getElementById("error-container").innerHTML = `
+                <ol class="alert alert-danger">${errorList}</ol>
+            `;
+          $("#form-modal").modal("hide");
+        } else {
+          alert("Terjadi kesalahan saat menambahkan pasien");
+        }
+      })
+      .catch((error) => console.error("Error:", error));
+  }
 }
 
 function deletePatient(index) {
-    if (confirm('Apakah Anda yakin ingin menghapus pasien ini?')) {
-        const url = `${baseUrl}/admin/delete_pasien/${patients[index].id}`;
-        const csrfToken = document.querySelector('meta[name="X-CSRF-TOKEN"]').getAttribute('content');
-        
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': csrfToken,
-                'X-Requested-With': 'XMLHttpRequest'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                patients.splice(index, 1);
-                updateTable();
-            } else {
-                alert('Terjadi kesalahan saat menghapus pasien');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    }
+  if (confirm("Apakah Anda yakin ingin menghapus pasien ini?")) {
+    const url = `${baseUrl}/admin/delete_pasien/${patients[index].id}`;
+    const csrfToken = document
+      .querySelector('meta[name="X-CSRF-TOKEN"]')
+      .getAttribute("content");
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "X-CSRF-TOKEN": csrfToken,
+        "X-Requested-With": "XMLHttpRequest",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          patients.splice(index, 1);
+          updateTable();
+        } else {
+          alert("Terjadi kesalahan saat menghapus pasien");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
 }
 
 ///////////////////////////////////////////
