@@ -37,7 +37,7 @@ function showForm(index = null) {
 function fillFormWithDoctorData(doctor) {
   document.getElementById("doctor-name").value = doctor.name;
   document.getElementById("doctor-gender").value = doctor.gender;
-  document.getElementById("doctor-usia").value = doctor.usia;
+  document.getElementById("doctor-tanggal-lahir").value = doctor.tanggal_lahir;
   document.getElementById("doctor-tahun-pengalaman").value =
     doctor.tahunPengalaman;
   document.getElementById("doctor-nomor-handphone").value =
@@ -59,9 +59,6 @@ function saveDoctor(event) {
   const newDoctor = Object.fromEntries(formData.entries());
 
   // Log form data entries
-  for (const pair of formData.entries()) {
-    console.log(pair[0] + ": " + pair[1]);
-  }
 
   if (editIndex !== null) {
     // Edit existing doctor
@@ -160,7 +157,6 @@ function deleteDoctor(index) {
 const cardsPerPage = 2;
 let currentPage = 1;
 const cards = document.querySelectorAll(".card-table");
-console.log(cards);
 const totalPages = Math.ceil(cards.length / cardsPerPage); // Menghitung jumlah total halaman berdasarkan jumlah card dan jumlah card per halaman
 
 /**

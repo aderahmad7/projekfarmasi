@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\DokterModel;
 use App\Models\PasienModel;
 use App\Models\StatCourseModel;
 use App\Models\UserModel;
@@ -79,11 +80,14 @@ class Login extends BaseController
                     if ($statPretest === 'belum') {
                         return redirect()->to('/pretest')->with('success', 'Login successful.');
                     } else {
-
                         return redirect()->to('/pasien')->with('success', 'Login successful.');
                     }
                 } elseif ($role === 'dokter') {
-                    return redirect()->to('/dokter')->with('success', 'Login successful.');
+                    $dokterModel = new DokterModel();
+                    $dokterData = $dokterModel->getDataID($id_user)["id"];
+                    if ($dokterData) {
+                        return redirect()->to('/dokter')->with('success', 'Login successful.');
+                    }
                 } elseif ($role === 'admin') {
                     # code...
                 }

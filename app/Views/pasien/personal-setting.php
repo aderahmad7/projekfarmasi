@@ -140,8 +140,8 @@
                             </div>
                             <div class="mb-3 d-flex flex-column">
                                 <label for="tanggal-lahir" class="form-label">Tanggal Lahir</label>
-                                <input type="text" id="tanggal-lahir" name="tanggal-lahir" placeholder="Tanggal Lahir"
-                                    class="form-control" />
+                                <input type="text" value="<?= $tgl_lahir ?>" id="tanggal-lahir" name="tanggal-lahir"
+                                    placeholder="Tanggal Lahir" class="form-control" />
                             </div>
                             <div class="mb-3">
                                 <label for="no-hp" class="form-label">Nomor Handphone</label>

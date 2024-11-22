@@ -56,7 +56,6 @@ class Dokter extends BaseController
         $idUser = session()->get('id_user');
         $username = session()->get('username');
         $userData = $userModel->getData($username);
-        $dokterData = $dokterModel->getDataID($idUser);
         $data = [
             "nama" => $userData["nama"],
             "email" => $userData["email"],
@@ -64,7 +63,13 @@ class Dokter extends BaseController
             "jumlah_pasien" => $userModel->where('role', 'pasien')->countAllResults()
         ];
 
-        return view('dokter/laman_utama', $data);
+        $dokterData = $dokterModel->getDataID($idUser);
+        if ($dokterData != null) {
+            return view('dokter/laman_utama', $data);
+        } else {
+            return redirect()->to('login/logout');
+        }
+
     }
 
     public function setperson()
@@ -81,7 +86,7 @@ class Dokter extends BaseController
             "username" => $userData["username"],
             "nama" => $userData["nama"],
             "gender" => $userData["gender"],
-            "usia" => $userData["usia"],
+            "tgl_lahir" => $userData["tgl_lahir"],
             "no_hp" => $userData["no_hp"],
             "email" => $userData["email"],
             "foto" => $userData["foto"],
@@ -128,7 +133,7 @@ class Dokter extends BaseController
         $dataUser = [
             "nama" => esc($this->request->getPost('nama')),
             "gender" => esc($this->request->getPost('gender')),
-            "usia" => esc($this->request->getPost('usia')),
+            "tgl_lahir" => esc($this->request->getPost('tanggal-lahir')),
             "no_hp" => esc($this->request->getPost('no-hp')),
         ];
 

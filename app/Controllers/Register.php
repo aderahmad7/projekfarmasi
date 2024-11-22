@@ -24,7 +24,7 @@ class Register extends BaseController
             $rules = [
                 'name' => 'required',
                 'gender' => 'required',
-                'usia' => 'required|greater_than[-1]',
+                'tanggal-lahir' => 'required|valid_date[Y-m-d]',
                 'pekerjaan' => 'required',
                 'riwayat' => 'required',
                 'no-hp' => 'required',
@@ -67,7 +67,7 @@ class Register extends BaseController
                     'role' => 'pasien',
                     'nama' => esc($this->request->getPost('name')),
                     'gender' => esc($this->request->getPost('gender')),
-                    'usia' => esc($this->request->getPost('usia')),
+                    'tgl_lahir' => esc($this->request->getPost('tanggal-lahir')),
                     'no_hp' => esc($this->request->getPost('no-hp')),
                     'email' => esc($this->request->getPost('email')),
                     'username' => esc($this->request->getPost('username')),

@@ -9,7 +9,7 @@ class UserModel extends Model
     protected $table = 'user'; // Nama tabel
     protected $primaryKey = 'id'; // Primary key tabel
 
-    protected $allowedFields = ['role', 'nama', 'gender', 'usia', 'no_hp', 'email', 'username', 'password', 'foto']; // Kolom yang dapat diisi
+    protected $allowedFields = ['role', 'nama', 'gender', 'tgl_lahir', 'no_hp', 'email', 'username', 'password', 'foto']; // Kolom yang dapat diisi
 
     public function insertData($data)
     {

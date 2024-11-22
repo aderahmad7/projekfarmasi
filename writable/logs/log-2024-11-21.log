@@ -1,0 +1,136 @@
+INFO - 2024-11-21 05:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 05:45:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 05:45:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 05:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 05:45:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-21 05:45:11 --> mysqli_sql_exception: Unknown column 'user.usia' in 'field list' in C:\xampp\htdocs\projekfarmasi\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\projekfarmasi\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `dokter`...', 0)
+#1 C:\xampp\htdocs\projekfarmasi\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dokter`...')
+#2 C:\xampp\htdocs\projekfarmasi\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dokter`...')
+#3 C:\xampp\htdocs\projekfarmasi\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `dokter`...', Array, false)
+#4 C:\xampp\htdocs\projekfarmasi\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\projekfarmasi\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\projekfarmasi\app\Models\DokterModel.php(28): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\projekfarmasi\app\Controllers\Admin.php(101): App\Models\DokterModel->getAllDoctors()
+#8 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(933): App\Controllers\Admin->dokter_screen()
+#9 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#10 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\projekfarmasi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\projekfarmasi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\projekfarmasi\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-11-21 05:45:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'user.usia' in 'field list'
+[Method: GET, Route: admin/dokter_screen]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `dokter`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `dokter`
+JOIN `user` ON `user`.`id` = `dokter`.`id_user`
+WHERE `user`.`role` = :user.role:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\DokterModel.php(28): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Admin.php(101): App\Models\DokterModel->getAllDoctors()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->dokter_screen()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-21 05:45:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'user.usia' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dokter`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `dokter`
+JOIN `user` ON `user`.`id` = `dokter`.`id_user`
+WHERE `user`.`role` = \'dokter\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dokter`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `dokter`
+JOIN `user` ON `user`.`id` = `dokter`.`id_user`
+WHERE `user`.`role` = \'dokter\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `dokter`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `dokter`
+JOIN `user` ON `user`.`id` = `dokter`.`id_user`
+WHERE `user`.`role` = :user.role:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\DokterModel.php(28): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Admin.php(101): App\Models\DokterModel->getAllDoctors()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->dokter_screen()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-21 05:45:11 --> [Caused by] mysqli_sql_exception: Unknown column 'user.usia' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `dokter`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `dokter`
+JOIN `user` ON `user`.`id` = `dokter`.`id_user`
+WHERE `user`.`role` = \'dokter\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dokter`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `dokter`
+JOIN `user` ON `user`.`id` = `dokter`.`id_user`
+WHERE `user`.`role` = \'dokter\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dokter`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `dokter`
+JOIN `user` ON `user`.`id` = `dokter`.`id_user`
+WHERE `user`.`role` = \'dokter\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `dokter`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `dokter`
+JOIN `user` ON `user`.`id` = `dokter`.`id_user`
+WHERE `user`.`role` = :user.role:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\DokterModel.php(28): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Admin.php(101): App\Models\DokterModel->getAllDoctors()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->dokter_screen()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-11-21 05:45:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 06:49:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-21 06:49:06 --> ErrorException: Undefined array key "usia"
+[Method: GET, Route: admin/dokter_screen]
+in APPPATH\Views\admin\dokter-screen.php on line 133.
+ 1 APPPATH\Views\admin\dokter-screen.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usia"', 'C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\admin\\dokter-screen.php', 133)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\admin\\dokter-screen.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/dokter-screen', [], true)
+ 5 APPPATH\Controllers\Admin.php(122): view('admin/dokter-screen', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->dokter_screen()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-11-21 08:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 08:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 08:12:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 08:12:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 08:12:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 08:12:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 08:12:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 08:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 08:12:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-21 08:12:25 --> ErrorException: Undefined array key "tgl_lahir"
+[Method: GET, Route: admin/dokter_screen]
+in APPPATH\Views\admin\dokter-screen.php on line 133.
+ 1 APPPATH\Views\admin\dokter-screen.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tgl_lahir"', 'C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\admin\\dokter-screen.php', 133)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\projekfarmasi\\app\\Views\\admin\\dokter-screen.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/dokter-screen', [], true)
+ 5 APPPATH\Controllers\Admin.php(122): view('admin/dokter-screen', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->dokter_screen()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-11-21 08:13:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 08:13:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 08:13:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 08:48:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 08:50:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-21 08:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

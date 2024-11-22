@@ -59,6 +59,11 @@ class Pasien extends BaseController
         $idUser = session()->get('id_user');
         $username = session()->get('username');
 
+
+        if ($pasienModel->getDataID($idUser) === null) {
+            return redirect()->to('login/logout');
+        }
+
         $userData = $userModel->getData($username);
         $pasienData = $pasienModel->getDataID($idUser);
         $statData = $statModel->getData($pasienData["id"]);
@@ -66,7 +71,7 @@ class Pasien extends BaseController
             "role" => $userData["role"],
             "nama" => $userData["nama"],
             "gender" => $userData["gender"],
-            "usia" => $userData["usia"],
+            "tgl_lahir" => $userData["tgl_lahir"],
             "no_hp" => $userData["no_hp"],
             "email" => $userData["email"],
             "foto" => $userData["foto"],
@@ -93,7 +98,7 @@ class Pasien extends BaseController
             "username" => $userData["username"],
             "nama" => $userData["nama"],
             "gender" => $userData["gender"],
-            "usia" => $userData["usia"],
+            "tgl_lahir" => $userData["tgl_lahir"],
             "no_hp" => $userData["no_hp"],
             "email" => $userData["email"],
             "foto" => $userData["foto"],
@@ -136,7 +141,7 @@ class Pasien extends BaseController
         $dataUser = [
             "nama" => esc($this->request->getPost('nama')),
             "gender" => esc($this->request->getPost('gender')),
-            "usia" => esc($this->request->getPost('usia')),
+            "tgl_lahir" => esc($this->request->getPost('tanggal-lahir')),
             "no_hp" => esc($this->request->getPost('no-hp')),
         ];
 

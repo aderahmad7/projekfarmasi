@@ -127,7 +127,12 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text"><strong>Gender:</strong> <?= $pasien['gender'] ?></p>
-                        <p class="card-text"><strong>Umur:</strong> <?= $pasien['usia'] ?></p>
+                        <p class="card-text"><strong>Umur:</strong> <?php
+                        $tanggal_lahir = new DateTime($pasien['tanggal_lahir']); // Tanggal lahir dokter
+                        $tanggal_sekarang = new DateTime(); // Tanggal hari ini
+                        $umur = $tanggal_lahir->diff($tanggal_sekarang)->y; // Selisih dalam tahun
+                        echo $umur . ' tahun';
+                        ?></p>
                         <p class="card-text"><strong>Riwayat Kesehatan:</strong> <?= $pasien['history'] ?></p>
                         <p class="card-text"><strong>Pekerjaan:</strong> <?= $pasien['pekerjaan'] ?></p>
                         <p class="card-text"><strong>Nomor Handphone:</strong> <?= $pasien['nomorHandphone'] ?></p>
@@ -198,8 +203,8 @@
                         </div>
                         <div class="form-group d-flex flex-column">
                             <label for="patient-tanggal-lahir">Tanggal Lahir:</label>
-                            <input name="tanggal-lahir" type="text" class="form-control" id="patient-tanggal-lahir"
-                                required />
+                            <input name="tanggal-lahir" type="text" class="form-control"
+                                id="patient-tanggal-lahir" required />
                         </div>
                         <div class="form-group">
                             <label for="patient-job">Pekerjaan:</label>

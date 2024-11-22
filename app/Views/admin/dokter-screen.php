@@ -130,9 +130,14 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text"><strong>Gender:</strong> <?= $doctor['gender'] ?></p>
-                        <p class="card-text"><strong>Umur:</strong> <?= $doctor['usia'] ?></p>
+                        <p class="card-text"><strong>Umur:</strong> <?php
+                        $tanggal_lahir = new DateTime($doctor['tanggal_lahir']); // Tanggal lahir dokter
+                        $tanggal_sekarang = new DateTime(); // Tanggal hari ini
+                        $umur = $tanggal_lahir->diff($tanggal_sekarang)->y; // Selisih dalam tahun
+                        echo $umur . ' tahun';
+                        ?></p>
                         <p class="card-text"><strong>Jenis Tenaga Kesehatan:</strong> <?= $doctor['specialty'] ?></p>
-                        <p class="card-text"><strong>Total Tahun Pengalaman:</strong> <?= $doctor['tahunPengalaman'] ?></p>
+                        <p class="card-text"><strong>Total Tahun Pengalaman:</strong> <?= $doctor['tahunPengalaman'] ?> tahun</p>
                         <p class="card-text"><strong>Nomor Handphone:</strong> <?= $doctor['nomorHandphone'] ?></p>
                         <p class="card-text"><strong>Email:</strong> <?= $doctor['email'] ?></p>
                         <p class="card-text"><strong>Nama Pengguna:</strong> <?= $doctor['username'] ?></p>

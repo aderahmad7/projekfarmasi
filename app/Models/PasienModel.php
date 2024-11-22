@@ -24,7 +24,7 @@ class PasienModel extends Model
 
     public function getAllPatients()
     {
-        return $this->select('pasien.*, user.id, user.nama, user.gender, user.usia, user.no_hp, user.email, user.username')
+        return $this->select('pasien.*, user.id, user.nama, user.gender, user.tgl_lahir, user.no_hp, user.email, user.username')
             ->join('user', 'user.id = pasien.id_user')
             ->where('user.role', 'pasien')
             ->findAll();
@@ -38,7 +38,8 @@ class PasienModel extends Model
             ->findAll();
     }
 
-    public function getPatient($id) {
+    public function getPatient($id)
+    {
         return $this->select('pasien.*, user.id, user.nama, user.gender, user.usia, user.no_hp, user.email, user.username, user.foto')
             ->join('user', 'user.id = pasien.id_user')
             ->where('user.role', 'pasien')

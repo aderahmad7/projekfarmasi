@@ -1,5 +1,6 @@
 let pasienElement = document.getElementById("patient-table-body");
 let patients = JSON.parse(pasienElement.getAttribute("data-pasien"));
+console.log("coba");
 console.log(patients);
 
 let editIndex = null;
@@ -35,7 +36,8 @@ function showForm(index = null) {
 function fillFormWithPatientData(patient) {
   document.getElementById("patient-name").value = patient.name;
   document.getElementById("patient-gender").value = patient.gender;
-  document.getElementById("patient-usia").value = patient.usia;
+  document.getElementById("patient-tanggal-lahir").value =
+    patient.tanggal_lahir;
   document.getElementById("patient-history").value = patient.history;
   document.getElementById("patient-nomor-handphone").value =
     patient.nomorHandphone;

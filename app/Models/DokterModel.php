@@ -22,7 +22,7 @@ class DokterModel extends Model
 
     public function getAllDoctors()
     {
-        return $this->select('dokter.*, user.id, user.nama, user.gender, user.usia, user.no_hp, user.email, user.username, user.foto')
+        return $this->select('dokter.*, user.id, user.nama, user.gender, user.tgl_lahir, user.no_hp, user.email, user.username, user.foto')
             ->join('user', 'user.id = dokter.id_user')
             ->where('user.role', 'dokter')
             ->findAll();
@@ -30,7 +30,7 @@ class DokterModel extends Model
 
     public function getDoctors($id)
     {
-        return $this->select('dokter.*, user.id, user.nama, user.gender, user.usia, user.no_hp, user.email, user.username, user.foto')
+        return $this->select('dokter.*, user.id, user.nama, user.gender, user.tgl_lahir, user.no_hp, user.email, user.username, user.foto')
             ->join('user', 'user.id = dokter.id_user')
             ->where('user.role', 'dokter')
             ->where('dokter.id_user', $id)  // Tambahkan kondisi untuk mencocokkan id_user dengan $id
