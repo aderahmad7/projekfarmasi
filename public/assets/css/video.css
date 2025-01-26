@@ -73,3 +73,40 @@
 #completeButton:hover {
     background-color: rgb(13, 53, 67);
 }
+
+.tabs {
+    border-radius: 7px;
+    border: 1px solid rgb(22, 65, 80);
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab.active {
+    background-color: rgb(22, 65, 80);
+    color: white ;
+    border: none;
+}
+
+.tab:after {
+    content: " (Klik untuk melihat)";
+    font-size: 10px;
+    color: rgb(22, 65, 80);
+    display: block;
+}
+
+.tab.active:after {
+    content: "";
+}
+
+.content {display: none;}
+
+.content.active {
+    display: block;
+}

@@ -164,7 +164,22 @@
                 <div class="title">
                     <h4>Kursus Unggulan</h4>
                 </div>
-                <div id="videoList"></div>
+                <div class="tabs d-flex justify-content-around">
+                    <div data-target="tab1"
+                        class="tab active d-flex align-items-center justify-content-center text-center flex-column">
+                        Belum
+                        ditonton</div>
+                    <div data-target="tab2"
+                        class="tab text-center d-flex align-items-center justify-content-center flex-column">
+                        Sudah ditonton</div>
+                </div>
+
+                <div id="tab1" class="content active">
+                    <div id="videoList"></div>
+                </div>
+                <div id="tab2" class="content">
+                    <div id="videoList"></div>
+                </div>
             </div>
         </section>
         <!-- Features Course Section End -->
