@@ -5,17 +5,15 @@ let currentEditIndex;
 let totalProgress = 0;
 const baseUrl = "http://localhost/projekfarmasi/public";
 
-console.log(videoData);
-
 // TODO: Data Dummy
 videoData.forEach((_, index) => {
-  // if (index % 2 == 0) {
-  //   videoData[index].watched = true;
-  // } else {
-  //   videoData[index].watched = false;
-  // }
+  if (videoData[index].watched === true) {
+    videoData[index].watched = true;
+  } else {
+    videoData[index].watched = false;
+  }
 
-  videoData[index].watched = true;
+  // videoData[index].watched = true;
 });
 
 // TODO: Tab Video
@@ -46,45 +44,28 @@ function onYouTubeIframeAPIReady() {
 
 // TODO: Display Video yg baru berdasarkan Tab
 function displayVideos(target = "tab1") {
-  // const videoList = document.getElementById("videoList");
+  const container = document.getElementById(target).querySelector("#videoList");
+  container.innerHTML = "";
 
-  // TODO: Jika tab 1 maka akan merender data yang belum ditonton, jika tab 2 maka akan merender data yang sudah ditonton
-  if (target === "tab1") {
-    const belumDitontonList = document
-      .getElementById("tab1")
-      .querySelector("#videoList");
+  // Filter tanpa membuat array baru
+  const filteredVideos = videoData
+    .map((video, originalIndex) => ({ ...video, originalIndex }))
+    .filter((video) => (target === "tab1" ? !video.watched : video.watched));
 
-    belumDitontonList.innerHTML = "";
-
-    const belumDitonton = videoData.filter((video) => !video.watched);
-
-    renderVideoList(belumDitonton, belumDitontonList);
-  } else {
-    const sudahDitontonList = document
-      .getElementById("tab2")
-      .querySelector("#videoList");
-
-    sudahDitontonList.innerHTML = "";
-
-    const sudahDitonton = videoData.filter((video) => video.watched);
-
-    renderVideoList(sudahDitonton, sudahDitontonList);
-  }
+  renderVideoList(filteredVideos, container);
 }
 
-function renderVideoList(videoArray, container) {
-  const startIndex = 0;
-
-  if (videoArray.length === 0) {
-    container.innerHTML =
-      "<h4 class='text-center mt-2'>No videos available.</h4>";
+function renderVideoList(filteredVideos, container) {
+  if (filteredVideos.length === 0) {
+    container.innerHTML = "<h4 class='text-center mt-2'>Tidak ada video.</h4>";
     return;
   }
 
-  videoArray.forEach((video, index) => {
+  filteredVideos.forEach((video) => {
     const videoItem = document.createElement("div");
     videoItem.className = "col";
 
+    // Gunakan originalIndex dari videoData asli
     videoItem.innerHTML = `
       <div class="card h-100 video-item">
         <div class="video-thumbnail">
@@ -105,17 +86,14 @@ function renderVideoList(videoArray, container) {
       videoId: video.id_link,
       events: {
         onStateChange: (event) => {
-          // TODO: Hanya akan mengubah progress jika status video belum ditonton
-          if (!videoArray[0].watched) {
-            onPlayerStateChange(event, startIndex + index);
+          if (!video.watched) {
+            onPlayerStateChange(event, video.originalIndex); // Gunakan index asli
           }
         },
       },
     });
 
-    console.log(player);
-
-    players[startIndex + index] = player;
+    players[video.originalIndex] = player; // Simpan berdasarkan index asli
   });
 }
 
@@ -126,11 +104,39 @@ function onPlayerStateChange(event, index) {
     stopProgressTracker(index);
   } else if (event.data === YT.PlayerState.ENDED) {
     stopProgressTracker(index);
-    videoData[index].progress = 100;
 
     // TODO: Ini adlaah function untuk mengirimkan data progress video dengan id tertentu
-    console.log(videoData[index].id);
-    updateTotalProgress();
+    saveWatched(videoData[index]);
+    //location.reload(true);
+    setTimeout(() => {
+      location.reload(true);
+    }, 1500); // 1500 milidetik = 1.5 detik
+  }
+}
+
+function saveWatched(dataVideo) {
+  const url = `${baseUrl}/course/tonton_course`;
+  const id_course = dataVideo.id;
+  const id_user = dataVideo.id_user;
+
+  if (id_course && id_user) {
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id_user, id_course }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          //tulis disini
+        } else {
+          alert("Gagal update progress");
+        }
+      });
+  } else {
+    alert("Please fill all fields");
   }
 }
 
@@ -156,33 +162,34 @@ function updateVideoProgress(index) {
 
 function updateTotalProgress() {
   const belumDitonton = videoData.filter((video) => !video.watched);
+  const sudahDitonton = videoData.filter((video) => video.watched);
+  const progressBar = document.getElementById("progressBar");
+  const progressPercentage = document.getElementById("progressPercentage");
+  const progressFill = document.getElementById("progressFill");
+  const progressContainer = document.getElementById("progressContainer");
 
   let progress = 0;
-  if (belumDitonton.length == 0) {
-    progress = 100;
+  if (sudahDitonton.length == 0) {
+    progress = 0;
   } else {
-    progress =
-      videoData.reduce((sum, video) => sum + (video.progress || 0), 0) /
-      belumDitonton.length;
-
-    const progressBar = document.getElementById("progressBar");
-    const progressPercentage = document.getElementById("progressPercentage");
-    const progressFill = document.getElementById("progressFill");
-    const progressContainer = document.getElementById("progressContainer");
+    progress = (sudahDitonton.length / videoData.length) * 100;
   }
+  totalProgress += progress;
 
   if (progress >= 100) {
     progressContainer.style.display = "none";
     // progressPercentage.style.textAlign = "center";
     // progressPercentage.textContent = "Anda sudah menyelesaikan semua video";
   } else {
-    totalProgress = progress;
     progressFill.style.width = `${totalProgress}%`;
     progressPercentage.textContent = `${Math.round(totalProgress)}% Complete`;
   }
 }
 
 function createPagination() {
+  if (videoData.length === 0) {
+    return;
+  }
   const paginationContainer = document.getElementById("pagination");
   paginationContainer.innerHTML = "";
 
@@ -240,6 +247,7 @@ btnPostTest.addEventListener("click", function () {
   if (totalProgress >= 99.5) {
     location.href = `${baseUrl}/posttest/cek`;
   } else {
+    console.log(totalProgress);
     alert("Selesaikan video terlebih dahulu");
   }
 });

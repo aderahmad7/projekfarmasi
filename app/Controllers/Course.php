@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\CourseProgressModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class Course extends BaseController
@@ -51,10 +52,29 @@ class Course extends BaseController
     {
         $courseModel = new \App\Models\CourseModel();
 
+        $courseProgressModel = new CourseProgressModel();
+
+        // Hapus semua progress course dengan id_user = $id
+        $courseProgressModel->where('id_course', $id)->delete();
+
+
         if ($courseModel->delete($id)) {
             return redirect()->back();
         } else {
             return $this->response->setJSON(['success' => false]);
         }
+    }
+
+    public function tonton_course()
+    {
+        $courseProgressModel = new CourseProgressModel();
+        $data = $this->request->getJSON(true);
+
+        if ($courseProgressModel->insert($data)) {
+            return redirect()->back();
+        } else {
+            return $this->response->setJSON(['success' => false]);
+        }
+
     }
 }

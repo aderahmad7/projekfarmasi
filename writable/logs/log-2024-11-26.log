@@ -1,0 +1,116 @@
+INFO - 2024-11-26 03:45:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:47:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:47:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:47:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-26 03:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-26 03:47:10 --> mysqli_sql_exception: Unknown column 'user.usia' in 'field list' in C:\xampp\htdocs\projekfarmasi\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\projekfarmasi\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pasien`...', 0)
+#1 C:\xampp\htdocs\projekfarmasi\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pasien`...')
+#2 C:\xampp\htdocs\projekfarmasi\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pasien`...')
+#3 C:\xampp\htdocs\projekfarmasi\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `pasien`...', Array, false)
+#4 C:\xampp\htdocs\projekfarmasi\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\projekfarmasi\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\projekfarmasi\app\Models\PasienModel.php(47): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\projekfarmasi\app\Controllers\Dokter.php(302): App\Models\PasienModel->getPatient('13')
+#8 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(933): App\Controllers\Dokter->chat('13')
+#9 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dokter))
+#10 C:\xampp\htdocs\projekfarmasi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\projekfarmasi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\projekfarmasi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\projekfarmasi\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-11-26 03:47:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'user.usia' in 'field list'
+[Method: GET, Route: dokter/chat/13]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `pasien`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `pasien`
+JOIN `user` ON `user`.`id` = `pasien`.`id_user`
+WHERE `user`.`role` = :user.role:
+AND `pasien`.`id_user` = :pasien.id_user:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\PasienModel.php(47): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Dokter.php(302): App\Models\PasienModel->getPatient('13')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dokter->chat('13')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dokter))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-26 03:47:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'user.usia' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pasien`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `pasien`
+JOIN `user` ON `user`.`id` = `pasien`.`id_user`
+WHERE `user`.`role` = \'pasien\'
+AND `pasien`.`id_user` = \'13\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pasien`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `pasien`
+JOIN `user` ON `user`.`id` = `pasien`.`id_user`
+WHERE `user`.`role` = \'pasien\'
+AND `pasien`.`id_user` = \'13\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `pasien`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `pasien`
+JOIN `user` ON `user`.`id` = `pasien`.`id_user`
+WHERE `user`.`role` = :user.role:
+AND `pasien`.`id_user` = :pasien.id_user:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\PasienModel.php(47): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Dokter.php(302): App\Models\PasienModel->getPatient('13')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dokter->chat('13')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dokter))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-26 03:47:10 --> [Caused by] mysqli_sql_exception: Unknown column 'user.usia' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `pasien`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `pasien`
+JOIN `user` ON `user`.`id` = `pasien`.`id_user`
+WHERE `user`.`role` = \'pasien\'
+AND `pasien`.`id_user` = \'13\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pasien`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `pasien`
+JOIN `user` ON `user`.`id` = `pasien`.`id_user`
+WHERE `user`.`role` = \'pasien\'
+AND `pasien`.`id_user` = \'13\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pasien`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `pasien`
+JOIN `user` ON `user`.`id` = `pasien`.`id_user`
+WHERE `user`.`role` = \'pasien\'
+AND `pasien`.`id_user` = \'13\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT `pasien`.*, `user`.`id`, `user`.`nama`, `user`.`gender`, `user`.`usia`, `user`.`no_hp`, `user`.`email`, `user`.`username`, `user`.`foto`
+FROM `pasien`
+JOIN `user` ON `user`.`id` = `pasien`.`id_user`
+WHERE `user`.`role` = :user.role:
+AND `pasien`.`id_user` = :pasien.id_user:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\PasienModel.php(47): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Dokter.php(302): App\Models\PasienModel->getPatient('13')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dokter->chat('13')
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dokter))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

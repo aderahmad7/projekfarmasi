@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ChatModel;
+use App\Models\CourseProgressModel;
 use App\Models\DokterModel;
 use App\Models\DosisObatModel;
 use App\Models\RiwayatMedisModel;
@@ -55,6 +56,7 @@ class Pasien extends BaseController
         $userModel = new UserModel();
         $courseModel = new \App\Models\CourseModel();
         $statModel = new StatCourseModel();
+        $courseProgressModel = new CourseProgressModel();
 
         $idUser = session()->get('id_user');
         $username = session()->get('username');
@@ -67,6 +69,21 @@ class Pasien extends BaseController
         $userData = $userModel->getData($username);
         $pasienData = $pasienModel->getDataID($idUser);
         $statData = $statModel->getData($pasienData["id"]);
+        $courses = $courseModel->findAll();
+        $courseProgress = $courseProgressModel->where('id_user', $userData["id"])->findAll();
+
+        // isi disini
+        // Ambil semua id_course yang sudah ditonton dari progress
+        $watchedCourseIds = array_column($courseProgress, 'id_course');
+
+        // Tambahkan status watched ke setiap course
+        foreach ($courses as &$course) {
+            // Cek apakah course ini ada di progress
+            $course['id_user'] = $userData["id"];
+            $course['watched'] = in_array($course['id'], $watchedCourseIds) ? true : false;
+        }
+        unset($course); // Hapus reference terakhir
+
         $data = [
             "role" => $userData["role"],
             "nama" => $userData["nama"],
@@ -77,7 +94,7 @@ class Pasien extends BaseController
             "foto" => $userData["foto"],
             "pekerjaan" => $pasienData["pekerjaan"],
             "riwayat" => $pasienData["riwayat"],
-            "courses" => $courseModel->findAll(),
+            "courses" => $courses,
             "status_posttest" => $statData["posttest"]
         ];
 
