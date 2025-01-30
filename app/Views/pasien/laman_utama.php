@@ -24,6 +24,10 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet" />
 
+    <!-- Sweet alert css -->
+    <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.min.css " rel="stylesheet">
+
+
     <!-- Bootstrap css -->
     <link id="rtl-link" rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/vendors/bootstrap.css" />
 
@@ -246,6 +250,9 @@
         </div>
         <!-- Side menu offcanvas end -->
     </main>
+
+    <!-- Sweet alert -->
+    <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.all.min.js "></script>
 
     <!-- Bootstrap js-->
     <script src="<?= base_url() ?>assets/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>

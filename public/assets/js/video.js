@@ -28,7 +28,6 @@ tabs.forEach((tab) => {
     // Tambahkan kelas aktif ke tab dan konten yang dipilih
     tab.classList.add("active");
     const target = tab.getAttribute("data-target");
-    console.log(target);
     document.getElementById(target).classList.add("active");
 
     displayVideos(target);
@@ -107,10 +106,27 @@ function onPlayerStateChange(event, index) {
 
     // TODO: Ini adlaah function untuk mengirimkan data progress video dengan id tertentu
     saveWatched(videoData[index]);
+
+    // menambahkan sweet alert
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Selamat",
+      text: "Anda telah menyelesaikan video ini!",
+      // showConfirmButton: false,
+      // timer: 1500,
+      // ubah warna confirmation
+      confirmButtonColor: "#164150",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        location.reload(true);
+      }
+    });
+
     //location.reload(true);
-    setTimeout(() => {
-      location.reload(true);
-    }, 1500); // 1500 milidetik = 1.5 detik
+    // setTimeout(() => {
+    //   location.reload(true);
+    // }, 1500); // 1500 milidetik = 1.5 detik
   }
 }
 
@@ -174,7 +190,17 @@ function updateTotalProgress() {
   } else {
     progress = (sudahDitonton.length / videoData.length) * 100;
   }
-  totalProgress += progress;
+
+  // progress awal
+  totalProgress = progress;
+
+  // progress video saat ini
+  let currentProgress =
+    belumDitonton.reduce((sum, video) => sum + (video.progress || 0), 0) /
+    videoData.length;
+
+  // menambahkan progress awal dengan progress video saat ini
+  totalProgress += currentProgress;
 
   if (progress >= 100) {
     progressContainer.style.display = "none";
@@ -247,7 +273,6 @@ btnPostTest.addEventListener("click", function () {
   if (totalProgress >= 99.5) {
     location.href = `${baseUrl}/posttest/cek`;
   } else {
-    console.log(totalProgress);
     alert("Selesaikan video terlebih dahulu");
   }
 });
