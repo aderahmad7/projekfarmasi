@@ -21,7 +21,6 @@ class Resetsandi extends BaseController
             return redirect()->back()->withInput()->with('error', $this->validator->getErrors());
         }
 
-        $email = \Config\Services::email();
         $userModel = new UserModel();
         $resetModel = new ResetModel();
 
@@ -29,7 +28,6 @@ class Resetsandi extends BaseController
 
         if (!$userModel->cekEmail($userEmail)) {
             $token = bin2hex(random_bytes(50)); // Membuat token acak
-            //$userModel->update($user['id'], ['reset_token' => $token, 'token_expiry' => date('Y-m-d H:i:s', strtotime('+1 hour'))]); // Menyimpan token dan waktu kadaluarsa
             $id_user = $userModel->getDataByEmail($userEmail)["id"];
             $dataReset = [
                 'id_user' => $id_user,
@@ -46,30 +44,8 @@ class Resetsandi extends BaseController
 
             $resetLink = base_url("resetsandi/reset/$token");
 
-
-            $config = [
-                'protocol' => 'smtp',
-                'SMTPHost' => 'smtp.gmail.com',
-                'SMTPPort' => 587,
-                'SMTPUser' => 'appfarmasi@gmail.com',
-                'SMTPPass' => 'duydhuztjwencgxz', // App Password
-                'mailType' => 'html',
-                'charset' => 'utf-8',
-                'newline' => "\r\n"
-            ];
-
-            $email->initialize($config);
-
-            $email->setFrom('appfarmasi@gmail.com', 'Pharmacy App');
-            $email->setTo($userEmail);
-            $email->setSubject('Reset Password');
-            $email->setMessage("Click this link to reset your password: <a href='{$resetLink}'>Reset Password</a>");
-
-            if ($email->send()) {
-                return redirect()->back()->with('success', 'Periksa email Anda untuk tautan pengaturan ulang kata sandi.');
-            } else {
-                return redirect()->back()->with('error', 'Tidak dapat mengirim email. Silakan coba lagi.');
-            }
+            // Langsung arahkan user ke halaman reset password
+            return redirect()->to($resetLink);
         } else {
             return redirect()->back()->with('error', 'Email tidak ditemukan.');
         }
@@ -89,7 +65,6 @@ class Resetsandi extends BaseController
             $resetModel->deleteByToken($token);
             return redirect()->to('login/lupa_password')->with('error', 'Token reset tidak valid atau kedaluwarsa.');
         }
-
     }
 
     public function ubah($token)
@@ -140,6 +115,4 @@ class Resetsandi extends BaseController
             return redirect()->back()->withInput()->with('error', $userModel->errors());
         }
     }
-
-
 }
