@@ -21,5 +21,8 @@ class StatCourseModel extends Model
     {
         return $this->where('course', 100)->countAllResults();
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 423e6abd066d9c0623b64b22e39ae85cee06f51c
 }

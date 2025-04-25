@@ -9,7 +9,11 @@ use App\Models\PostTestModel;
 use App\Models\StatCourseModel;
 use App\Models\UserModel;
 use CodeIgniter\HTTP\ResponseInterface;
+<<<<<<< HEAD
 use App\Models\AnsPosttestModel;
+=======
+
+>>>>>>> 423e6abd066d9c0623b64b22e39ae85cee06f51c
 class Posttest extends BaseController
 {
     protected $posttestModel;
@@ -91,6 +95,7 @@ class Posttest extends BaseController
         ]);
     }
     public function submit()
+<<<<<<< HEAD
 {
     $pasienModel = new PasienModel();
     $hasilModel = new \App\Models\HasilPosttestModel(); // Panggil model hasil posttest
@@ -153,6 +158,29 @@ class Posttest extends BaseController
 
 
 
+=======
+    {
+        $pasienModel = new PasienModel();
+        $selectedOptions = $this->request->getPost('pilihan');
+        $id_user = session()->get('id_user'); // Ambil ID pasien dari sesi
+        $id_pasien = $pasienModel->getDataID($id_user)["id"];
+
+        // Ambil data pertanyaan dan pilihan ganda
+        $pertanyaan = $this->posttestModel->findAll();
+        $pilihan = [];
+
+        foreach ($pertanyaan as $p) {
+            $pilihan[$p['id']] = $this->optposttestModel->where('id_posttest', $p['id'])->findAll();
+        }
+
+        $data = [
+            'selectedOptions' => $selectedOptions,
+            'pertanyaan' => $pertanyaan,
+            'pilihan' => $pilihan
+        ];
+        return view('pasien/posttest-review', $data);
+    }
+>>>>>>> 423e6abd066d9c0623b64b22e39ae85cee06f51c
     public function done()
     {
         $pasienModel = new PasienModel();
@@ -304,6 +332,7 @@ class Posttest extends BaseController
 
         return redirect()->back();
     }
+<<<<<<< HEAD
     public function nilai()
 {
     $userModel = new UserModel();
@@ -312,4 +341,6 @@ class Posttest extends BaseController
 
     return view('posttest/nilai', $data);
 }
+=======
+>>>>>>> 423e6abd066d9c0623b64b22e39ae85cee06f51c
 }

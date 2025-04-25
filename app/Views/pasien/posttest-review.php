@@ -46,6 +46,7 @@
                             <p><?= $p['pertanyaan'] ?></p>
                         </div>
                         <div class="primary-goal-content mt-32">
+<<<<<<< HEAD
     <?php foreach ($pilihan[$p['id']] as $pil): ?>
         <div class="form-check select-goal mt-12">
             <?php
@@ -71,6 +72,32 @@
     <?php endforeach; ?>
 </div>
 
+=======
+                            <?php foreach ($pilihan[$p['id']] as $pil): ?>
+                                <div class="form-check select-goal mt-12">
+                                    <?php
+                                    // Periksa apakah jawaban yang dipilih user adalah kunci jawaban
+                                    $jawabanUser = $selectedOptions[$p['id']]; // Jawaban yang dipilih user
+                                    $isCorrect = ($jawabanUser == $p['id_jawaban']); // Apakah jawaban user benar
+                            
+                                    if ($pil['id'] == $jawabanUser): ?>
+                                        <label class="form-check-label custom-lable-goal"
+                                            style="font-weight: bold; color: <?= $isCorrect ? 'green' : 'red' ?>;">
+                                            <?= $pil['teks_pilihan'] ?>
+                                            <?= $isCorrect ? '(Benar)' : '(Salah)' ?>
+                                        </label>
+                                        <?php if ($isCorrect)
+                                            $totalBenar++; // Jika benar, tambah counter ?>
+                                    <?php else: ?>
+                                        <label class="form-check-label custom-lable-goal">
+                                            <?= $pil['teks_pilihan'] ?>
+                                        </label>
+                                    <?php endif; ?>
+                                    <br>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+>>>>>>> 423e6abd066d9c0623b64b22e39ae85cee06f51c
                         <br><br>
                     <?php endforeach; ?>
 

@@ -53,6 +53,7 @@ class UserModel extends Model
     {
         return $this->where('role', 'dokter')->findAll();
     }
+<<<<<<< HEAD
     public function getAllPosttestScoresPaginated($perPage = 10)
 {
     $builder = $this->db->table('user');
@@ -98,4 +99,6 @@ class UserModel extends Model
     return $users;
 }
 
+=======
+>>>>>>> 423e6abd066d9c0623b64b22e39ae85cee06f51c
 }

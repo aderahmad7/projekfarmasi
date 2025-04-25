@@ -39,6 +39,7 @@
         <!-- Header end -->
         <!-- Primary goal start -->
         <section id="primary_goal">
+<<<<<<< HEAD
     <div class="container">
         <h1 class="d-none">Goal</h1>
         <h2 class="d-none">Hidden</h2>
@@ -83,6 +84,43 @@
     </div>
 </section>
 
+=======
+            <div class="container">
+                <h1 class="d-none">Goal</h1>
+                <h2 class="d-none">Hidden</h2>
+                <div class="primary_goal-wrap mt-32">
+                    <form id="quiz-form" class="primary-form" method="POST" action="<?= base_url('posttest/submit') ?>">
+                        <?php
+                        $i = 0;
+                        $idQuestion = [];
+                        foreach ($pertanyaan as $p): ?>
+                            <?php $idQuestion[] = $p['id']; ?>
+                            <?php if ($i > 0): ?>
+                                <br><br>
+                            <?php endif; ?>
+                            <div class="goal-title">
+                                <p><?= $p['pertanyaan'] ?></p>
+                            </div>
+                            <div class="primary-goal-content mt-32">
+                                <?php foreach ($pilihan[$p['id']] as $pil): ?>
+                                    <div class="form-check select-goal mt-12">
+                                        <input class="form-check-input custom-input-goal" name="pilihan[<?= $p['id'] ?>]"
+                                            type="radio" id="language<?= $pil['id'] ?>" value="<?= $pil['id'] ?>" />
+                                        <label class="form-check-label custom-lable-goal" for="language<?= $pil['id'] ?>">
+                                            <?= $pil['teks_pilihan'] ?>
+                                        </label>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                            <?php $i++; ?>
+                        <?php endforeach; ?>
+                        <button name="submit" class="btn btn-primary mt-32 w-100" type="submit">Kirim</button>
+                    </form>
+                    <p class="error" id="errorMessage"></p>
+                </div>
+            </div>
+        </section>
+>>>>>>> 423e6abd066d9c0623b64b22e39ae85cee06f51c
         <!-- Primary goal end -->
     </div>
     <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>

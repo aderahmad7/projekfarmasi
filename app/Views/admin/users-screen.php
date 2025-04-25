@@ -125,6 +125,7 @@
                         </div>
                     </a>
                 </li>
+<<<<<<< HEAD
                 <li>
                     <a href="<?= site_url('admin/nilai_posttest') ?>" class="menu-setting-box">
                         <div class="setting-icon">
@@ -137,6 +138,8 @@
                     </a>
                 </li>
 
+=======
+>>>>>>> 423e6abd066d9c0623b64b22e39ae85cee06f51c
             </ul>
         </div>
     </div>

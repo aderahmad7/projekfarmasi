@@ -14,8 +14,11 @@ use App\Models\PretestModel;
 use App\Models\StatCourseModel;
 use App\Models\UserModel;
 use CodeIgniter\HTTP\ResponseInterface;
+<<<<<<< HEAD
 use App\Models\HasilPosttestModel;
 use App\Models\AnsPosttestModel;
+=======
+>>>>>>> 423e6abd066d9c0623b64b22e39ae85cee06f51c
 
 class Admin extends BaseController
 {
@@ -515,6 +518,7 @@ class Admin extends BaseController
             return redirect()->to('/admin');
         }
     }
+<<<<<<< HEAD
     public function nilai_posttest()
 {
     $session = session();
@@ -613,3 +617,7 @@ class Admin extends BaseController
 //     return view('admin/nilai-posttest-screen', $data);
 // }
 
+=======
+
+}
+>>>>>>> 423e6abd066d9c0623b64b22e39ae85cee06f51c
